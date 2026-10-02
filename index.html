@@ -161,6 +161,76 @@ nav button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;heig
 .pills.five button{font-size:13px;padding:0 2px}
 .daycap{font-family:var(--fh);font-weight:800;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin:0 0 2px}
 #dayTitle{margin:0 0 10px}
+/* ---- v2: nuevas secciones ---- */
+.top .langbtn{margin-left:auto;min-width:50px;height:40px;border:2px solid var(--edge);border-radius:12px;background:var(--bg);color:var(--text);font-family:var(--fh);font-weight:800;font-size:13px;letter-spacing:.08em}
+.seg.m0{margin:0}
+.seg.sm button{min-height:36px}
+.mind{background:var(--card);border:2px solid var(--line);border-left:6px solid var(--accent);border-radius:16px;padding:16px;margin-bottom:14px}
+.mind .kicker{margin:0 0 8px}
+.mind .quote{font-family:var(--fh);font-weight:800;font-size:19px;line-height:1.3;letter-spacing:-.01em;margin:0 0 8px}
+.mind .by{color:var(--muted);font-size:14px;font-weight:600}
+.subnav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.subnav button{min-height:52px;border:2px solid var(--edge);border-radius:14px;background:var(--card);color:var(--text);font-family:var(--fh);font-weight:800;font-size:14px}
+.subnav button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hand{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px}
+.hand .e{font-size:30px;line-height:1.1}
+.hand b{display:block;font-family:var(--fh);font-weight:800;font-size:14px;margin:6px 0 2px}
+.hand span{font-size:13px;color:var(--muted)}
+.platesvg{display:block;width:100%;max-width:280px;margin:6px auto 4px}
+.plate .seg{margin-bottom:8px}
+.prow{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:2px solid var(--line)}
+.prow .e{font-size:26px;flex:none;width:34px;text-align:center}
+.prow b{display:block}
+.food h3{font-size:16.5px;margin:0 0 2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--bg);border:2px solid var(--line);border-radius:99px;padding:3px 10px;font-size:13px;font-weight:600;color:var(--muted)}
+.chip b{font-family:var(--fh);font-weight:900}
+.chip.k{color:var(--text)} .chip.k b{color:var(--accent)}
+.chip.p{color:var(--text)} .chip.p b{color:var(--gold)}
+.swap{font-size:14.5px}
+.lbl2{display:block;font-family:var(--fh);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.groc{list-style:none;margin:0;padding:0}
+.groc li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 0;border-top:2px solid var(--line)}
+.groc li:first-child{border-top:none;padding-top:0}
+.groc li b{display:block}
+.groc .price{font-family:var(--fh);font-weight:900;font-size:18px}
+.groc .tip{grid-column:1/-1;font-size:13.5px;color:var(--muted)}
+.groc .tip b{display:inline;color:var(--text)}
+.total{border-top:2px solid var(--line);padding-top:12px;margin-top:4px}
+.big2{font-family:var(--fh);font-weight:900;font-size:28px;letter-spacing:-.02em;color:var(--accent)}
+.grid30{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0}
+.grid30 button{aspect-ratio:1;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--muted);font-family:var(--fh);font-weight:800;font-size:15px;padding:0}
+.grid30 button.done{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.grid30 button.cur{border-color:var(--accent);color:var(--text)}
+.grid30 button.lock{color:#62749A}
+.grid30 button.sel{outline:3px solid var(--gold);outline-offset:2px}
+.task{background:var(--bg);border:2px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.badges{display:flex;justify-content:space-between;gap:6px}
+.badge{flex:1;text-align:center;font-size:12px;color:var(--muted);font-weight:600}
+.badge i{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 6px;border-radius:50%;background:var(--line);color:var(--muted);font-family:var(--fh);font-weight:900;font-size:18px;font-style:normal}
+.badge.on{color:var(--text)}
+.badge.on i{background:var(--gold);color:var(--on-accent)}
+.sharePrev{display:block;width:62%;margin:14px auto 8px;border-radius:14px;border:2px solid var(--line)}
+.faq{border-top:2px solid var(--line);padding:12px 0}
+.faq:first-of-type{border-top:none}
+.faq summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-family:var(--fh);font-weight:900;font-size:22px;line-height:1}
+.faq[open] summary::after{content:"–"}
+.faq p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.ov{border-top:2px solid var(--line);margin-top:12px;padding-bottom:0}
+.lead{position:relative}
+.lead .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.vid{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:8px 14px;border:2px solid var(--accent);border-radius:99px;color:var(--accent);font-family:var(--fh);font-weight:800;font-size:13px;text-decoration:none}
+.weekc .pills{margin:0 0 12px}
+.weekc .pills button{min-height:42px}
+.story{display:flex;gap:14px;align-items:flex-start}
+.story .logo{flex:none}
+.stats.four{grid-template-columns:1fr 1fr;margin-bottom:14px}
+.stats.four div{background:var(--card)}
+button:disabled{opacity:.7}
+
 </style>
 </head>
 <body>
@@ -168,231 +238,536 @@ nav button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;heig
 <header class="top">
   <div class="logo" id="logo"></div>
   <div><h1 id="brandTitle"></h1><small id="brandTag"></small></div>
+  <button type="button" class="langbtn" id="langBtn" data-act="lang">EN</button>
 </header>
 
 <main>
-  <!-- ============ INICIO ============ -->
-  <section id="tab-inicio">
-    <div class="card hero">
-      <div class="kicker">App gratis · Principiantes</div>
-      <h2 id="heroTitle">¡Hola! 👋</h2>
-      <p>Si estás empezando, esta app es para ti. Sin complicaciones: entrena de 3 a 5 días a la semana dependiendo de tu disponibilidad, come mejor y mira tu progreso.</p>
-    </div>
-
-    <div class="card">
-      <h3>3 reglas para <span class="hl">empezar</span></h3>
-      <div class="rule"><div class="num">1</div><div><b>Constancia antes que perfección</b><span>De 3 a 5 entrenamientos por semana, según tu disponibilidad, aunque sean cortos, valen más que una semana perfecta y luego nada.</span></div></div>
-      <div class="rule"><div class="num">2</div><div><b>Proteína y agua todos los días</b><span>Pon proteína en cada comida (huevo, pollo, pescado, frijoles, yogur) y toma agua durante el día.</span></div></div>
-      <div class="rule"><div class="num">3</div><div><b>Descansa y muévete</b><span>Duerme 7–8 horas y camina todos los días. Tu cuerpo cambia cuando descansas.</span></div></div>
-    </div>
-
-    <div class="kicker" style="margin-top:20px">¿Cómo usar la app?</div>
-    <div class="steps">
-      <button class="step" data-go="calculadora"><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><b>1. Calcula</b><span>Tus calorías y proteína</span></button>
-      <button class="step" data-go="rutina"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg><b>2. Entrena</b><span>Sigue tu rutina de 3 días</span></button>
-      <button class="step" data-go="hoy"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>3. Marca tu día</b><span>Cumple tus 5 hábitos</span></button>
-      <button class="step" data-go="progreso"><svg class="ico" viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M5 15l4-4 4 3 6-7"/></svg><b>4. Pésate</b><span>1 vez por semana</span></button>
-    </div>
-
-    <div class="card" style="margin-top:12px">
-      <h3>¿Quieres resultados <span class="hl">más rápido</span>?</h3>
-      <p class="muted" style="margin:0 0 12px">Te armo un plan hecho para ti: entrenamiento, alimentación y seguimiento.</p>
-      <a class="btn" id="ctaCard" target="_blank" rel="noopener">Trabaja conmigo →</a>
-    </div>
-
-    <div class="card">
-      <h3>Sígueme</h3>
-      <div class="socials" id="socials"></div>
-    </div>
-
-    <div class="disc"><b>Aviso de salud:</b> esta app es informativa y no reemplaza el consejo de un médico o profesional de la salud. Consulta a tu médico antes de empezar a entrenar o cambiar tu alimentación, sobre todo si tienes una condición de salud, una lesión o estás embarazada. Si sientes dolor, mareo o falta de aire, detente.</div>
-    <p class="foot" id="foot"></p>
-  </section>
-
-  <!-- ============ RUTINA ============ -->
-  <section id="tab-rutina">
-    <div class="kicker">Paso 2 · Entrena</div>
-    <h2>Tu <span class="hl">rutina</span></h2>
-    <div class="note" id="rutNote">
-      <p>Es una rutina general de fuerza para principiantes que trabaja todo tu cuerpo. Sirve para cualquier meta: <b>bajar grasa, ganar músculo o sentirte mejor</b>.</p>
-      <p>Lo que decide el resultado es tu comida: usa la <button class="inl" data-go="calculadora">Calculadora</button> para saber tus calorías y proteína. Si eliges 5 días, el día de cardio + core te ayuda extra a bajar grasa.</p>
-    </div>
-    <div class="seg" id="modeSeg">
-      <button data-mode="gym"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg>Gimnasio</button>
-      <button data-mode="casa"><svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>En casa</button>
-    </div>
-    <div class="seg" id="freqSeg">
-      <button data-freq="3">3 días</button>
-      <button data-freq="5">5 días</button>
-    </div>
-    <p class="choose"><b>¿Cuál elijo?</b> 3 días si estás empezando o tienes poco tiempo. 5 días si puedes ser constante y te recuperas bien.</p>
-    <div class="pills" id="dayPills"></div>
-    <p class="sub" id="rutSub" style="margin-top:-2px"></p>
-    <div class="card" style="padding:14px 16px">
-      <div class="daycap" id="dayCap">Día 1</div>
-      <h3 id="dayTitle">Cuerpo completo</h3>
-      <div class="row small" style="margin-bottom:10px"><b id="progText" class="lbl" style="color:var(--text)">0 de 0 series</b><button class="linkbtn small" id="resetSets">Reiniciar</button></div>
-      <div class="bar"><i id="progBar" style="width:0"></i></div>
-    </div>
-    <div id="exList"></div>
-    <p class="muted small" style="margin:4px 2px 14px">Usa un peso con el que las últimas 2 repeticiones cuesten, pero sin perder la técnica. Cuando completes todas las repeticiones fácil, sube un poquito el peso.</p>
-  </section>
-
-  <!-- ============ CALCULADORA ============ -->
-  <section id="tab-calculadora">
-    <div class="kicker">Paso 1 · Calcula</div>
-    <h2>Tus <span class="hl">calorías</span> y proteína</h2>
-    <p class="sub">Descubre cuántas calorías y cuánta proteína necesitas al día.</p>
-    <div class="card">
-      <div class="field"><label class="f">Sexo</label>
-        <div class="seg" id="sexSeg" style="margin:0"><button data-v="h">Hombre</button><button data-v="m">Mujer</button></div></div>
-      <div class="field"><label class="f" for="age">Edad</label>
-        <input class="inp" id="age" type="number" inputmode="numeric" min="14" max="90" placeholder="Ej. 30"></div>
-      <div class="field"><label class="f" for="weight">Peso</label>
-        <div class="unitwrap"><input class="inp" id="weight" type="number" inputmode="decimal" step="0.1" placeholder="Ej. 180">
-          <div class="seg" id="wUnitSeg"><button data-v="lb">lb</button><button data-v="kg">kg</button></div></div></div>
-      <div class="field"><label class="f">Estatura</label>
-        <div class="unitwrap">
-          <div id="hFt" class="two"><input class="inp" id="hft" type="number" inputmode="numeric" placeholder="pies"><input class="inp" id="hin" type="number" inputmode="numeric" placeholder="pulg."></div>
-          <div id="hCm"><input class="inp" id="hcm" type="number" inputmode="numeric" placeholder="cm"></div>
-          <div class="seg" id="hUnitSeg"><button data-v="ft">ft</button><button data-v="cm">cm</button></div></div></div>
-      <div class="field"><label class="f" for="act">¿Qué tan activo eres?</label><p class="muted small" style="margin:-2px 0 8px">Si trabajas de pie o caminas mucho, sube un nivel.</p>
-        <select class="inp" id="act">
-          <option value="1.2">Sedentario (casi sin ejercicio)</option>
-          <option value="1.375">Poco activo (ejercicio 1–3 días/sem)</option>
-          <option value="1.55">Moderado (ejercicio 3–5 días/sem)</option>
-          <option value="1.725">Activo (ejercicio 6–7 días/sem)</option>
-          <option value="1.9">Muy activo (trabajo físico + ejercicio)</option>
-        </select></div>
-      <div class="field"><label class="f">Tu meta</label>
-        <div class="seg" id="goalSeg" style="margin:0"><button data-v="bajar">Bajar grasa</button><button data-v="mantener">Mantener</button><button data-v="ganar">Ganar músculo</button></div></div>
-      <div class="err" id="calcErr" hidden></div>
-      <button class="btn" id="calcBtn">Calcular</button>
-    </div>
-    <div class="card result" id="calcResult" hidden>
-      <div class="lbl">Tu meta diaria</div>
-      <div class="kpis">
-        <div class="kpi"><b id="rKcal">–</b><span>calorías al día</span></div>
-        <div class="kpi"><b id="rProt">–</b><span>gramos de proteína</span></div>
-      </div>
-      <p id="rText" style="margin:0 0 10px;font-size:17px"></p>
-      <p class="muted small" id="rDetail" style="margin:0 0 12px"></p>
-      <a class="btn ghost" id="ctaCalc" target="_blank" rel="noopener">¿Quieres tu plan de comidas? Trabaja conmigo</a>
-    </div>
-    <div class="disc">Es una estimación (fórmula Mifflin-St Jeor). Pésate 1 vez por semana: si en 2–3 semanas no ves cambio, ajusta 100–200 calorías. Consulta a tu médico si tienes alguna condición de salud.</div>
-  </section>
-
-  <!-- ============ HOY ============ -->
-  <section id="tab-hoy">
-    <div class="kicker">Paso 3 · Hábitos</div>
-    <h2>Tu día de <span class="hl">hoy</span></h2>
-    <p class="sub" id="todayLabel"></p>
-    <div class="card">
-      <div class="streak"><div class="flame">🔥</div><div><div class="big" id="streakNum">0</div><div class="muted small" id="streakTxt">días seguidos</div></div></div>
-      <div class="week" id="week"></div>
-    </div>
-    <div id="checks"></div>
-    <p class="muted small" style="margin:0 2px 14px">Sumas un día a tu racha cuando marcas al menos 3 de los 5 hábitos. ¡No tiene que ser perfecto!</p>
-  </section>
-
-  <!-- ============ PROGRESO ============ -->
-  <section id="tab-progreso">
-    <div class="kicker">Paso 4 · Mide</div>
-    <h2>Tu <span class="hl">progreso</span></h2>
-    <p class="sub">Pésate 1 vez por semana, en ayunas y a la misma hora.</p>
-    <div class="card">
-      <div class="two">
-        <div class="field" style="margin-bottom:10px"><label class="f" for="pDate">Fecha</label><input class="inp" id="pDate" type="date" style="font-size:16px"></div>
-        <div class="field" style="margin-bottom:10px"><label class="f" for="pW">Peso (<span id="pUnitLbl">lb</span>)</label><input class="inp" id="pW" type="number" inputmode="decimal" step="0.1" placeholder="Ej. 180"></div>
-      </div>
-      <div class="err" id="pErr" hidden></div>
-      <button class="btn" id="pSave">Guardar peso</button>
-    </div>
-    <div class="card">
-      <div class="row" style="margin-bottom:8px"><h3 style="margin:0">Tu peso</h3>
-        <div class="seg" id="pUnitSeg" style="margin:0;width:112px"><button data-v="lb" style="min-height:36px">lb</button><button data-v="kg" style="min-height:36px">kg</button></div></div>
-      <div class="stats" id="pStats"></div>
-      <div id="chartWrap"></div>
-    </div>
-    <div class="card"><h3>Historial</h3><ul class="log" id="pLog"></ul></div>
-  </section>
+  <section id="tab-inicio"></section>
+  <section id="tab-rutina"></section>
+  <section id="tab-comida"></section>
+  <section id="tab-hoy"></section>
+  <section id="tab-progreso"></section>
 </main>
 
-<div class="cta"><a id="ctaBar" target="_blank" rel="noopener"><span>¿Quieres un plan personalizado? <em>Trabaja&nbsp;conmigo&nbsp;→</em></span></a></div>
-
-<nav><div class="in" id="tabs">
-  <button data-tab="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Inicio</button>
-  <button data-tab="rutina"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg>Rutina</button>
-  <button data-tab="calculadora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>Calculadora</button>
-  <button data-tab="hoy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Hoy</button>
-  <button data-tab="progreso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M5 15l4-4 4 3 6-7"/></svg>Progreso</button>
-</div></nav>
-
-<div class="toast" id="toast"></div>
+<div class="cta"><a id="ctaBar" target="_blank" rel="noopener"></a></div>
+<nav><div class="in" id="tabs"></div></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:20px">Activa JavaScript para usar la app. / Please enable JavaScript.</p></noscript>
 
 <script>
 /* =====================================================================
-   CONFIGURACIÓN DE MARCA  ·  Cambia solo este bloque
+   CONFIGURACIÓN  ·  Cambia solo este bloque
    ===================================================================== */
 const CONFIG = {
   BRAND_NAME:   "Balmore Hernandez",
-  TAGLINE:      "Coach de fitness y mentalidad",
-  // Link de TODOS los botones "Trabaja conmigo". Por ahora va a tu Instagram; cámbialo aquí cuando tengas tu link de coaching.
+  // Link de TODOS los botones "Trabaja conmigo" (y respaldo del formulario de leads).
   COACHING_URL: "https://wa.me/50366803369?text=Hola%20Balmore%2C%20vengo%20de%20tu%20app%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20coaching",
+  APP_URL:      "app.balmorehernandez.com",   // se muestra en la imagen para compartir
+  // Formulario "Recibe tu plan de 4 semanas": URL del Google Apps Script (Nico). Vacío = el botón abre WhatsApp (COACHING_URL).
+  LEAD_FORM_URL: "",
   ACCENT_COLOR: "#FF5F1F",           // naranja brasa (marca Brasa Navy). El resto de colores está en :root del CSS
   LOGO_URL:     "",                  // opcional: ruta o URL de tu logo/foto (vacío = iniciales)
   SOCIAL: {                          // agrega o quita redes aquí (ej. youtube: { handle: "@...", url: "https://..." })
     instagram: { handle: "@BalmoreHernandez.sv", url: "https://www.instagram.com/BalmoreHernandez.sv" },
     tiktok:    { handle: "@BalmoreHernandez.sv", url: "https://www.tiktok.com/@BalmoreHernandez.sv" },
     facebook:  { handle: "@BalmoreHernandez.sv", url: "https://www.facebook.com/BalmoreHernandez.sv" }
+  },
+  // Videos por ejercicio (opcional). El botón "Ver video" solo aparece si hay link. Ej.: goblet: "https://youtu.be/xxxx"
+  // (También puedes poner videoUrl directamente en un ejercicio de EX.)
+  VIDEOS: {},
+  // RETO CON BALMORE: agrega una entrada por semana { date: "AAAA-MM-DD", weight: libras, note: "texto" o { es, en } }
+  RETO_BALMORE: {
+    GOAL_MIN: 200, GOAL_MAX: 210, UNIT: "lb",
+    ENTRIES: [
+      { date: "2026-10-02", weight: 250, note: { es: "Día 1. Aquí empieza todo.", en: "Day 1. This is where it all starts." } }
+    ]
   }
 };
 /* ===================================================================== */
 
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
-const KEY = "fitnessPrincipiantes_v1";
-const todayKey = (d = new Date()) => d.toLocaleDateString("en-CA"); // YYYY-MM-DD local
-const fmt = n => Math.round(n).toLocaleString("es-MX");
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* =====================================================================
+   MENTALIDAD DIARIA  ·  Edita aquí los mensajes de Balmore (1 por día, se repiten en ciclo)
+   Cada mensaje: { es: "texto en español", en: "English text" }
+   ===================================================================== */
+const MENSAJES = [
+  { es: "No necesitas motivación todos los días. Necesitas un plan y cumplirlo aunque no tengas ganas.", en: "You don't need motivation every day. You need a plan, and to follow it even when you don't feel like it." },
+  { es: "Yo empecé en 250 libras. No esperes a sentirte listo: empieza con lo que tienes hoy.", en: "I started at 250 pounds. Don't wait until you feel ready: start with what you have today." },
+  { es: "Disciplina es elegir lo que más quieres sobre lo que quieres ahorita.", en: "Discipline is choosing what you want most over what you want right now." },
+  { es: "Un mal día de comida no arruina tu progreso. Rendirte, sí. Vuelve en la siguiente comida.", en: "One bad day of eating doesn't ruin your progress. Quitting does. Get back on track at your next meal." },
+  { es: "Los tuyos te ven. Cada entrenamiento también es un ejemplo para ellos.", en: "Your people are watching. Every workout is also an example for them." },
+  { es: "No eres 'alguien que intenta hacer ejercicio'. Eres alguien que entrena. Actúa como esa persona hoy.", en: "You're not 'someone trying to work out.' You're someone who trains. Act like that person today." },
+  { es: "En el negocio y en el gym es igual: lo que se mide, mejora. Anota tu peso y tus comidas.", en: "Business and the gym work the same way: what gets measured gets better. Track your weight and your meals." },
+  { es: "20 minutos hechos valen más que una hora planeada que nunca llegó.", en: "20 minutes done beats an hour planned that never happened." },
+  { es: "La constancia le gana al talento cuando el talento no es constante.", en: "Consistency beats talent when talent isn't consistent." },
+  { es: "Hoy no tienes que ser perfecto. Solo tienes que ser mejor que tu excusa.", en: "Today you don't have to be perfect. You just have to be better than your excuse." },
+  { es: "Cuida tu cuerpo como cuidas tu negocio: con atención diaria, no solo cuando hay crisis.", en: "Take care of your body like you take care of your business: every day, not only in a crisis." },
+  { es: "Cuida tu salud para disfrutar a los tuyos, no solo para verte bien. ¿Cuál es tu porqué?", en: "Take care of your health to enjoy your loved ones, not just to look good. What's your why?" },
+  { es: "Cada vez que cumples lo que te prometiste, tu confianza crece. Cúmplete hoy.", en: "Every time you keep a promise to yourself, your confidence grows. Keep one today." },
+  { es: "El progreso lento sigue siendo progreso. Una libra por semana son 50 en un año.", en: "Slow progress is still progress. One pound a week is 50 in a year." },
+  { es: "No negocies con tu alarma. Levántate, muévete y después decides cómo te sientes.", en: "Don't negotiate with your alarm. Get up, move, and then decide how you feel." },
+  { es: "Las pupusas no son el enemigo. La falta de plan, sí. Disfruta con medida.", en: "Pupusas aren't the enemy. Having no plan is. Enjoy them in moderation." },
+  { es: "Tu salud es tu primer negocio. Si quiebra, todo lo demás se detiene.", en: "Your health is your first business. If it goes under, everything else stops." },
+  { es: "Empieza pequeño: un vaso de agua más, una caminata de 10 minutos. Lo pequeño se suma.", en: "Start small: one more glass of water, a 10-minute walk. Small things add up." },
+  { es: "Los resultados que quieres están del otro lado de los días aburridos. Sigue.", en: "The results you want are on the other side of the boring days. Keep going." },
+  { es: "No compares tu capítulo 1 con el capítulo 20 de otro.", en: "Don't compare your chapter 1 to someone else's chapter 20." },
+  { es: "Estar ocupado no es la excusa, es la razón. Entrenar te da energía para los tuyos y para tu trabajo.", en: "Being busy isn't the excuse, it's the reason. Training gives you energy for your loved ones and your work." },
+  { es: "El dinero y el físico se construyen igual: hábitos pequeños, repetidos por mucho tiempo.", en: "Money and fitness are built the same way: small habits, repeated for a long time." },
+  { es: "Si fallaste ayer, hoy es el mejor día para volver. No esperes al lunes.", en: "If you slipped yesterday, today is the best day to come back. Don't wait for Monday." },
+  { es: "La motivación te hace empezar. El hábito te hace seguir.", en: "Motivation gets you started. Habit keeps you going." },
+  { es: "Duerme bien. El músculo y las buenas decisiones se construyen descansando.", en: "Sleep well. Muscle and good decisions are both built while you rest." },
+  { es: "No busques el plan perfecto. Busca el plan que sí vas a cumplir.", en: "Don't look for the perfect plan. Look for the plan you'll actually follow." },
+  { es: "Lo que haces cuando nadie te ve es lo que se nota después en el espejo.", en: "What you do when no one's watching is what shows in the mirror later." },
+  { es: "Ganar es aparecer. Aparece hoy, aunque sea con una rutina exprés.", en: "Winning is showing up. Show up today, even if it's an express workout." },
+  { es: "Tus antojos pasan en 10 minutos. Tu meta dura toda la vida. Toma agua y espera.", en: "Cravings pass in 10 minutes. Your goal lasts a lifetime. Drink some water and wait." },
+  { es: "Celebra cada libra, cada repetición extra, cada día cumplido. Eso también es progreso.", en: "Celebrate every pound, every extra rep, every day you show up. That's progress too." },
+  { es: "Un emprendedor no espera condiciones perfectas: trabaja con lo que hay. Entrena igual.", en: "An entrepreneur doesn't wait for perfect conditions: you work with what you have. Train the same way." },
+  { es: "Tu cuerpo escucha todo lo que dices. Habla de ti como alguien que sí puede.", en: "Your body hears everything you say. Talk about yourself like someone who can." },
+  { es: "No se trata de tener tiempo. Se trata de hacer tiempo para lo que importa.", en: "It's not about having time. It's about making time for what matters." },
+  { es: "La comida es combustible. Dale a tu cuerpo lo que lo hace fuerte.", en: "Food is fuel. Give your body what makes it strong." },
+  { es: "El dolor de la disciplina pesa onzas. El del arrepentimiento pesa toneladas.", en: "The pain of discipline weighs ounces. Regret weighs tons." },
+  { es: "Hoy elige una sola cosa y hazla bien: entrenar, comer limpio o dormir temprano.", en: "Today, pick one thing and do it well: train, eat clean, or go to bed early." },
+  { es: "Quien eres en el gym es quien eres en la vida: si no te rindes aquí, no te rindes allá.", en: "Who you are in the gym is who you are in life: if you don't quit here, you won't quit out there." },
+  { es: "No necesitas un gimnasio caro. Necesitas decidir. Tu sala también sirve.", en: "You don't need an expensive gym. You need to decide. Your living room works too." },
+  { es: "Invierte en ti primero: tu salud paga los mejores intereses.", en: "Invest in yourself first: your health pays the best interest." },
+  { es: "Si no te gusta el resultado, cambia el hábito, no la meta.", en: "If you don't like the result, change the habit, not the goal." },
+  { es: "Haz las cosas difíciles mientras son pequeñas. Una caminata hoy evita un problema mañana.", en: "Do the hard things while they're small. A walk today prevents a problem tomorrow." },
+  { es: "Los tuyos merecen tu mejor versión. Esa versión se entrena todos los días.", en: "Your loved ones deserve the best version of you. That version gets trained every day." },
+  { es: "La báscula no mide tu valor. Mide un número. Confía en el proceso.", en: "The scale doesn't measure your worth. It measures a number. Trust the process." },
+  { es: "Rodéate de gente que entrena, emprende y crece. Se contagia.", en: "Surround yourself with people who train, build, and grow. It's contagious." },
+  { es: "No es suerte. Es repetición.", en: "It's not luck. It's repetition." },
+  { es: "Prepara tu comida como preparas tu semana de trabajo: con anticipación.", en: "Prep your food the way you prep your work week: ahead of time." },
+  { es: "Cada 'no' a una excusa es un 'sí' a la persona que quieres ser.", en: "Every 'no' to an excuse is a 'yes' to the person you want to become." },
+  { es: "Si hoy cuesta, hazlo más corto, pero no lo saltes.", en: "If today is hard, make it shorter, but don't skip it." },
+  { es: "La energía que buscas en el café está en dormir, tomar agua y moverte.", en: "The energy you look for in coffee is in sleep, water, and movement." },
+  { es: "Tu yo del futuro te está agradeciendo lo que haces hoy.", en: "Your future self is thanking you for what you do today." },
+  { es: "Paciencia activa: trabaja todos los días y deja que el tiempo haga su parte.", en: "Active patience: work every day and let time do its part." },
+  { es: "Pequeñas victorias diarias construyen una identidad ganadora.", en: "Small daily wins build a winning identity." },
+  { es: "No tienes que sentirte bien para empezar. Empieza y te vas a sentir bien.", en: "You don't have to feel good to start. Start, and you'll feel good." },
+  { es: "Lo que comes en privado se nota en público. Elige con intención.", en: "What you eat in private shows in public. Choose on purpose." },
+  { es: "Un negocio crece con sistemas. Tu cuerpo también: rutina, comida, sueño, repetir.", en: "A business grows with systems. So does your body: routine, food, sleep, repeat." },
+  { es: "No te castigues por lo que comiste. Planea mejor tu próxima comida.", en: "Don't punish yourself for what you ate. Plan your next meal better." },
+  { es: "Hoy mejora 1%. En un año vas a ser otra persona.", en: "Get 1% better today. In a year you'll be a different person." },
+  { es: "Fuerte no es el que nunca cae. Es el que se levanta cada vez.", en: "Strong isn't never falling. It's getting up every time." },
+  { es: "Entrena por cómo te hace sentir, no solo por cómo te hace ver.", en: "Train for how it makes you feel, not just how it makes you look." },
+  { es: "Vamos juntos. Yo también estoy en el proceso, semana a semana.", en: "We're in this together. I'm in the process too, week by week." }
+];
 
-let S = {
-  tab: "inicio", mode: "gym", freq: "3", day: 0,
-  sets: { date: "", done: {} },
-  calc: { sex: "h", age: "", w: "", wUnit: "lb", hUnit: "ft", hft: "", hin: "", hcm: "", act: "1.55", goal: "bajar", result: null },
-  checks: {}, weights: [], pUnit: "lb"
+/* ---------- Textos de la interfaz (ES / EN) ---------- */
+const I18N = {
+  es: {
+    tagline: "Coach de fitness y mentalidad", langBtn: "EN", langAria: "Cambiar idioma a inglés",
+    tabInicio: "Inicio", tabRutina: "Rutina", tabComida: "Comida", tabHoy: "Hoy", tabProgreso: "Progreso",
+    cta: "¿Quieres un plan personalizado?", ctaGo: "Trabaja conmigo →",
+    heroKicker: "App gratis · Principiantes", hello: "¡Hola! Soy", heroP: "Si estás empezando, esta app es para ti. Sin complicaciones: entrena de 3 a 5 días a la semana dependiendo de tu disponibilidad, come mejor y mira tu progreso.",
+    mindKicker: "Mentalidad del día", mindBy: "— Balmore",
+    retoBKicker: "Reto con Balmore", retoBTeaser: "Yo también voy en el proceso. Mira mi peso real, semana a semana.", retoBGo: "Ver mi reto →",
+    rulesTitle: "3 reglas para <span class=\"hl\">empezar</span>",
+    rule1t: "Constancia antes que perfección", rule1: "De 3 a 5 entrenamientos por semana, según tu disponibilidad, aunque sean cortos, valen más que una semana perfecta y luego nada.",
+    rule2t: "Proteína y agua todos los días", rule2: "Pon proteína en cada comida (huevo, pollo, pescado, frijoles, yogur) y toma agua durante el día.",
+    rule3t: "Descansa y muévete", rule3: "Duerme 7–8 horas y camina todos los días. Tu cuerpo cambia cuando descansas.",
+    howKicker: "¿Cómo usar la app?",
+    step1t: "1. Calcula", step1: "Tus calorías y proteína", step2t: "2. Entrena", step2: "3 o 5 días, o exprés", step3t: "3. Marca tu día", step3: "Hábitos y reto de 30 días", step4t: "4. Pésate", step4: "1 vez por semana",
+    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Déjame tus datos y te mando el plan con tips para empezar con todo.",
+    leadName: "Nombre", leadEmail: "Correo", leadWa: "WhatsApp", leadGoal: "Tu objetivo", leadSend: "Quiero mi plan gratis",
+    goalFat: "Bajar grasa", goalMuscle: "Ganar músculo", goalBetter: "Sentirme mejor",
+    leadNeed: "Escribe al menos tu nombre, correo o WhatsApp.", leadSending: "Enviando…",
+    leadThanks: "¡Gracias{name}! 🙌", leadThanksP: "Recibí tus datos. Pronto te llega tu plan de 4 semanas.", leadAgain: "Enviar otros datos", leadWaMsg: "Te llevo a WhatsApp para enviarte el plan.",
+    leadPrivacy: "Solo uso tus datos para enviarte el plan y tips. Nada de spam.",
+    faqTitle: "Preguntas <span class=\"hl\">frecuentes</span>",
+    moreTitle: "¿Quieres resultados <span class=\"hl\">más rápido</span>?", moreP: "Te armo un plan hecho para ti: entrenamiento, alimentación y seguimiento.", moreBtn: "Trabaja conmigo →",
+    follow: "Sígueme",
+    disc: "<b>Aviso de salud:</b> esta app es informativa y no reemplaza el consejo de un médico o profesional de la salud. Consulta a tu médico antes de empezar a entrenar o cambiar tu alimentación, sobre todo si tienes una condición de salud, una lesión o estás embarazada. Si sientes dolor, mareo o falta de aire, detente.",
+    foot: "App gratis",
+    // Rutina
+    rutKicker: "Paso 2 · Entrena", rutTitle: "Tu <span class=\"hl\">rutina</span>",
+    rutNote1: "Es una rutina general de fuerza para principiantes que trabaja todo tu cuerpo. Sirve para cualquier meta: <b>bajar grasa, ganar músculo o sentirte mejor</b>.",
+    rutNote2: "Lo que decide el resultado es tu comida: usa la <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculadora</button> para saber tus calorías y proteína. Si eliges 5 días, el día de cardio + core te ayuda extra a bajar grasa.",
+    gym: "Gimnasio", casa: "En casa", f3: "3 días", f5: "5 días", fx: "Exprés",
+    choose: "<b>¿Cuál elijo?</b> 3 días si estás empezando o tienes poco tiempo. 5 días si puedes ser constante y te recuperas bien. <b>Exprés</b> (20–30 min) para tus días ocupados.",
+    sub3: "3 días por semana, cuerpo completo. Ejemplo: lunes, miércoles y viernes. Descansa 60–90 segundos entre series.",
+    sub5: "5 días por semana: tren superior, tren inferior y cardio + core. Ejemplo: lunes a viernes. Descansa 60–90 segundos entre series.",
+    subx: "Para días ocupados: haz los ejercicios seguidos en circuito, descansa 30–45 segundos entre ejercicios y 1 minuto al final de cada vuelta. Total: 20–30 minutos.",
+    weekKicker: "Progresión de 4 semanas", weekN: "Semana {n}", weekS: "S{n}",
+    weekSince: "Empezaste el {date}. Según la fecha vas en la semana {n}.", weekGo: "Ir a la semana {n}", weekRestart: "Empezar de nuevo hoy",
+    weekDone: "¡Terminaste las 4 semanas! Repite el ciclo con un poco más de peso.",
+    overloadQ: "¿Qué es la sobrecarga progresiva?", overloadA: "Tu cuerpo se adapta a lo que le pides. Para seguir mejorando, cada semana le pides un poquito más: una repetición, una serie o un poco más de peso. Poco a poco y con buena técnica, sin lastimarte. Esta app ajusta las series y repeticiones de cada semana por ti.",
+    day: "Día {n}", dayOf: "Día {n} de {t}", rounds: "{s} vueltas × {r}", setsReps: "{s} series × {r}",
+    setsCount: "{d} de {t} series", reset: "Reiniciar", tapSet: "Toca cada serie al terminarla", tapOnce: "Tócalo al terminar", setAria: "Serie {n}",
+    video: "Ver video", rutTip: "Usa un peso con el que las últimas 2 repeticiones cuesten, pero sin perder la técnica. Cuando completes todas las repeticiones fácil, sube un poquito el peso.",
+    start: "Inicio", end: "Final", step: "Paso", hold: "Mantén la posición", figAria: "posición inicial y final",
+    doneToast: "¡Entrenamiento completado! 💪 Ya quedó marcado en Hoy.",
+    // Comida
+    comKicker: "Paso 1 · Come bien", comTitle: "Tu <span class=\"hl\">comida</span>",
+    subCalc: "Calculadora", subPor: "Porciones", subTip: "Comida típica", subSup: "Súper barato",
+    calcIntro: "Descubre cuántas calorías y cuánta proteína necesitas al día.",
+    sex: "Sexo", man: "Hombre", woman: "Mujer", age: "Edad", agePh: "Ej. 30", weight: "Peso", height: "Estatura", ft: "pies", inch: "pulg.",
+    actQ: "¿Qué tan activo eres?", actHint: "Si trabajas de pie o caminas mucho, sube un nivel.",
+    act1: "Sedentario (casi sin ejercicio)", act2: "Poco activo (ejercicio 1–3 días/sem)", act3: "Moderado (ejercicio 3–5 días/sem)", act4: "Activo (ejercicio 6–7 días/sem)", act5: "Muy activo (trabajo físico + ejercicio)",
+    goal: "Tu meta", gBajar: "Bajar grasa", gMantener: "Mantener", gGanar: "Ganar músculo", calc: "Calcular",
+    errAge: "Escribe tu edad (entre 14 y 90 años).", errW: "Escribe tu peso correctamente.", errH: "Escribe tu estatura correctamente.",
+    resKicker: "Tu meta diaria", kcalDay: "calorías al día", protG: "gramos de proteína",
+    resBajar: "Para bajar grasa, come unas {k} calorías al día (unas {d} menos de las ~{t} que gastas) y al menos {p} g de proteína.",
+    resMantener: "Para mantener tu peso, come unas {k} calorías al día, más o menos lo que gastas, con al menos {p} g de proteína.",
+    resGanar: "Para ganar músculo, come unas {k} calorías al día (unas {d} más de lo que gastas) con al menos {p} g de proteína, y entrena fuerte.",
+    resDetail: "Tu cuerpo gasta ~{b} calorías en reposo y ~{t} con tu actividad. Tip: reparte la proteína en 3–4 comidas (unos {m} g cada una).",
+    resCta: "¿Quieres tu plan de comidas? Trabaja conmigo", calcDisc: "Es una estimación (fórmula Mifflin-St Jeor). Pésate 1 vez por semana: si en 2–3 semanas no ves cambio, ajusta 100–200 calorías. Consulta a tu médico si tienes alguna condición de salud.",
+    porIntro: "Sin contar calorías: tu mano es tu medida. Viaja contigo y es proporcional a tu cuerpo.",
+    plateTitle: "Arma tu <span class=\"hl\">plato</span>", plateFor: "Por comida, para:", meal: "Comida", desayuno: "Desayuno", almuerzo: "Almuerzo", cena: "Cena",
+    pP: "proteína", pV: "verduras", pC: "carbohidratos", pF: "grasas", palms: "palma|palmas", fists: "puño|puños", cupped: "mano ahuecada|manos ahuecadas", thumbs: "pulgar|pulgares",
+    plateTip: "Come despacio y para cuando estés satisfecho, no lleno. Si tienes más hambre, suma verduras o proteína.",
+    tipIntro: "Calorías y proteína <b>estimadas</b> por porción típica; cambian según el tamaño y la receta. Nada está prohibido: usa el cambio inteligente.",
+    est: "estimado", kcal: "kcal", protShort: "g proteína", swap: "Cambio inteligente",
+    supIntro: "Lista semanal para 1 persona, enfocada en proteína y básicos. <b>Precios estimados</b> en USD (mercados y supermercados de El Salvador, 2026); pueden variar.",
+    supTotal: "Total aproximado", perWeek: "por semana", saveTip: "Ahorro",
+    // Hoy
+    hoyKicker: "Paso 3 · Hábitos", hoyTitle: "Tu día de <span class=\"hl\">hoy</span>", hoySub: "{date} · marca lo que cumpliste hoy.",
+    streakOne: "día seguido", streakMany: "días seguidos", streakNote: "Sumas un día a tu racha cuando marcas al menos 3 de los 5 hábitos. ¡No tiene que ser perfecto!",
+    hEntrenar: "Entrené (o caminé 30 min)", hEntrenarS: "Se marca solo al terminar tu rutina", hProteina: "Comí proteína en cada comida", hProteinaS: "Huevo, pollo, pescado, frijoles, yogur…",
+    hAgua: "Tomé 8 vasos de agua", hAguaS: "Unos 2 litros durante el día", hPasos: "Caminé 7,000 pasos", hPasosS: "O unos 45 minutos en total", hDormir: "Dormí 7–8 horas", hDormirS: "El descanso también cuenta",
+    dayToast: "¡Día cumplido! 🔥 Tu racha sigue creciendo.", weekdays: "D,L,M,M,J,V,S",
+    r30Kicker: "Reto de 30 días", r30Title: "Reto de <span class=\"hl\">30 días</span>", r30Intro: "Una tarea sencilla cada día durante 30 días. Gana insignias a los 7, 14, 21 y 30 días.",
+    r30Start: "Empezar el reto hoy", r30Day: "Día {n} de 30", r30Task: "Tarea del día {n}", r30Mark: "Marcar como hecho", r30Done: "¡Hecho! ✓", r30Future: "Disponible el día {n}",
+    r30Count: "{n} de 30 días completados", r30Badges: "Insignias", badge: "{n} días", r30Share: "Compartir mi progreso", r30Restart: "Reiniciar reto",
+    r30Confirm: "¿Reiniciar el reto? Perderás tus días marcados.", r30BadgeToast: "🏅 ¡Ganaste la insignia de {n} días!", r30Saved: "Imagen lista. Descárgala o compártela en tus historias.",
+    r30Download: "Descargar imagen", shareDay: "DÍA {n}/30", shareDone: "{n} días completados", shareKicker: "RETO DE 30 DÍAS", shareJoin: "Únete gratis en", shareWith: "con",
+    // Progreso
+    proKicker: "Paso 4 · Mide", proTitle: "Tu <span class=\"hl\">progreso</span>", proMine: "Mi progreso", proBalmore: "Reto con Balmore",
+    proSub: "Pésate 1 vez por semana, en ayunas y a la misma hora.", date: "Fecha", saveW: "Guardar peso", yourW: "Tu peso",
+    first: "Inicio", current: "Actual", change: "Cambio", history: "Historial", noLog: "Todavía no hay registros. ¡Anota tu primer peso!", chartEmpty: "Aquí verás tu gráfica 📉",
+    delAria: "Borrar", delConfirm: "¿Borrar este registro?", errDate: "Elige una fecha.", errWeight: "Escribe un peso válido.", savedW: "Peso guardado ✅",
+    bStory: "Soy Balmore, tu coach. El 2 de octubre de 2026 me subí a la báscula y marcó 250 libras. Mi meta es llegar a 200–210. No te voy a vender perfección: voy a entrenar con esta misma app, comer mejor y compartir aquí mi peso real cada semana, con lo bueno y lo difícil. Si yo puedo con mi agenda, tú también puedes con la tuya. Hagámoslo juntos.",
+    bStart: "Inicio", bNow: "Ahora", bLost: "Bajado", bLeft: "Falta", bGoal: "Meta", bLog: "Mis registros semanales", bJoin: "Únete al reto de 30 días",
+    bOnlyStart: "Semana 1. Los próximos registros aparecerán aquí cada semana."
+  },
+  en: {
+    tagline: "Fitness & mindset coach", langBtn: "ES", langAria: "Switch language to Spanish",
+    tabInicio: "Home", tabRutina: "Workout", tabComida: "Food", tabHoy: "Today", tabProgreso: "Progress",
+    cta: "Want a personalized plan?", ctaGo: "Work with me →",
+    heroKicker: "Free app · Beginners", hello: "Hi! I'm", heroP: "If you're just getting started, this app is for you. No complications: train 3 to 5 days a week depending on your schedule, eat better, and watch your progress.",
+    mindKicker: "Today's mindset", mindBy: "— Balmore",
+    retoBKicker: "Challenge with Balmore", retoBTeaser: "I'm in the process too. See my real weight, week by week.", retoBGo: "See my challenge →",
+    rulesTitle: "3 rules to <span class=\"hl\">get started</span>",
+    rule1t: "Consistency over perfection", rule1: "3 to 5 workouts a week, depending on your schedule, even short ones, beat one perfect week followed by nothing.",
+    rule2t: "Protein and water every day", rule2: "Add protein to every meal (eggs, chicken, fish, beans, yogurt) and drink water throughout the day.",
+    rule3t: "Rest and move", rule3: "Sleep 7–8 hours and walk every day. Your body changes while you rest.",
+    howKicker: "How to use the app",
+    step1t: "1. Calculate", step1: "Your calories and protein", step2t: "2. Train", step2: "3 or 5 days, or express", step3t: "3. Check off your day", step3: "Habits and 30-day challenge", step4t: "4. Weigh in", step4: "Once a week",
+    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Leave your info and I'll send you the plan with tips to start strong.",
+    leadName: "Name", leadEmail: "Email", leadWa: "WhatsApp", leadGoal: "Your goal", leadSend: "Send me my free plan",
+    goalFat: "Lose fat", goalMuscle: "Build muscle", goalBetter: "Feel better",
+    leadNeed: "Enter at least your name, email, or WhatsApp.", leadSending: "Sending…",
+    leadThanks: "Thank you{name}! 🙌", leadThanksP: "I got your info. Your 4-week plan is on its way.", leadAgain: "Send different info", leadWaMsg: "Taking you to WhatsApp to send you the plan.",
+    leadPrivacy: "I only use your info to send you the plan and tips. No spam.",
+    faqTitle: "Frequently asked <span class=\"hl\">questions</span>",
+    moreTitle: "Want results <span class=\"hl\">faster</span>?", moreP: "I'll build a plan just for you: training, nutrition, and check-ins.", moreBtn: "Work with me →",
+    follow: "Follow me",
+    disc: "<b>Health notice:</b> this app is for information only and doesn't replace advice from a doctor or health professional. Check with your doctor before you start training or change your diet, especially if you have a health condition or an injury, or are pregnant. If you feel pain, dizziness, or shortness of breath, stop.",
+    foot: "Free app",
+    rutKicker: "Step 2 · Train", rutTitle: "Your <span class=\"hl\">workout</span>",
+    rutNote1: "This is a general beginner strength routine that works your whole body. It fits any goal: <b>losing fat, building muscle, or feeling better</b>.",
+    rutNote2: "Your food decides the result: use the <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculator</button> to find your calories and protein. If you choose 5 days, the cardio + core day gives fat loss an extra push.",
+    gym: "Gym", casa: "At home", f3: "3 days", f5: "5 days", fx: "Express",
+    choose: "<b>Which one?</b> 3 days if you're just starting or short on time. 5 days if you can stay consistent and recover well. <b>Express</b> (20–30 min) for your busy days.",
+    sub3: "3 days a week, full body. Example: Monday, Wednesday, and Friday. Rest 60–90 seconds between sets.",
+    sub5: "5 days a week: upper body, lower body, and cardio + core. Example: Monday to Friday. Rest 60–90 seconds between sets.",
+    subx: "For busy days: do the exercises back to back as a circuit, rest 30–45 seconds between exercises and 1 minute after each round. Total: 20–30 minutes.",
+    weekKicker: "4-week progression", weekN: "Week {n}", weekS: "W{n}",
+    weekSince: "You started on {date}. By the calendar you're in week {n}.", weekGo: "Go to week {n}", weekRestart: "Start over today",
+    weekDone: "You finished all 4 weeks! Repeat the cycle with a little more weight.",
+    overloadQ: "What is progressive overload?", overloadA: "Your body adapts to what you ask of it. To keep improving, you ask for a little more each week: one more rep, one more set, or a bit more weight. Step by step, with good form, without getting hurt. This app adjusts each week's sets and reps for you.",
+    day: "Day {n}", dayOf: "Day {n} of {t}", rounds: "{s} rounds × {r}", setsReps: "{s} sets × {r}",
+    setsCount: "{d} of {t} sets", reset: "Reset", tapSet: "Tap each set when you finish it", tapOnce: "Tap it when you're done", setAria: "Set {n}",
+    video: "Watch video", rutTip: "Use a weight where the last 2 reps feel hard but your form stays clean. When all the reps feel easy, add a little weight.",
+    start: "Start", end: "Finish", step: "Step", hold: "Hold the position", figAria: "start and finish position",
+    doneToast: "Workout complete! 💪 Checked off in Today.",
+    comKicker: "Step 1 · Eat well", comTitle: "Your <span class=\"hl\">food</span>",
+    subCalc: "Calculator", subPor: "Portions", subTip: "Salvadoran food", subSup: "Budget groceries",
+    calcIntro: "Find out how many calories and how much protein you need each day.",
+    sex: "Sex", man: "Male", woman: "Female", age: "Age", agePh: "e.g. 30", weight: "Weight", height: "Height", ft: "ft", inch: "in",
+    actQ: "How active are you?", actHint: "If you work on your feet or walk a lot, go up one level.",
+    act1: "Sedentary (little or no exercise)", act2: "Lightly active (exercise 1–3 days/wk)", act3: "Moderate (exercise 3–5 days/wk)", act4: "Active (exercise 6–7 days/wk)", act5: "Very active (physical job + exercise)",
+    goal: "Your goal", gBajar: "Lose fat", gMantener: "Maintain", gGanar: "Build muscle", calc: "Calculate",
+    errAge: "Enter your age (14 to 90).", errW: "Enter a valid weight.", errH: "Enter a valid height.",
+    resKicker: "Your daily target", kcalDay: "calories a day", protG: "grams of protein",
+    resBajar: "To lose fat, eat about {k} calories a day (about {d} less than the ~{t} you burn) and at least {p} g of protein.",
+    resMantener: "To maintain your weight, eat about {k} calories a day, roughly what you burn, with at least {p} g of protein.",
+    resGanar: "To build muscle, eat about {k} calories a day (about {d} more than you burn) with at least {p} g of protein, and train hard.",
+    resDetail: "Your body burns ~{b} calories at rest and ~{t} with your activity. Tip: split your protein across 3–4 meals (about {m} g each).",
+    resCta: "Want a meal plan? Work with me", calcDisc: "This is an estimate (Mifflin-St Jeor formula). Weigh in once a week: if nothing changes in 2–3 weeks, adjust by 100–200 calories. Check with your doctor if you have a health condition.",
+    porIntro: "No calorie counting: your hand is your measuring tool. It's always with you and it's proportional to your body.",
+    plateTitle: "Build your <span class=\"hl\">plate</span>", plateFor: "Per meal, for:", meal: "Meal", desayuno: "Breakfast", almuerzo: "Lunch", cena: "Dinner",
+    pP: "protein", pV: "vegetables", pC: "carbs", pF: "fats", palms: "palm|palms", fists: "fist|fists", cupped: "cupped hand|cupped hands", thumbs: "thumb|thumbs",
+    plateTip: "Eat slowly and stop when you're satisfied, not stuffed. Still hungry? Add more vegetables or protein.",
+    tipIntro: "<b>Estimated</b> calories and protein per typical portion; they vary with size and recipe. Nothing is off-limits: use the smart swap.",
+    est: "estimated", kcal: "kcal", protShort: "g protein", swap: "Smart swap",
+    supIntro: "Weekly list for 1 person, focused on protein and staples. <b>Estimated prices</b> in USD (El Salvador markets and supermarkets, 2026); they may vary.",
+    supTotal: "Approximate total", perWeek: "per week", saveTip: "Save",
+    hoyKicker: "Step 3 · Habits", hoyTitle: "Your day <span class=\"hl\">today</span>", hoySub: "{date} · check off what you did today.",
+    streakOne: "day in a row", streakMany: "days in a row", streakNote: "Your streak grows each day you check at least 3 of the 5 habits. It doesn't have to be perfect!",
+    hEntrenar: "I trained (or walked 30 min)", hEntrenarS: "Checks itself when you finish your workout", hProteina: "I ate protein at every meal", hProteinaS: "Eggs, chicken, fish, beans, yogurt…",
+    hAgua: "I drank 8 glasses of water", hAguaS: "About 2 liters through the day", hPasos: "I walked 7,000 steps", hPasosS: "Or about 45 minutes total", hDormir: "I slept 7–8 hours", hDormirS: "Rest counts too",
+    dayToast: "Day complete! 🔥 Your streak keeps growing.", weekdays: "S,M,T,W,T,F,S",
+    r30Kicker: "30-day challenge", r30Title: "<span class=\"hl\">30-day</span> challenge", r30Intro: "One simple task a day for 30 days. Earn badges at 7, 14, 21, and 30 days.",
+    r30Start: "Start the challenge today", r30Day: "Day {n} of 30", r30Task: "Day {n} task", r30Mark: "Mark as done", r30Done: "Done! ✓", r30Future: "Unlocks on day {n}",
+    r30Count: "{n} of 30 days completed", r30Badges: "Badges", badge: "{n} days", r30Share: "Share my progress", r30Restart: "Reset challenge",
+    r30Confirm: "Reset the challenge? You'll lose your checked days.", r30BadgeToast: "🏅 You earned the {n}-day badge!", r30Saved: "Image ready. Download it or share it to your stories.",
+    r30Download: "Download image", shareDay: "DAY {n}/30", shareDone: "{n} days completed", shareKicker: "30-DAY CHALLENGE", shareJoin: "Join free at", shareWith: "with",
+    proKicker: "Step 4 · Measure", proTitle: "Your <span class=\"hl\">progress</span>", proMine: "My progress", proBalmore: "Balmore's challenge",
+    proSub: "Weigh in once a week, on an empty stomach, at the same time.", date: "Date", saveW: "Save weight", yourW: "Your weight",
+    first: "Start", current: "Current", change: "Change", history: "History", noLog: "No entries yet. Log your first weight!", chartEmpty: "Your chart will show up here 📉",
+    delAria: "Delete", delConfirm: "Delete this entry?", errDate: "Pick a date.", errWeight: "Enter a valid weight.", savedW: "Weight saved ✅",
+    bStory: "I'm Balmore, your coach. On October 2, 2026, I stepped on the scale and it read 250 pounds. My goal is 200–210. I'm not going to sell you perfection: I'll train with this same app, eat better, and share my real weight here every week, the good and the hard. If I can make it work with my schedule, you can make it work with yours. Let's do this together.",
+    bStart: "Start", bNow: "Now", bLost: "Lost", bLeft: "To go", bGoal: "Goal", bLog: "My weekly check-ins", bJoin: "Join the 30-day challenge",
+    bOnlyStart: "Week 1. New check-ins will show up here every week."
+  }
 };
-try { const saved = JSON.parse(localStorage.getItem(KEY)); if (saved) S = Object.assign(S, saved, { calc: Object.assign(S.calc, saved.calc || {}) }); } catch (e) {}
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 
-function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2200); }
+/* ---------- Ejercicios en inglés (el español está en EX) ---------- */
+const EX_EN = {
+  sentadilla: ["Bodyweight squat", ["Feet shoulder-width apart, toes slightly out.", "Sit down like there's a chair behind you, chest up.", "Push through your whole foot to stand up."]],
+  goblet: ["Goblet squat with dumbbell", ["Hold the dumbbell close to your chest.", "Lower slowly; knees point the same way as your toes.", "Stand up squeezing your glutes, back straight."]],
+  pressPecho: ["Dumbbell chest press", ["Lie on the bench with feet firmly on the floor.", "Lower the dumbbells beside your chest, elbows at 45°.", "Press up without banging the dumbbells together."]],
+  jalon: ["Lat pulldown", ["Adjust the pad so your legs stay locked in.", "Pull the bar to your upper chest.", "Drive elbows down and back; return under control."]],
+  rdl: ["Dumbbell Romanian deadlift", ["Keep a slight bend in your knees the whole time.", "Push your hips back with a flat back.", "Lower until you feel a stretch in your hamstrings, then stand up."]],
+  rdlBag: ["Backpack Romanian deadlift", ["Hold the backpack with both hands; soft knees.", "Push your hips back with a flat back.", "Lower until you feel a stretch in your hamstrings, then stand up."]],
+  plancha: ["Plank", ["Elbows under your shoulders.", "Body in a straight line from head to heels.", "Squeeze your abs and glutes; breathe normally."]],
+  prensa: ["Leg press", ["Back and hips flat against the pad.", "Feet shoulder-width in the middle of the platform.", "Lower to 90° and press without locking your knees."]],
+  remoPolea: ["Seated cable row", ["Sit tall with your chest up.", "Pull the handle toward your belly button.", "Squeeze your shoulder blades and return slowly."]],
+  pressHombro: ["Seated dumbbell shoulder press", ["Back straight, abs tight.", "Start with the dumbbells at shoulder height.", "Press up without arching your lower back."]],
+  puente: ["Glute bridge", ["On your back, knees bent, feet flat on the floor.", "Lift your hips by squeezing your glutes.", "Pause 1 second at the top and lower slowly."]],
+  puenteDb: ["Dumbbell glute bridge", ["Rest the dumbbell on your hips and hold it.", "Drive through your heels to lift your hips.", "Squeeze 1 second at the top; lower slowly."]],
+  zancada: ["Reverse lunge", ["Take a long step back.", "Lower until your back knee almost touches the floor.", "Push through your front foot to return."]],
+  zancadaDb: ["Dumbbell reverse lunge", ["One dumbbell in each hand, arms straight.", "Step back and lower until your knee almost touches the floor.", "Push through your front foot to return."]],
+  flexInc: ["Incline push-up", ["Hands on a sturdy bench or table, a bit wider than your shoulders.", "Keep your body straight like a board.", "Lower your chest to the edge and push back up."]],
+  flexRod: ["Knee push-up", ["Knees on the floor; body straight from knees to head.", "Lower your chest close to the floor, elbows at 45°.", "Push the floor away to come up."]],
+  remoBag: ["Backpack row", ["Fill a backpack with books or water bottles.", "Hinge forward with a flat back and soft knees.", "Pull the backpack toward your belly button and lower slowly."]],
+  superman: ["Superman", ["Lie face down, arms stretched in front.", "Lift arms, chest, and legs at the same time.", "Hold 2 seconds at the top, looking at the floor."]],
+  bicho: ["Dead bug", ["On your back, arms to the ceiling, knees at 90°.", "Slowly extend one arm and the opposite leg.", "Keep your lower back on the floor; alternate sides."]],
+  escalon: ["Step-up", ["Use a sturdy, low step or bench.", "Step up pushing through the heel of your top foot.", "Step down with control and switch legs."]],
+  pushdown: ["Cable triceps pushdown", ["Elbows tucked at your sides, don't move them.", "Push the bar down until your arms are straight.", "Return slowly to chest height."]],
+  legCurl: ["Lying leg curl", ["Face down, with the pad just above your heels.", "Bend your knees, bringing your heels toward your glutes.", "Lower slowly and keep your hips on the bench."]],
+  calfDb: ["Dumbbell calf raise", ["Stand tall with a dumbbell in each hand.", "Rise onto your toes as high as you can.", "Pause 1 second at the top and lower slowly."]],
+  calf: ["Calf raise", ["Hold a wall for balance if you need to.", "Rise onto your toes as high as you can.", "Pause 1 second at the top; for more challenge, do it on a step."]],
+  cinta: ["Incline treadmill walk", ["Set a 5–10% incline and a comfortable speed.", "Walk without holding the rails.", "You should be able to talk, but with some effort."]],
+  caminata: ["Brisk walk", ["Walk fast, like you're running late.", "Swing your arms in rhythm with your steps.", "Do it outside, at a mall, or at home."]],
+  marcha: ["High-knee march", ["Lift each knee to hip height.", "Alternate legs at a good pace and swing your arms.", "Chest up, abs tight."]],
+  planchaLat: ["Side plank", ["Elbow under your shoulder, feet stacked.", "Lift your hips until your body forms a straight line.", "If it's too hard, rest your bottom knee on the floor."]],
+  pressInc: ["Incline dumbbell press", ["Bench inclined to about 30°.", "Lower the dumbbells to your upper chest.", "Press up without banging the dumbbells together."]],
+  remoDb: ["Bent-over dumbbell row", ["Hinge forward with a flat back and soft knees.", "Pull the dumbbells toward your hips, elbows close.", "Lower slowly without rounding your back."]],
+  curl: ["Dumbbell biceps curl", ["Elbows tucked at your sides.", "Curl the dumbbells up without swinging your torso.", "Lower slowly, over 2–3 seconds."]],
+  curlBot: ["Water-bottle biceps curl", ["Use full bottles, gallon jugs, or a backpack.", "Elbows at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
+  fondos: ["Bench dips", ["Hands on the edge of the bench, fingers forward.", "Lower by bending your elbows back to about 90°.", "Push up; bent knees make it easier."]],
+  fondosSilla: ["Chair dips", ["Use a sturdy chair against a wall.", "Lower by bending your elbows back to about 90°.", "Push up; bent knees make it easier."]],
+  extPiernas: ["Leg extension machine", ["Adjust the backrest so your knees line up with the seat edge.", "Straighten your legs without slamming at the top.", "Lower slowly, don't drop the weight."]],
+  puenteUna: ["Single-leg glute bridge", ["One foot on the floor, the other leg straight.", "Lift your hips by pushing through your planted heel.", "Keep your hips level; switch legs."]],
+  gobletBag: ["Backpack front squat", ["Hug the backpack against your chest.", "Sit down like there's a chair behind you, chest up.", "Stand up pushing through your whole foot."]],
+  pressBot: ["Water-bottle shoulder press", ["Sit tall on a sturdy chair.", "Start with the bottles at shoulder height.", "Press up without arching your lower back."]]
+};
 
-/* ---------- Marca ---------- */
-function applyBrand() {
-  document.documentElement.style.setProperty("--accent", CONFIG.ACCENT_COLOR);
-    document.title = "Fitness para principiantes · " + CONFIG.BRAND_NAME;
-  const initials = CONFIG.BRAND_NAME.split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-  $("#logo").innerHTML = CONFIG.LOGO_URL ? `<img src="${esc(CONFIG.LOGO_URL)}" alt="">` : esc(initials);
-  $("#brandTitle").textContent = CONFIG.BRAND_NAME;
-  $("#brandTag").textContent = CONFIG.TAGLINE;
-  $("#heroTitle").innerHTML = "¡Hola! Soy <span class=\"hl\">" + esc(CONFIG.BRAND_NAME.split(" ")[0]) + "</span>";
-  ["#ctaBar", "#ctaCard", "#ctaCalc"].forEach(id => $(id).href = CONFIG.COACHING_URL);
-  const names = { instagram: "Instagram", tiktok: "TikTok", facebook: "Facebook", youtube: "YouTube" };
-  const icons = {
-    instagram: '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7h.01"/>',
-    tiktok: '<path d="M14 3.5v11a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3.5c.4 2.6 2.4 4.6 5 4.8"/>',
-    facebook: '<path d="M14.5 8.5h2.5V5h-2.5A3.5 3.5 0 0 0 11 8.5V11H8.5v3.5H11V21h3.5v-6.5H17l.5-3.5h-3V9a.5.5 0 0 1 .5-.5z"/>',
-    youtube: '<rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l4 2.5-4 2.5z"/>'
-  };
-  $("#socials").innerHTML = Object.entries(CONFIG.SOCIAL).map(([k, v]) =>
-    `<a href="${esc(v.url)}" target="_blank" rel="noopener" data-net="${k}"><svg class="ico" viewBox="0 0 24 24">${icons[k] || icons.instagram}</svg><span><b>${names[k] || k}</b><span>${esc(v.handle)}</span></span><i>→</i></a>`).join("");
-  $("#foot").textContent = "© " + new Date().getFullYear() + " " + CONFIG.BRAND_NAME + " · App gratis";
-}
+/* ---------- Rutinas: [ejercicio, series, reps (es), reps (en)] ----------
+   freq "3" = 3 días, "5" = 5 días, "x" = exprés 20–30 min (circuito) */
+const rx = (id, sets, es, en) => [id, sets, es, en || es.replace("por pierna", "per leg").replace("por lado", "per side").replace("seg", "sec")];
+const ROUTINE = {
+  gym: {
+    3: [
+      { t: { es: "Cuerpo completo A", en: "Full body A" }, ex: [rx("goblet", 3, "10"), rx("pressPecho", 3, "10"), rx("jalon", 3, "10"), rx("puenteDb", 3, "12"), rx("plancha", 3, "20–30 seg")] },
+      { t: { es: "Cuerpo completo B", en: "Full body B" }, ex: [rx("prensa", 3, "12"), rx("remoPolea", 3, "10"), rx("pressHombro", 3, "10"), rx("zancadaDb", 2, "8 por pierna"), rx("bicho", 3, "8 por lado")] },
+      { t: { es: "Cuerpo completo C", en: "Full body C" }, ex: [rx("rdl", 3, "10"), rx("jalon", 3, "10"), rx("flexInc", 3, "8–10"), rx("escalon", 2, "8 por pierna"), rx("plancha", 3, "20–30 seg")] }
+    ],
+    5: [
+      { t: { es: "Tren superior", en: "Upper body" }, ex: [rx("pressPecho", 3, "10"), rx("jalon", 3, "10"), rx("pressHombro", 3, "10"), rx("remoPolea", 3, "10"), rx("pushdown", 2, "12")] },
+      { t: { es: "Tren inferior", en: "Lower body" }, ex: [rx("prensa", 3, "12"), rx("rdl", 3, "10"), rx("zancadaDb", 2, "8 por pierna"), rx("legCurl", 3, "12"), rx("calfDb", 3, "15")] },
+      { t: { es: "Cardio + core", en: "Cardio + core" }, ex: [rx("cinta", 1, "20–30 min"), rx("plancha", 3, "20–30 seg"), rx("bicho", 3, "8 por lado"), rx("planchaLat", 2, "15–20 seg por lado")] },
+      { t: { es: "Tren superior (variaciones)", en: "Upper body (variations)" }, ex: [rx("pressInc", 3, "10"), rx("remoDb", 3, "10"), rx("flexInc", 3, "8–10"), rx("curl", 2, "12"), rx("fondos", 2, "8–10")] },
+      { t: { es: "Tren inferior (variaciones)", en: "Lower body (variations)" }, ex: [rx("goblet", 3, "10"), rx("puenteDb", 3, "12"), rx("extPiernas", 3, "12"), rx("escalon", 2, "8 por pierna"), rx("calfDb", 3, "15")] }
+    ],
+    x: [
+      { t: { es: "Exprés A · 20–30 min", en: "Express A · 20–30 min" }, ex: [rx("goblet", 3, "12"), rx("pressPecho", 3, "10"), rx("remoDb", 3, "10"), rx("plancha", 3, "30 seg")] },
+      { t: { es: "Exprés B · 20–30 min", en: "Express B · 20–30 min" }, ex: [rx("rdl", 3, "10"), rx("pressHombro", 3, "10"), rx("jalon", 3, "10"), rx("bicho", 3, "8 por lado")] }
+    ]
+  },
+  casa: {
+    3: [
+      { t: { es: "Cuerpo completo A", en: "Full body A" }, ex: [rx("sentadilla", 3, "12"), rx("flexInc", 3, "8–10"), rx("remoBag", 3, "12"), rx("puente", 3, "15"), rx("plancha", 3, "20–30 seg")] },
+      { t: { es: "Cuerpo completo B", en: "Full body B" }, ex: [rx("zancada", 3, "8 por pierna"), rx("flexRod", 3, "6–10"), rx("superman", 3, "10"), rx("rdlBag", 3, "12"), rx("bicho", 3, "8 por lado")] },
+      { t: { es: "Cuerpo completo C", en: "Full body C" }, ex: [rx("escalon", 3, "10 por pierna"), rx("flexInc", 3, "10"), rx("remoBag", 3, "12"), rx("sentadilla", 3, "15"), rx("plancha", 3, "30 seg")] }
+    ],
+    5: [
+      { t: { es: "Tren superior", en: "Upper body" }, ex: [rx("flexInc", 3, "8–10"), rx("remoBag", 3, "12"), rx("pressBot", 3, "12"), rx("fondosSilla", 2, "8–10"), rx("superman", 2, "10")] },
+      { t: { es: "Tren inferior", en: "Lower body" }, ex: [rx("sentadilla", 3, "12"), rx("zancada", 3, "8 por pierna"), rx("puente", 3, "15"), rx("rdlBag", 3, "12"), rx("calf", 3, "15")] },
+      { t: { es: "Cardio + core", en: "Cardio + core" }, ex: [rx("caminata", 1, "20–30 min"), rx("marcha", 3, "30 seg"), rx("plancha", 3, "20–30 seg"), rx("bicho", 3, "8 por lado"), rx("planchaLat", 2, "15–20 seg por lado")] },
+      { t: { es: "Tren superior (variaciones)", en: "Upper body (variations)" }, ex: [rx("flexRod", 3, "6–10"), rx("remoBag", 3, "12"), rx("curlBot", 3, "12"), rx("pressBot", 3, "10"), rx("superman", 3, "10")] },
+      { t: { es: "Tren inferior (variaciones)", en: "Lower body (variations)" }, ex: [rx("escalon", 3, "10 por pierna"), rx("gobletBag", 3, "12"), rx("puenteUna", 3, "8 por pierna"), rx("rdlBag", 3, "12"), rx("calf", 3, "15")] }
+    ],
+    x: [
+      { t: { es: "Exprés A · 20–30 min", en: "Express A · 20–30 min" }, ex: [rx("sentadilla", 3, "15"), rx("flexInc", 3, "10"), rx("remoBag", 3, "12"), rx("plancha", 3, "30 seg")] },
+      { t: { es: "Exprés B · 20–30 min", en: "Express B · 20–30 min" }, ex: [rx("zancada", 3, "8 por pierna"), rx("flexRod", 3, "8"), rx("puente", 3, "15"), rx("bicho", 3, "8 por lado")] }
+    ]
+  }
+};
+
+/* ---------- Progresión de 4 semanas ---------- */
+const WEEKS = [
+  { sets: 0, reps: 0, min: 0, sec: 0, t: { es: "Técnica", en: "Technique" }, d: { es: "Aprende bien cada movimiento con un peso cómodo.", en: "Learn each movement well with a comfortable weight." } },
+  { sets: 0, reps: 2, min: 5, sec: 10, t: { es: "Más repeticiones", en: "More reps" }, d: { es: "Mismo peso, 2 repeticiones más por serie (o un poco más de tiempo).", en: "Same weight, 2 more reps per set (or a bit more time)." } },
+  { sets: 1, reps: 0, min: 5, sec: 10, t: { es: "Más series", en: "More sets" }, d: { es: "Una serie más y sube un poquito el peso si la técnica está bien.", en: "One more set, and add a little weight if your form is solid." } },
+  { sets: 1, reps: 2, min: 10, sec: 20, t: { es: "Supera tu marca", en: "Beat your best" }, d: { es: "Una serie más y 2 repeticiones más. Al terminar, repite el ciclo con más peso.", en: "One more set and 2 more reps. When you finish, repeat the cycle with more weight." } }
+];
+
+/* ---------- Reto de 30 días ---------- */
+const RETO30 = [
+  { es: "Toma 8 vasos de agua hoy.", en: "Drink 8 glasses of water today." },
+  { es: "Camina 20 minutos.", en: "Walk for 20 minutes." },
+  { es: "Haz tu rutina de hoy (o la exprés).", en: "Do today's workout (or the express one)." },
+  { es: "Pon proteína en cada comida.", en: "Add protein to every meal." },
+  { es: "Cero gaseosas o jugos azucarados hoy.", en: "Zero sodas or sugary drinks today." },
+  { es: "Acuéstate 30 minutos más temprano.", en: "Go to bed 30 minutes earlier." },
+  { es: "Pésate y anota tu peso en Progreso.", en: "Weigh yourself and log it in Progress." },
+  { es: "Arma tu almuerzo con la guía de la mano.", en: "Build your lunch with the hand guide." },
+  { es: "Haz 10 minutos de estiramientos.", en: "Stretch for 10 minutes." },
+  { es: "Come 2 porciones de verdura.", en: "Eat 2 servings of vegetables." },
+  { es: "Entrena hoy, aunque sean 20 minutos.", en: "Train today, even if it's 20 minutes." },
+  { es: "Camina 7,000 pasos.", en: "Walk 7,000 steps." },
+  { es: "Prepara hoy tu comida de mañana.", en: "Prep tomorrow's food today." },
+  { es: "Escribe 3 razones por las que empezaste.", en: "Write down 3 reasons why you started." },
+  { es: "Cambia un antojo por una fruta.", en: "Swap one craving for a piece of fruit." },
+  { es: "Entrena y sube un poco el peso o las repeticiones.", en: "Train and add a little weight or reps." },
+  { es: "Nada de pantallas 30 minutos antes de dormir.", en: "No screens 30 minutes before bed." },
+  { es: "Haz tu compra con la lista Súper barato.", en: "Shop with the Budget grocery list." },
+  { es: "Come despacio: suelta los cubiertos entre bocados.", en: "Eat slowly: put your fork down between bites." },
+  { es: "Camina 30 minutos con alguien de tu familia.", en: "Walk 30 minutes with someone in your family." },
+  { es: "Pésate, anota y compara con la semana 1.", en: "Weigh in, log it, and compare with week 1." },
+  { es: "Toma un vaso de agua antes de cada comida.", en: "Drink a glass of water before every meal." },
+  { es: "Entrena hoy completando todas tus series.", en: "Train today and finish all your sets." },
+  { es: "Elige el cambio inteligente en tu comida típica favorita.", en: "Pick the smart swap for your favorite Salvadoran dish." },
+  { es: "Suma 2 minutos de plancha en total (en partes).", en: "Do 2 minutes of plank in total (in parts)." },
+  { es: "Cena ligero y temprano.", en: "Have a light, early dinner." },
+  { es: "Invita a alguien a hacer el reto contigo.", en: "Invite someone to do the challenge with you." },
+  { es: "Entrena y anota cómo te sientes comparado con el día 1.", en: "Train and note how you feel compared to day 1." },
+  { es: "Planea tus próximas 4 semanas de entrenamiento.", en: "Plan your next 4 weeks of training." },
+  { es: "Pésate, celebra y comparte tu logro.", en: "Weigh in, celebrate, and share your win." }
+];
+
+/* ---------- Preguntas frecuentes ---------- */
+const FAQ = [
+  { q: { es: "Me duelen los músculos después de entrenar, ¿es normal?", en: "I'm sore after training. Is that normal?" },
+    a: { es: "Sí. Se llama dolor muscular tardío y aparece 24–72 horas después, sobre todo al empezar. Pasa solo: camina, muévete suave, duerme bien y sigue entrenando; con las semanas duele mucho menos. Si el dolor es agudo o en una articulación, para y consulta.", en: "Yes. It's called delayed-onset muscle soreness and shows up 24–72 hours later, especially when you're new. It goes away on its own: walk, move gently, sleep well, and keep training; after a few weeks it hurts much less. If the pain is sharp or in a joint, stop and get it checked." } },
+  { q: { es: "¿Necesito suplementos?", en: "Do I need supplements?" },
+    a: { es: "No para empezar. Comida, proteína, sueño y entrenar te dan casi todo el resultado. Si no llegas a tu proteína con comida, un batido de proteína es práctico. La creatina monohidratada (3–5 g al día) es de las que tienen más evidencia. Evita los 'quemadores de grasa'.", en: "Not to get started. Food, protein, sleep, and training give you almost all of the results. If you can't reach your protein with food, a protein shake is convenient. Creatine monohydrate (3–5 g a day) is one of the best-studied supplements. Skip 'fat burners.'" } },
+  { q: { es: "¿Qué como antes de entrenar?", en: "What should I eat before training?" },
+    a: { es: "Algo ligero 1–2 horas antes: carbohidrato con un poco de proteína. Por ejemplo: guineo con yogur, pan con huevo o avena. Si entrenas muy temprano y comer te cae pesado, puedes entrenar en ayunas y comer después.", en: "Something light 1–2 hours before: carbs with a little protein. For example: a banana with yogurt, toast with egg, or oatmeal. If you train very early and eating feels heavy, you can train fasted and eat afterward." } },
+  { q: { es: "¿Y qué como después de entrenar?", en: "And what should I eat after training?" },
+    a: { es: "Una comida normal con proteína en las siguientes horas: pollo, huevos, atún o frijoles con queso, más tortilla o arroz. No necesitas un batido especial; lo que más importa es tu total del día.", en: "A normal meal with protein in the next few hours: chicken, eggs, tuna, or beans with cheese, plus tortillas or rice. You don't need a special shake; your daily total matters most." } },
+  { q: { es: "¿Qué es mejor para bajar grasa: cardio o pesas?", en: "What's better for fat loss: cardio or weights?" },
+    a: { es: "Las dos, pero si solo puedes una, pesas: te ayudan a mantener el músculo mientras bajas de peso. El cardio suma calorías y salud del corazón. Lo que más baja la grasa es comer en déficit.", en: "Both, but if you can only do one, lift weights: they help you keep muscle while you lose weight. Cardio adds calories burned and heart health. What drives fat loss most is eating in a deficit." } },
+  { q: { es: "¿Puedo bajar grasa solo de la panza?", en: "Can I lose fat just from my belly?" },
+    a: { es: "No. No se puede quemar grasa de una sola zona haciendo abdominales. Bajas grasa de todo el cuerpo comiendo en déficit, y tu genética decide de dónde sale primero. Los abdominales fortalecen, pero no 'queman' la panza.", en: "No. You can't burn fat from one spot by doing crunches. You lose fat from your whole body by eating in a deficit, and your genetics decide where it comes off first. Ab exercises build strength but don't 'burn' belly fat." } },
+  { q: { es: "¿Cuánta agua debo tomar?", en: "How much water should I drink?" },
+    a: { es: "Una guía simple: unos 8 vasos (2 litros) al día, y más si hace calor o sudas mucho. Si tu orina es clarita, vas bien. Con el calor de El Salvador, carga siempre tu botella.", en: "A simple guide: about 8 glasses (2 liters) a day, more if it's hot or you sweat a lot. If your urine is pale, you're doing fine. In El Salvador's heat, always carry your bottle." } },
+  { q: { es: "¿Puedo tomar alcohol?", en: "Can I drink alcohol?" },
+    a: { es: "Puedes, pero frena tu progreso: una cerveza tiene unas 150 calorías, el alcohol abre el apetito y empeora el sueño. Si tomas, que sea poco y de vez en cuando.", en: "You can, but it slows your progress: a beer has about 150 calories, and alcohol increases appetite and worsens sleep. If you drink, keep it light and occasional." } },
+  { q: { es: "¿Cuánto debo dormir?", en: "How much should I sleep?" },
+    a: { es: "De 7 a 9 horas. Dormir poco aumenta el hambre y los antojos, baja tu energía para entrenar y frena tu recuperación. Dormir es parte del plan, no un lujo.", en: "7 to 9 hours. Short sleep increases hunger and cravings, lowers your energy for training, and slows recovery. Sleep is part of the plan, not a luxury." } },
+  { q: { es: "Soy mujer, ¿las pesas me van a poner 'muy grande'?", en: "I'm a woman. Will weights make me 'bulky'?" },
+    a: { es: "No. Las mujeres tienen mucha menos testosterona y ganar músculo es lento. Las pesas te dan forma, fuerza y huesos más fuertes, y te ayudan a bajar grasa. Entrena sin miedo.", en: "No. Women have much less testosterone, and building muscle is slow. Weights give you shape, strength, and stronger bones, and help you lose fat. Train without fear." } },
+  { q: { es: "¿Cada cuánto me peso?", en: "How often should I weigh myself?" },
+    a: { es: "Una vez por semana, en ayunas, después de ir al baño y con poca ropa. El peso sube y baja por agua y sal; fíjate en la tendencia de varias semanas, no en un solo día.", en: "Once a week, on an empty stomach, after using the bathroom, wearing light clothes. Weight goes up and down with water and salt; watch the trend over several weeks, not a single day." } },
+  { q: { es: "No veo resultados, ¿qué hago?", en: "I'm not seeing results. What should I do?" },
+    a: { es: "Dale 3–4 semanas siendo constante. Revisa: ¿cumples tus calorías y proteína casi todos los días? ¿Duermes 7 horas o más? ¿Entrenas 3 días o más? Si todo es sí y no bajas en 3 semanas, quita 100–200 calorías.", en: "Give it 3–4 consistent weeks. Check: are you hitting your calories and protein most days? Sleeping 7+ hours? Training 3+ days? If it's all yes and nothing changes in 3 weeks, cut 100–200 calories." } },
+  { q: { es: "¿Puedo comer pupusas y bajar de peso?", en: "Can I eat pupusas and still lose weight?" },
+    a: { es: "Sí. Ninguna comida está prohibida: importan la cantidad y la frecuencia. Dos pupusas con bastante curtido caben en tu plan. Revisa la guía de Comida salvadoreña para cambios inteligentes.", en: "Yes. No food is off-limits: amount and frequency matter. Two pupusas with plenty of curtido fit your plan. Check the Salvadoran food guide for smart swaps." } },
+  { q: { es: "¿Cuánto descanso entre series?", en: "How long should I rest between sets?" },
+    a: { es: "De 60 a 90 segundos en la rutina normal, y de 30 a 45 en la exprés. En ejercicios pesados puedes descansar hasta 2 minutos.", en: "60 to 90 seconds in the regular routine, and 30 to 45 in the express one. On heavy exercises you can rest up to 2 minutes." } },
+  { q: { es: "¿Qué hago si me duele una articulación o tengo una condición de salud?", en: "What if a joint hurts or I have a health condition?" },
+    a: { es: "Para y consulta a tu médico o fisioterapeuta. Esta app es una guía general y no reemplaza la atención médica. Mientras tanto, cambia el ejercicio por uno que no te duela.", en: "Stop and see your doctor or physical therapist. This app is a general guide and doesn't replace medical care. Meanwhile, swap the exercise for one that doesn't hurt." } }
+];
+
+/* ---------- Comida salvadoreña (valores ESTIMADOS por porción típica) ---------- */
+const FOODS = [
+  { n: { es: "Pupusa revuelta", en: "Pupusa revuelta (pork, beans & cheese)" }, p: { es: "1 pupusa mediana", en: "1 medium pupusa" }, k: 320, g: 12,
+    s: { es: "Come 2, no 4. Llena medio plato de curtido y acompaña con agua o café sin azúcar.", en: "Have 2, not 4. Fill half your plate with curtido and drink water or unsweetened coffee." } },
+  { n: { es: "Pupusa de frijol con queso", en: "Bean & cheese pupusa" }, p: { es: "1 pupusa mediana", en: "1 medium pupusa" }, k: 290, g: 10,
+    s: { es: "Buena opción. Suma proteína aparte (un huevo o un vaso de leche) y mucho curtido.", en: "A good pick. Add protein on the side (an egg or a glass of milk) and lots of curtido." } },
+  { n: { es: "Pupusa de queso con loroco", en: "Cheese & loroco pupusa" }, p: { es: "1 pupusa mediana", en: "1 medium pupusa" }, k: 300, g: 11,
+    s: { es: "Pide queso con loroco o con ayote: un poco menos de grasa que solo queso duro.", en: "Choose cheese with loroco or squash: a bit less fat than cheese alone." } },
+  { n: { es: "Pupusa de chicharrón", en: "Chicharrón (pork) pupusa" }, p: { es: "1 pupusa mediana", en: "1 medium pupusa" }, k: 340, g: 12,
+    s: { es: "Es de las más grasosas: cámbiala por una de pollo o de frijol con queso.", en: "One of the fattiest: swap it for chicken or bean & cheese." } },
+  { n: { es: "Pan con pollo", en: "Pan con pollo (chicken sandwich)" }, p: { es: "1 pan con pollo guisado", en: "1 stewed-chicken sandwich" }, k: 550, g: 30,
+    s: { es: "Pide extra pollo y verdura, sin mayonesa extra, y quítale la piel al pollo.", en: "Ask for extra chicken and veggies, no extra mayo, and remove the chicken skin." } },
+  { n: { es: "Casamiento", en: "Casamiento (rice & beans)" }, p: { es: "1 taza", en: "1 cup" }, k: 350, g: 11,
+    s: { es: "Sirve media taza (un puño) y suma huevo, pollo o queso fresco para la proteína.", en: "Serve half a cup (one fist) and add egg, chicken, or fresh cheese for protein." } },
+  { n: { es: "Tamal de pollo", en: "Chicken tamal" }, p: { es: "1 tamal", en: "1 tamal" }, k: 350, g: 14,
+    s: { es: "Uno solo con ensalada. Evita acompañarlo con café o chocolate con mucha azúcar.", en: "Just one, with a salad. Skip the very sweet coffee or hot chocolate on the side." } },
+  { n: { es: "Tamal de elote", en: "Sweet corn tamal" }, p: { es: "1 tamal", en: "1 tamal" }, k: 260, g: 5,
+    s: { es: "Tiene poca proteína: acompáñalo con huevo, requesón o un vaso de leche.", en: "Low in protein: pair it with eggs, requesón (ricotta-style cheese), or a glass of milk." } },
+  { n: { es: "Yuca frita con chicharrón", en: "Fried cassava with chicharrón" }, p: { es: "1 plato", en: "1 plate" }, k: 750, g: 20,
+    s: { es: "Pide yuca sancochada con curtido, y el chicharrón solo del tamaño de tu palma.", en: "Order boiled cassava with curtido, and keep the chicharrón to a palm-size portion." } },
+  { n: { es: "Yuca sancochada", en: "Boiled cassava" }, p: { es: "1 taza", en: "1 cup" }, k: 320, g: 3,
+    s: { es: "Porción de un puño, y súmale una proteína: pollo, pescado o huevo.", en: "A fist-size portion, plus a protein: chicken, fish, or eggs." } },
+  { n: { es: "Plátano frito", en: "Fried plantain" }, p: { es: "1 plátano maduro", en: "1 ripe plantain" }, k: 350, g: 2,
+    s: { es: "Hazlo asado o al horno (unas 220 kcal) y come medio si quieres bajar grasa.", en: "Bake or grill it (about 220 kcal) and have half if you're cutting fat." } },
+  { n: { es: "Desayuno típico", en: "Typical Salvadoran breakfast" }, p: { es: "Huevos, frijoles fritos, plátano frito, crema, queso y 2 tortillas", en: "Eggs, refried beans, fried plantain, cream, cheese & 2 tortillas" }, k: 850, g: 30,
+    s: { es: "Huevos y frijoles sí; plátano asado o medio, queso fresco en vez de duro y 1 cucharada de crema.", en: "Keep the eggs and beans; grilled or half plantain, fresh cheese instead of aged, and 1 tbsp of cream." } },
+  { n: { es: "Sopa de res", en: "Beef soup (sopa de res)" }, p: { es: "1 plato con carne y verduras", en: "1 bowl with meat & veggies" }, k: 450, g: 30,
+    s: { es: "¡Excelente! Más verdura y carne, menos yuca y elote, y 1–2 tortillas.", en: "Great choice! More veggies and meat, less cassava and corn, and 1–2 tortillas." } },
+  { n: { es: "Sopa de gallina india", en: "Hen soup (sopa de gallina india)" }, p: { es: "1 plato", en: "1 bowl" }, k: 450, g: 35,
+    s: { es: "Quita la piel y la grasa de encima. Acompaña con arroz o con tortilla, no con los dos.", en: "Remove the skin and skim the fat. Pair it with rice or tortillas, not both." } },
+  { n: { es: "Tortilla de maíz", en: "Corn tortilla" }, p: { es: "1 tortilla mediana", en: "1 medium tortilla" }, k: 90, g: 2,
+    s: { es: "Cuenta tus tortillas: 2 por comida si quieres bajar grasa.", en: "Count your tortillas: 2 per meal if you're cutting fat." } },
+  { n: { es: "Frijoles fritos (molidos)", en: "Refried beans" }, p: { es: "½ taza", en: "½ cup" }, k: 200, g: 8,
+    s: { es: "Prefiere frijoles de olla (unas 120 kcal): misma proteína, mucha menos grasa.", en: "Choose whole stewed beans (about 120 kcal): same protein, much less fat." } },
+  { n: { es: "Quesadilla salvadoreña", en: "Salvadoran quesadilla (sweet cheese cake)" }, p: { es: "1 porción", en: "1 slice" }, k: 380, g: 7,
+    s: { es: "Es postre: una porción pequeña con café sin azúcar, y no todos los días.", en: "It's dessert: a small slice with unsweetened coffee, and not every day." } },
+  { n: { es: "Horchata", en: "Horchata" }, p: { es: "1 vaso de 16 oz", en: "1 16-oz glass" }, k: 250, g: 3,
+    s: { es: "Pídela con poca azúcar o toma medio vaso. Mejor: agua con limón o fresco sin azúcar.", en: "Ask for less sugar or have half a glass. Better: lemon water or an unsweetened fresco." } },
+  { n: { es: "Kolashanpan o gaseosa", en: "Kolashanpan or soda" }, p: { es: "1 botella de 600 ml", en: "1 600-ml bottle" }, k: 250, g: 0,
+    s: { es: "Cámbiala por la versión cero azúcar o por agua mineral con limón.", en: "Switch to the zero-sugar version or sparkling water with lime." } },
+  { n: { es: "Chilate con nuegados", en: "Chilate with nuegados" }, p: { es: "1 taza + 3 nuegados con miel", en: "1 cup + 3 nuegados with syrup" }, k: 450, g: 5,
+    s: { es: "Disfruta el chilate solo (unas 120 kcal) o con un solo nuegado.", en: "Enjoy the chilate alone (about 120 kcal) or with just one nuegado." } },
+  { n: { es: "Pastelitos de carne", en: "Meat pastelitos (fried turnovers)" }, p: { es: "3 pastelitos", en: "3 pastelitos" }, k: 450, g: 12,
+    s: { es: "Come 1–2 con bastante curtido y suma una proteína magra en la comida.", en: "Have 1–2 with plenty of curtido and add lean protein to the meal." } },
+  { n: { es: "Pollo frito", en: "Fried chicken" }, p: { es: "2 piezas", en: "2 pieces" }, k: 600, g: 40,
+    s: { es: "Cámbialo por pollo asado o a la plancha, sin piel (unas 300 kcal).", en: "Swap it for grilled or roasted chicken, skinless (about 300 kcal)." } }
+];
+
+/* ---------- Súper barato: lista semanal para 1 persona (precios ESTIMADOS en USD) ---------- */
+const GROCERY = [
+  { n: { es: "Huevos", en: "Eggs" }, q: { es: "Cartón de 30", en: "30-egg tray" }, p: 5.50, t: { es: "El cartón de 30 en el mercado sale más barato que por docena.", en: "A 30-egg tray at the market is cheaper than buying by the dozen." } },
+  { n: { es: "Pollo (pechuga o pierna-muslo)", en: "Chicken (breast or leg quarters)" }, q: { es: "3 lb", en: "3 lb" }, p: 6.75, t: { es: "Pierna-muslo sin piel es más barata que pechuga y rinde igual.", en: "Skinless leg quarters are cheaper than breast and go just as far." } },
+  { n: { es: "Atún en agua", en: "Tuna in water" }, q: { es: "4 latas", en: "4 cans" }, p: 5.00, t: { es: "Compra el paquete de 4 y busca 'en agua', no en aceite.", en: "Buy the 4-pack and look for 'in water,' not oil." } },
+  { n: { es: "Requesón o queso fresco", en: "Requesón or fresh cheese" }, q: { es: "1 lb", en: "1 lb" }, p: 3.00, t: { es: "El requesón tiene buena proteína y menos grasa que el queso duro.", en: "Requesón has good protein and less fat than aged cheese." } },
+  { n: { es: "Leche descremada", en: "Skim milk" }, q: { es: "2 litros", en: "2 liters" }, p: 2.60, t: { es: "La leche en bolsa o marca local suele costar menos.", en: "Bagged or local-brand milk is usually cheaper." } },
+  { n: { es: "Frijoles rojos (en grano)", en: "Red beans (dry)" }, q: { es: "2 lb", en: "2 lb" }, p: 2.20, t: { es: "Cocínalos en olla de presión: salen mucho más baratos que en bolsa o lata.", en: "Cook them in a pressure cooker: much cheaper than bagged or canned." } },
+  { n: { es: "Arroz", en: "Rice" }, q: { es: "2 lb", en: "2 lb" }, p: 1.50, t: { es: "Si tienes dónde guardarlo, el paquete de 5 lb rinde más.", en: "If you have storage, the 5-lb bag is better value." } },
+  { n: { es: "Tortillas", en: "Tortillas" }, q: { es: "30 unidades", en: "30 tortillas" }, p: 1.75, t: { es: "Las de la tortillería del barrio son más baratas y frescas.", en: "Neighborhood tortillería tortillas are cheaper and fresher." } },
+  { n: { es: "Avena en hojuelas", en: "Rolled oats" }, q: { es: "1 bolsa (800 g)", en: "1 bag (800 g)" }, p: 2.00, t: { es: "La avena en bolsa cuesta menos que la de caja y es igual.", en: "Bagged oats cost less than boxed and are the same." } },
+  { n: { es: "Papas o yuca", en: "Potatoes or cassava" }, q: { es: "3 lb", en: "3 lb" }, p: 2.00, t: { es: "Compra en el mercado y elige lo de temporada.", en: "Buy at the market and choose what's in season." } },
+  { n: { es: "Verduras (güisquil, repollo, tomate, cebolla, zanahoria)", en: "Vegetables (chayote, cabbage, tomato, onion, carrot)" }, q: { es: "Para la semana", en: "For the week" }, p: 4.00, t: { es: "El repollo y el güisquil rinden mucho y cuestan poco.", en: "Cabbage and chayote go a long way for very little." } },
+  { n: { es: "Guineos y fruta de temporada", en: "Bananas & seasonal fruit" }, q: { es: "10 guineos + 1 papaya o piña", en: "10 bananas + 1 papaya or pineapple" }, p: 2.75, t: { es: "La fruta de temporada del mercado es la más barata.", en: "Seasonal fruit at the market is the cheapest." } },
+  { n: { es: "Aguacate", en: "Avocado" }, q: { es: "2–3", en: "2–3" }, p: 1.50, t: { es: "Tu grasa saludable: una porción del tamaño de tu pulgar por comida.", en: "Your healthy fat: a thumb-size portion per meal." } },
+  { n: { es: "Plátanos", en: "Plantains" }, q: { es: "3", en: "3" }, p: 1.00, t: { es: "Ásalos u hornéalos en vez de freírlos.", en: "Bake or grill them instead of frying." } },
+  { n: { es: "Limón, ajo, sal y especias", en: "Lime, garlic, salt & spices" }, q: { es: "Básicos", en: "Basics" }, p: 1.00, t: { es: "El sabor sin calorías: cocina con limón, ajo y chile.", en: "Flavor without calories: cook with lime, garlic, and chili." } }
+];
+
+/* ---------- Guía de porciones por mano ---------- */
+const HANDS = [
+  { id: "p", e: "✋", n: { es: "Palma = proteína", en: "Palm = protein" }, d: { es: "Pollo, res, pescado, huevos, atún, requesón.", en: "Chicken, beef, fish, eggs, tuna, requesón." } },
+  { id: "v", e: "👊", n: { es: "Puño = verduras", en: "Fist = vegetables" }, d: { es: "Ensalada, curtido, güisquil, ejotes, repollo.", en: "Salad, curtido, chayote, green beans, cabbage." } },
+  { id: "c", e: "🤲", n: { es: "Mano ahuecada = carbohidratos", en: "Cupped hand = carbs" }, d: { es: "Tortillas, arroz, frijoles, yuca, avena, fruta.", en: "Tortillas, rice, beans, cassava, oats, fruit." } },
+  { id: "f", e: "👍", n: { es: "Pulgar = grasas", en: "Thumb = fats" }, d: { es: "Aguacate, crema, queso, aceite, maní.", en: "Avocado, cream, cheese, oil, peanuts." } }
+];
+const PLATE = { // porciones por comida
+  h: { bajar: { p: 2, v: 2, c: 1, f: 1 }, mantener: { p: 2, v: 2, c: 2, f: 2 }, ganar: { p: 2, v: 2, c: 3, f: 2 } },
+  m: { bajar: { p: 1, v: 2, c: 1, f: 1 }, mantener: { p: 1, v: 2, c: 1, f: 1 }, ganar: { p: 2, v: 1, c: 2, f: 1 } }
+};
+const MEALS = {
+  desayuno: { p: { es: "2–3 huevos picados o requesón", en: "2–3 scrambled eggs or requesón" }, v: { es: "Tomate, cebolla y chile en los huevos", en: "Tomato, onion, and pepper in the eggs" }, c: { es: "Tortillas o frijoles de olla", en: "Tortillas or whole stewed beans" }, f: { es: "Una tajada de aguacate", en: "A slice of avocado" } },
+  almuerzo: { p: { es: "Pollo guisado, res o pescado", en: "Stewed chicken, beef, or fish" }, v: { es: "Ensalada, curtido o verduras de la sopa", en: "Salad, curtido, or soup vegetables" }, c: { es: "Arroz, yuca o tortillas", en: "Rice, cassava, or tortillas" }, f: { es: "Aguacate o un poco de aceite", en: "Avocado or a little oil" } },
+  cena: { p: { es: "Atún, huevo o queso fresco", en: "Tuna, eggs, or fresh cheese" }, v: { es: "Güisquil, ejotes o repollo", en: "Chayote, green beans, or cabbage" }, c: { es: "Tortillas o un guineo", en: "Tortillas or a banana" }, f: { es: "Una cucharada de crema o queso", en: "A spoonful of cream or cheese" } }
+};
 
 /* =====================================================================
    ILUSTRACIONES (figuras de líneas en SVG, sin imágenes externas)
-   Ángulos en grados: 0 = hacia abajo, 90 = hacia adelante (derecha),
-   180 = hacia arriba, -90 = hacia atrás (izquierda).
    ===================================================================== */
 const LEN = { t: 34, hd: 10, ua: 17, fa: 16, th: 25, sh: 25, ft: 7 }, HEAD_R = 6.5, FLOOR = 108;
 const vec = (a, l) => { const r = a * Math.PI / 180; return [Math.sin(r) * l, Math.cos(r) * l]; };
@@ -448,7 +823,7 @@ function drawFigure(J) {
     pl(["P", "K1", "A1", "T1"], C.near, 4.8) + pl(["N", "E1", "W1"], C.near, 4.5) +
     `<circle cx="${J.H[0].toFixed(1)}" cy="${J.H[1].toFixed(1)}" r="${HEAD_R}" fill="${C.near}"/>`;
 }
-function illustration(ex) {
+function illustration(ex, name) {
   const frames = ex.f.map(f => ({ J: joints(f), props: f.p || [] }));
   let minX = 1e9, maxX = -1e9, minY = 1e9;
   for (const fr of frames) for (const pt of [...Object.values(fr.J), ...propPoints(fr.J, fr.props)]) {
@@ -458,8 +833,8 @@ function illustration(ex) {
   const cx = (minX + maxX) / 2, s = Math.min(1, 112 / (maxX - minX), (FLOOR - 16) / (FLOOR - minY));
   const inv = { x: X => cx + (X - 60) / s, y: Y => FLOOR - (FLOOR - Y) / s };
   const one = frames.length === 1;
-  const W = 250, offs = one ? [65] : [0, 130], labels = ex.labels || (one ? ["Mantén la posición"] : ["1 · Inicio", "2 · Final"]);
-  let svg = `<svg class="fig" viewBox="0 0 ${W} 120" role="img" aria-label="${esc(ex.n)}: ${one ? "posición" : "posición inicial y final"}">`;
+  const W = 250, offs = one ? [65] : [0, 130], labels = ex.labels ? [t("step") + " 1", t("step") + " 2"] : one ? [t("hold")] : ["1 · " + t("start"), "2 · " + t("end")];
+  let svg = `<svg class="fig" viewBox="0 0 ${W} 120" role="img" aria-label="${esc(name || ex.n)}: ${one ? t("hold") : t("figAria")}">`;
   frames.forEach((fr, i) => {
     const ox = offs[i];
     svg += `<g transform="translate(${ox},0)"><rect x="0" y="0" width="120" height="120" rx="10" fill="${C.frame}"/>` +
@@ -572,129 +947,271 @@ const EX = {
     f: [{ ua1: 25, fa1: 178 }, { ua1: 176, fa1: 180 }].map(o => ({ ...o, t: 180, th1: 90, sh1: 0, p: [{ k: "block", at: ["P", -2, 3], w: 18 }, { k: "dbv", at: ["W1"] }] })) }
 };
 
-// [ejercicio, series, repeticiones]. Si series = 1, se muestra solo el tiempo (ej. cardio).
-const CC = "Cuerpo completo";
-const ROUTINE = {
-  gym: {
-    3: [
-      { t: CC + " A", ex: [["goblet", 3, "10"], ["pressPecho", 3, "10"], ["jalon", 3, "10"], ["puenteDb", 3, "12"], ["plancha", 3, "20–30 seg"]] },
-      { t: CC + " B", ex: [["prensa", 3, "12"], ["remoPolea", 3, "10"], ["pressHombro", 3, "10"], ["zancadaDb", 2, "8 por pierna"], ["bicho", 3, "8 por lado"]] },
-      { t: CC + " C", ex: [["rdl", 3, "10"], ["jalon", 3, "10"], ["flexInc", 3, "8–10"], ["escalon", 2, "8 por pierna"], ["plancha", 3, "20–30 seg"]] }
-    ],
-    5: [
-      { t: "Tren superior", ex: [["pressPecho", 3, "10"], ["jalon", 3, "10"], ["pressHombro", 3, "10"], ["remoPolea", 3, "10"], ["pushdown", 2, "12"]] },
-      { t: "Tren inferior", ex: [["prensa", 3, "12"], ["rdl", 3, "10"], ["zancadaDb", 2, "8 por pierna"], ["legCurl", 3, "12"], ["calfDb", 3, "15"]] },
-      { t: "Cardio + core", ex: [["cinta", 1, "20–30 min"], ["plancha", 3, "20–30 seg"], ["bicho", 3, "8 por lado"], ["planchaLat", 2, "15–20 seg por lado"]] },
-      { t: "Tren superior (variaciones)", ex: [["pressInc", 3, "10"], ["remoDb", 3, "10"], ["flexInc", 3, "8–10"], ["curl", 2, "12"], ["fondos", 2, "8–10"]] },
-      { t: "Tren inferior (variaciones)", ex: [["goblet", 3, "10"], ["puenteDb", 3, "12"], ["extPiernas", 3, "12"], ["escalon", 2, "8 por pierna"], ["calfDb", 3, "15"]] }
-    ]
-  },
-  casa: {
-    3: [
-      { t: CC + " A", ex: [["sentadilla", 3, "12"], ["flexInc", 3, "8–10"], ["remoBag", 3, "12"], ["puente", 3, "15"], ["plancha", 3, "20–30 seg"]] },
-      { t: CC + " B", ex: [["zancada", 3, "8 por pierna"], ["flexRod", 3, "6–10"], ["superman", 3, "10"], ["rdlBag", 3, "12"], ["bicho", 3, "8 por lado"]] },
-      { t: CC + " C", ex: [["escalon", 3, "10 por pierna"], ["flexInc", 3, "10"], ["remoBag", 3, "12"], ["sentadilla", 3, "15"], ["plancha", 3, "30 seg"]] }
-    ],
-    5: [
-      { t: "Tren superior", ex: [["flexInc", 3, "8–10"], ["remoBag", 3, "12"], ["pressBot", 3, "12"], ["fondosSilla", 2, "8–10"], ["superman", 2, "10"]] },
-      { t: "Tren inferior", ex: [["sentadilla", 3, "12"], ["zancada", 3, "8 por pierna"], ["puente", 3, "15"], ["rdlBag", 3, "12"], ["calf", 3, "15"]] },
-      { t: "Cardio + core", ex: [["caminata", 1, "20–30 min"], ["marcha", 3, "30 seg"], ["plancha", 3, "20–30 seg"], ["bicho", 3, "8 por lado"], ["planchaLat", 2, "15–20 seg por lado"]] },
-      { t: "Tren superior (variaciones)", ex: [["flexRod", 3, "6–10"], ["remoBag", 3, "12"], ["curlBot", 3, "12"], ["pressBot", 3, "10"], ["superman", 3, "10"]] },
-      { t: "Tren inferior (variaciones)", ex: [["escalon", 3, "10 por pierna"], ["gobletBag", 3, "12"], ["puenteUna", 3, "8 por pierna"], ["rdlBag", 3, "12"], ["calf", 3, "15"]] }
-    ]
-  }
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const KEY = "fitnessPrincipiantes_v1";
+const todayKey = (d = new Date()) => d.toLocaleDateString("en-CA"); // YYYY-MM-DD local
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const DEF = {
+  lang: "es", tab: "inicio", mode: "gym", freq: "3", day: 0, week: 1, planStart: "",
+  sets: { date: "", done: {} },
+  calc: { sex: "h", age: "", w: "", wUnit: "lb", hUnit: "ft", hft: "", hin: "", hcm: "", act: "1.55", goal: "bajar", result: null },
+  checks: {}, weights: [], pUnit: "lb", comSub: "calc", proSub: "mio",
+  plate: { sex: "h", goal: "bajar", meal: "almuerzo" },
+  r30: { start: "", done: {}, sel: 0 },
+  lead: { sent: false, name: "" }
 };
-const figCache = {};
+let S = JSON.parse(JSON.stringify(DEF));
+try {
+  const sv = JSON.parse(localStorage.getItem(KEY));
+  if (sv) for (const k in sv) {
+    const d = DEF[k], v = sv[k];
+    S[k] = d && typeof d === "object" && !Array.isArray(d) && v && typeof v === "object" && !Array.isArray(v) ? Object.assign({}, d, v) : v;
+  }
+  if (!["3", "5", "x"].includes(S.freq)) S.freq = "3";
+  if (!(S.week >= 1 && S.week <= 4)) S.week = 1;
+} catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 
-/* ---------- Navegación ---------- */
-function go(tab) {
-  S.tab = tab; save();
-  $$("main section").forEach(s => s.classList.toggle("on", s.id === "tab-" + tab));
-  $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
-  ({ rutina: renderRutina, hoy: renderHoy, progreso: renderProgreso, calculadora: renderCalc })[tab]?.();
-  window.scrollTo(0, 0);
+/* ---------- Idioma ---------- */
+window.__missing = new Set();
+function t(k, v) {
+  let s = I18N[S.lang][k];
+  if (s == null) { window.__missing.add(S.lang + ":" + k); s = I18N.es[k] ?? k; }
+  return v ? s.replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "") : s;
 }
-$$("#tabs button").forEach(b => b.onclick = () => go(b.dataset.tab));
-$$("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
-function bindSeg(sel, get, set) {
-  const el = $(sel);
-  const paint = () => [...el.children].forEach(b => b.classList.toggle("on", (b.dataset.v ?? b.dataset.mode) === get()));
-  [...el.children].forEach(b => b.onclick = () => { set(b.dataset.v ?? b.dataset.mode); save(); paint(); });
-  paint(); return paint;
+const L = o => o && typeof o === "object" ? (o[S.lang] ?? o.es) : o;
+const loc = () => (S.lang === "en" ? "en-US" : "es-MX");
+const fmt = n => Math.round(n).toLocaleString(loc());
+const r1 = n => (Math.round(n * 10) / 10).toLocaleString(loc());
+const dLong = d => new Date(d + "T12:00").toLocaleDateString(loc(), { day: "numeric", month: "long" });
+const dShort = d => new Date(d + "T12:00").toLocaleDateString(loc(), { day: "numeric", month: "short" });
+const dFull = d => new Date(d + "T12:00").toLocaleDateString(loc(), { day: "numeric", month: "short", year: "numeric" });
+const daysBetween = (a, b) => Math.round((new Date(b + "T12:00") - new Date(a + "T12:00")) / 864e5);
+const exN = id => (S.lang === "en" ? EX_EN[id][0] : EX[id].n);
+const exTips = id => (S.lang === "en" ? EX_EN[id][1] : EX[id].tips);
+
+function toast(msg) { const el = $("#toast"); el.textContent = msg; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 2400); }
+const seg = (act, opts, cur, cls = "") => `<div class="seg ${cls}">${opts.map(o => `<button type="button" data-act="${act}" data-v="${o.v}" class="${String(o.v) === String(cur) ? "on" : ""}">${o.l}</button>`).join("")}</div>`;
+const ICON = {
+  gym: '<svg class="ico" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg>',
+  casa: '<svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>',
+  bolt: '<svg class="ico" viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg>',
+  calc: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
+  check: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+  chart: '<path d="M4 19h16"/><path d="M5 15l4-4 4 3 6-7"/>',
+  food: '<path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3"/><path d="M17 21V3c-2.2 0-3.5 2.5-3.5 6s1.3 5 3.5 5"/>',
+  home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  dumb: '<path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/>',
+  play: '<svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/></svg>'
+};
+
+/* ---------- Estructura ---------- */
+const TABS = [["inicio", "home", "tabInicio"], ["rutina", "dumb", "tabRutina"], ["comida", "food", "tabComida"], ["hoy", "check", "tabHoy"], ["progreso", "chart", "tabProgreso"]];
+function render() {
+  document.documentElement.lang = S.lang;
+  document.documentElement.style.setProperty("--accent", CONFIG.ACCENT_COLOR);
+  document.title = (S.lang === "en" ? "Beginner fitness · " : "Fitness para principiantes · ") + CONFIG.BRAND_NAME;
+  const initials = CONFIG.BRAND_NAME.split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+  $("#logo").innerHTML = CONFIG.LOGO_URL ? `<img src="${esc(CONFIG.LOGO_URL)}" alt="">` : esc(initials);
+  $("#brandTitle").textContent = CONFIG.BRAND_NAME;
+  $("#brandTag").textContent = t("tagline");
+  $("#langBtn").textContent = t("langBtn"); $("#langBtn").setAttribute("aria-label", t("langAria"));
+  $("#tabs").innerHTML = TABS.map(([id, ic, k]) => `<button type="button" data-act="tab" data-tab="${id}" class="${S.tab === id ? "on" : ""}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[ic]}</svg>${t(k)}</button>`).join("");
+  $("#ctaBar").href = CONFIG.COACHING_URL;
+  $("#ctaBar").innerHTML = `<span>${t("cta")} <em>${t("ctaGo").replace(/ /g, "&nbsp;")}</em></span>`;
+  renderTab();
+}
+function renderTab() {
+  const v = { inicio: vInicio, rutina: vRutina, comida: vComida, hoy: vHoy, progreso: vProgreso }[S.tab] || vInicio;
+  $$("main section").forEach(s => { const on = s.id === "tab-" + S.tab; s.classList.toggle("on", on); if (!on) s.innerHTML = ""; });
+  $("#tab-" + S.tab).innerHTML = v();
+  if (S.tab === "progreso" && S.proSub === "mio" && !$("#pDate").value) $("#pDate").value = todayKey();
+}
+function go(tab, sub) {
+  S.tab = tab;
+  if (sub && tab === "comida") S.comSub = sub;
+  if (sub && tab === "progreso") S.proSub = sub;
+  save(); render(); window.scrollTo(0, 0);
+}
+const mindIndex = () => Math.floor(new Date(todayKey() + "T12:00").getTime() / 864e5) % MENSAJES.length;
+const mindCard = () => `<div class="mind"><div class="kicker">${t("mindKicker")}</div><p class="quote">“${esc(L(MENSAJES[mindIndex()]))}”</p><div class="by">${t("mindBy")}</div></div>`;
+
+/* ---------- INICIO ---------- */
+function vInicio() {
+  const rb = CONFIG.RETO_BALMORE, E = rb.ENTRIES, startW = E[0]?.weight, last = E[E.length - 1]?.weight;
+  const pct = startW && last != null ? Math.max(0, Math.min(100, (startW - last) / (startW - rb.GOAL_MAX) * 100)) : 0;
+  const names = { instagram: "Instagram", tiktok: "TikTok", facebook: "Facebook", youtube: "YouTube" };
+  const sicons = {
+    instagram: '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7h.01"/>',
+    tiktok: '<path d="M14 3.5v11a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3.5c.4 2.6 2.4 4.6 5 4.8"/>',
+    facebook: '<path d="M14.5 8.5h2.5V5h-2.5A3.5 3.5 0 0 0 11 8.5V11H8.5v3.5H11V21h3.5v-6.5H17l.5-3.5h-3V9a.5.5 0 0 1 .5-.5z"/>',
+    youtube: '<rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l4 2.5-4 2.5z"/>'
+  };
+  return `
+  <div class="card hero"><div class="kicker">${t("heroKicker")}</div>
+    <h2 id="heroTitle">${t("hello")} <span class="hl">${esc(CONFIG.BRAND_NAME.split(" ")[0])}</span></h2><p>${t("heroP")}</p></div>
+  ${mindCard()}
+  <div class="card" id="retoTeaser"><div class="kicker">${t("retoBKicker")}</div>
+    <h3>${startW} → ${rb.GOAL_MIN}–${rb.GOAL_MAX} ${rb.UNIT}</h3>
+    <p class="muted" style="margin:0 0 10px">${t("retoBTeaser")}</p>
+    <div class="bar" style="margin-bottom:12px"><i style="width:${Math.max(2, pct)}%"></i></div>
+    <button class="btn ghost" data-act="go" data-tab="progreso" data-sub="balmore">${t("retoBGo")}</button></div>
+  <div class="card"><h3>${t("rulesTitle")}</h3>
+    ${[1, 2, 3].map(n => `<div class="rule"><div class="num">${n}</div><div><b>${t("rule" + n + "t")}</b><span>${t("rule" + n)}</span></div></div>`).join("")}</div>
+  <div class="kicker" style="margin-top:20px">${t("howKicker")}</div>
+  <div class="steps">
+    ${[["comida", "calc", "calc", 1], ["rutina", "", "dumb", 2], ["hoy", "", "check", 3], ["progreso", "mio", "chart", 4]].map(([tab, sub, ic, n]) =>
+      `<button class="step" data-act="go" data-tab="${tab}" data-sub="${sub}"><svg class="ico" viewBox="0 0 24 24">${ICON[ic]}</svg><b>${t("step" + n + "t")}</b><span>${t("step" + n)}</span></button>`).join("")}
+  </div>
+  <div style="height:12px"></div>
+  ${leadCard()}
+  <div class="card" id="faq"><h3>${t("faqTitle")}</h3>
+    ${FAQ.map(f => `<details class="faq"><summary>${esc(L(f.q))}</summary><p>${esc(L(f.a))}</p></details>`).join("")}</div>
+  <div class="card"><h3>${t("moreTitle")}</h3><p class="muted" style="margin:0 0 12px">${t("moreP")}</p>
+    <a class="btn" id="ctaCard" href="${esc(CONFIG.COACHING_URL)}" target="_blank" rel="noopener">${t("moreBtn")}</a></div>
+  <div class="card"><h3>${t("follow")}</h3><div class="socials" id="socials">
+    ${Object.entries(CONFIG.SOCIAL).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener" data-net="${k}"><svg class="ico" viewBox="0 0 24 24">${sicons[k] || sicons.instagram}</svg><span><b>${names[k] || k}</b><span>${esc(v.handle)}</span></span><i>→</i></a>`).join("")}
+  </div></div>
+  <div class="disc">${t("disc")}</div>
+  <p class="foot">© ${new Date().getFullYear()} ${esc(CONFIG.BRAND_NAME)} · ${t("foot")}</p>`;
 }
 
-/* ---------- Rutina ---------- */
-function ensureSetsDate() { if (S.sets.date !== todayKey()) S.sets = { date: todayKey(), done: {} }; }
+/* ---------- Formulario de leads ---------- */
+function leadCard() {
+  if (S.lead.sent) return `<div class="card lead" id="leadCard"><h3>${t("leadThanks", { name: S.lead.name ? ", " + esc(S.lead.name.split(" ")[0]) : "" })}</h3>
+    <p class="muted" style="margin:0 0 10px">${t("leadThanksP")}</p><button class="linkbtn" data-act="leadAgain">${t("leadAgain")}</button></div>`;
+  return `<form class="card lead" id="leadForm" novalidate>
+    <h3>${t("leadTitle")}</h3><p class="muted" style="margin:0 0 14px">${t("leadP")}</p>
+    <div class="field"><label class="f" for="lNombre">${t("leadName")}</label><input class="inp" id="lNombre" name="nombre" autocomplete="name"></div>
+    <div class="field"><label class="f" for="lEmail">${t("leadEmail")}</label><input class="inp" id="lEmail" name="email" type="email" autocomplete="email" inputmode="email"></div>
+    <div class="field"><label class="f" for="lWa">${t("leadWa")}</label><input class="inp" id="lWa" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+503"></div>
+    <div class="field"><label class="f" for="lObj">${t("leadGoal")}</label><select class="inp" id="lObj" name="objetivo">
+      <option value="bajar grasa">${t("goalFat")}</option><option value="ganar músculo">${t("goalMuscle")}</option><option value="sentirme mejor">${t("goalBetter")}</option></select></div>
+    <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="err" id="leadErr" hidden></div>
+    <button class="btn" type="submit" id="leadBtn">${t("leadSend")}</button>
+    <p class="muted small" style="margin:10px 0 0;text-align:center">${t("leadPrivacy")}</p></form>`;
+}
+function leadFallback() { toast(t("leadWaMsg")); window.open(CONFIG.COACHING_URL, "_blank", "noopener"); }
+async function submitLead(form) {
+  const fd = new FormData(form), g = k => String(fd.get(k) || "").trim(), err = $("#leadErr");
+  if (g("website")) { S.lead = { sent: true, name: "" }; save(); renderTab(); return "honeypot"; } // bot: no se envía nada
+  const nombre = g("nombre"), email = g("email"), whatsapp = g("whatsapp");
+  if (!nombre && !email && !whatsapp) { err.textContent = t("leadNeed"); err.hidden = false; return "invalid"; }
+  err.hidden = true;
+  const body = new URLSearchParams({ nombre, email, whatsapp, objetivo: g("objetivo"), idioma: S.lang, fuente: "app-plan-4-semanas" });
+  const url = String(CONFIG.LEAD_FORM_URL || "").trim();
+  if (!url) { leadFallback(); return "whatsapp"; }
+  const btn = $("#leadBtn"); btn.disabled = true; btn.textContent = t("leadSending");
+  try {
+    await fetch(url, { method: "POST", mode: "no-cors", body }); // respuesta opaca: si no lanza error, se considera enviado
+    S.lead = { sent: true, name: nombre }; save(); renderTab(); return "sent";
+  } catch (e) {
+    btn.disabled = false; btn.textContent = t("leadSend"); leadFallback(); return "whatsapp";
+  }
+}
+document.addEventListener("submit", e => { if (e.target.id === "leadForm") { e.preventDefault(); submitLead(e.target); } });
+
+/* ---------- RUTINA ---------- */
 const plan = () => ROUTINE[S.mode][S.freq];
-const setKey = i => `${S.mode}-${S.freq}-${S.day}-${i}`;
-function renderRutina() {
-  ensureSetsDate();
-  if (!ROUTINE[S.mode]?.[S.freq]) { S.mode = "gym"; S.freq = "3"; }
-  if (S.day >= plan().length) S.day = 0;
-  $$("#modeSeg button").forEach(b => b.classList.toggle("on", b.dataset.mode === S.mode));
-  $$("#freqSeg button").forEach(b => b.classList.toggle("on", b.dataset.freq === S.freq));
-  $("#rutSub").textContent = S.freq === "5"
-    ? "5 días por semana: tren superior, tren inferior y cardio + core. Ejemplo: lunes a viernes. Descansa 60–90 segundos entre series."
-    : "3 días por semana, cuerpo completo. Ejemplo: lunes, miércoles y viernes. Descansa 60–90 segundos entre series.";
-  $("#dayPills").className = "pills" + (plan().length > 3 ? " five" : "");
-  $("#dayPills").innerHTML = plan().map((_, i) => `<button data-d="${i}" class="${i === S.day ? "on" : ""}">Día ${i + 1}</button>`).join("");
-  $$("#dayPills button").forEach(b => b.onclick = () => { S.day = +b.dataset.d; save(); renderRutina(); });
-  const day = plan()[S.day];
-  $("#dayCap").textContent = `Día ${S.day + 1} de ${plan().length} · ${S.mode === "gym" ? "Gimnasio" : "En casa"}`;
-  $("#dayTitle").textContent = day.t;
-  $("#exList").innerHTML = day.ex.map(([id, sets, reps], i) => {
-    const ex = EX[id], key = setKey(i), done = S.sets.done[key] || [];
-    figCache[id] ??= illustration(ex);
-    const meta = sets === 1 ? esc(reps) : `${sets} series × ${esc(reps)}`;
-    return `<div class="card ex" data-ex="${id}"><h3>${i + 1}. ${esc(ex.n)}</h3><span class="meta">${meta}</span>
-      ${figCache[id]}
-      <ul>${ex.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
-      <div class="sets">${Array.from({ length: sets }, (_, s) => `<button class="set ${done[s] ? "done" : ""}" data-k="${key}" data-s="${s}" aria-label="Serie ${s + 1}"><span>${s + 1}</span></button>`).join("")}
-      <span class="muted small">${sets === 1 ? "Tócalo al terminar" : "Toca cada serie al terminarla"}</span></div></div>`;
-  }).join("");
-  $$("#exList .set").forEach(b => b.onclick = () => {
-    const k = b.dataset.k, s = +b.dataset.s; ensureSetsDate();
-    const arr = S.sets.done[k] || []; arr[s] = !arr[s]; S.sets.done[k] = arr;
-    b.classList.toggle("done", !!arr[s]); save(); updateProgress(true);
-  });
-  updateProgress(false);
+const setKey = i => `${S.mode}-${S.freq}-w${S.week}-${S.day}-${i}`;
+function ensureSetsDate() { if (S.sets.date !== todayKey()) S.sets = { date: todayKey(), done: {} }; }
+function adj(sets, reps) {
+  const W = WEEKS[S.week - 1], isMin = /min/.test(reps), isSec = /seg|sec/.test(reps);
+  const d = isMin ? W.min : isSec ? W.sec : W.reps;
+  return [sets === 1 ? 1 : Math.min(4, sets + W.sets), reps.replace(/\d+/g, n => +n + d)];
 }
+const dayEx = () => plan()[S.day].ex.map(([id, sets, es, en]) => { const [s, rp] = adj(sets, S.lang === "en" ? en : es); return { id, sets: s, reps: rp }; });
+const figCache = {};
+const fig = id => (figCache[id + S.lang] ??= illustration(EX[id], exN(id)));
+function vRutina() {
+  ensureSetsDate();
+  if (!S.planStart) { S.planStart = todayKey(); save(); }
+  if (S.day >= plan().length) S.day = 0;
+  const W = WEEKS[S.week - 1], day = plan()[S.day], since = daysBetween(S.planStart, todayKey());
+  const sugg = Math.min(4, Math.floor(since / 7) + 1), list = dayEx();
+  return `
+  <div class="kicker">${t("rutKicker")}</div><h2>${t("rutTitle")}</h2>
+  <div class="note" id="rutNote"><p>${t("rutNote1")}</p><p>${t("rutNote2")}</p></div>
+  ${seg("mode", [{ v: "gym", l: ICON.gym + t("gym") }, { v: "casa", l: ICON.casa + t("casa") }], S.mode, "")}
+  <div id="freqSeg">${seg("freq", [{ v: "3", l: t("f3") }, { v: "5", l: t("f5") }, { v: "x", l: ICON.bolt + t("fx") }], S.freq)}</div>
+  <p class="choose">${t("choose")}</p>
+  <div class="card weekc" id="weekCard"><div class="kicker">${t("weekKicker")}</div>
+    <div class="pills" id="weekPills">${[1, 2, 3, 4].map(n => `<button type="button" data-act="week" data-v="${n}" class="${n === S.week ? "on" : ""}">${t("weekS", { n })}</button>`).join("")}</div>
+    <h3 id="weekTitle">${t("weekN", { n: S.week })} · ${esc(L(W.t))}</h3><p style="margin:0 0 8px">${esc(L(W.d))}</p>
+    <p class="muted small" style="margin:0">${since >= 28 ? t("weekDone") : t("weekSince", { date: dLong(S.planStart), n: sugg })}
+      ${sugg !== S.week && since < 28 ? `<button class="inl" data-act="week" data-v="${sugg}">${t("weekGo", { n: sugg })}</button> · ` : ""}<button class="inl" data-act="weekRestart">${t("weekRestart")}</button></p>
+    <details class="faq ov"><summary>${t("overloadQ")}</summary><p>${t("overloadA")}</p></details></div>
+  <div class="pills${plan().length > 3 ? " five" : ""}" id="dayPills">${plan().map((_, i) => `<button type="button" data-act="day" data-v="${i}" class="${i === S.day ? "on" : ""}">${t("day", { n: i + 1 })}</button>`).join("")}</div>
+  <p class="sub" id="rutSub" style="margin-top:-2px">${t("sub" + S.freq)}</p>
+  <div class="card" style="padding:14px 16px">
+    <div class="daycap" id="dayCap">${t("dayOf", { n: S.day + 1, t: plan().length })} · ${t(S.mode)} · ${t("weekS", { n: S.week })}</div>
+    <h3 id="dayTitle">${esc(L(day.t))}</h3>
+    <div class="row small" style="margin-bottom:10px"><b id="progText" class="lbl" style="color:var(--text)"></b><button class="linkbtn small" data-act="reset">${t("reset")}</button></div>
+    <div class="bar"><i id="progBar" style="width:0"></i></div></div>
+  <div id="exList">${list.map((x, i) => exCard(x, i)).join("")}</div>
+  <p class="muted small" style="margin:4px 2px 14px">${t("rutTip")}</p>` + progressInit();
+}
+function exCard({ id, sets, reps }, i) {
+  const key = setKey(i), done = S.sets.done[key] || [];
+  const meta = sets === 1 ? esc(reps) : t(S.freq === "x" ? "rounds" : "setsReps", { s: sets, r: esc(reps) });
+  const vurl = EX[id].videoUrl || CONFIG.VIDEOS[id];
+  return `<div class="card ex" data-ex="${id}"><h3>${i + 1}. ${esc(exN(id))}</h3><span class="meta">${meta}</span>
+    ${fig(id)}
+    ${vurl ? `<a class="vid" href="${esc(vurl)}" target="_blank" rel="noopener" data-video="${id}">${ICON.play}${t("video")}</a>` : ""}
+    <ul>${exTips(id).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+    <div class="sets">${Array.from({ length: sets }, (_, s) => `<button type="button" class="set ${done[s] ? "done" : ""}" data-act="set" data-k="${key}" data-s="${s}" aria-label="${t("setAria", { n: s + 1 })}"><span>${s + 1}</span></button>`).join("")}
+    <span class="muted small">${sets === 1 ? t("tapOnce") : t("tapSet")}</span></div></div>`;
+}
+function progressInit() { queueMicrotask(() => updateProgress(false)); return ""; }
 function updateProgress(celebrate) {
+  if (!$("#progText")) return;
   let total = 0, done = 0;
-  plan()[S.day].ex.forEach(([, sets], i) => { total += sets; const arr = S.sets.done[setKey(i)] || []; for (let s = 0; s < sets; s++) if (arr[s]) done++; });
-  $("#progText").textContent = `${done} de ${total} series`;
+  dayEx().forEach(({ sets }, i) => { total += sets; const arr = S.sets.done[setKey(i)] || []; for (let s = 0; s < sets; s++) if (arr[s]) done++; });
+  $("#progText").textContent = t("setsCount", { d: done, t: total });
   $("#progBar").style.width = (100 * done / total) + "%";
   if (celebrate && done === total) {
-    const t = todayKey(); S.checks[t] = S.checks[t] || {}; S.checks[t].entrenar = true; save();
-    toast("¡Entrenamiento completado! 💪 Ya quedó marcado en Hoy.");
+    const k = todayKey(); S.checks[k] = S.checks[k] || {}; S.checks[k].entrenar = true; save(); toast(t("doneToast"));
   }
 }
-$("#modeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; S.mode = b.dataset.mode; save(); renderRutina(); });
-$("#freqSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; S.freq = b.dataset.freq; save(); renderRutina(); });
-$("#resetSets").onclick = () => { plan()[S.day].ex.forEach((_, i) => delete S.sets.done[setKey(i)]); save(); renderRutina(); };
 
-/* ---------- Calculadora ---------- */
-const c = S.calc;
-bindSeg("#sexSeg", () => c.sex, v => c.sex = v);
-bindSeg("#goalSeg", () => c.goal, v => c.goal = v);
-bindSeg("#wUnitSeg", () => c.wUnit, v => {
-  const w = parseFloat($("#weight").value);
-  if (w && v !== c.wUnit) $("#weight").value = (v === "kg" ? w / 2.20462 : w * 2.20462).toFixed(1).replace(/\.0$/, "");
-  c.wUnit = v; c.w = $("#weight").value;
-});
-const paintH = () => { $("#hFt").style.display = c.hUnit === "ft" ? "grid" : "none"; $("#hCm").style.display = c.hUnit === "cm" ? "block" : "none"; };
-bindSeg("#hUnitSeg", () => c.hUnit, v => {
-  if (v !== c.hUnit) {
-    if (v === "cm") { const ft = +$("#hft").value || 0, inch = +$("#hin").value || 0; if (ft || inch) $("#hcm").value = Math.round((ft * 12 + inch) * 2.54); }
-    else { const cm = +$("#hcm").value; if (cm) { const t = Math.round(cm / 2.54); $("#hft").value = Math.floor(t / 12); $("#hin").value = t % 12; } }
-  }
-  c.hUnit = v; paintH(); syncCalcInputs();
-});
-function syncCalcInputs() { c.age = $("#age").value; c.w = $("#weight").value; c.hft = $("#hft").value; c.hin = $("#hin").value; c.hcm = $("#hcm").value; c.act = $("#act").value; save(); }
-["#age", "#weight", "#hft", "#hin", "#hcm", "#act"].forEach(id => $(id).addEventListener("input", syncCalcInputs));
-function renderCalc() {
-  $("#age").value = c.age; $("#weight").value = c.w; $("#hft").value = c.hft; $("#hin").value = c.hin; $("#hcm").value = c.hcm; $("#act").value = c.act; paintH();
-  if (c.result) showResult(c.result);
+/* ---------- COMIDA ---------- */
+function vComida() {
+  const subs = [["calc", "subCalc"], ["por", "subPor"], ["tip", "subTip"], ["sup", "subSup"]];
+  const body = { calc: vCalc, por: vPor, tip: vTip, sup: vSup }[S.comSub] || vCalc;
+  return `<div class="kicker">${t("comKicker")}</div><h2>${t("comTitle")}</h2>
+    <div class="subnav" id="comSub">${subs.map(([v, k]) => `<button type="button" data-act="comSub" data-v="${v}" class="${S.comSub === v ? "on" : ""}">${t(k)}</button>`).join("")}</div>
+    <div id="comBody">${body()}</div>`;
+}
+function vCalc() {
+  const C2 = S.calc;
+  return `<p class="sub">${t("calcIntro")}</p>
+  <div class="card">
+    <div class="field"><label class="f">${t("sex")}</label>${seg("cSex", [{ v: "h", l: t("man") }, { v: "m", l: t("woman") }], C2.sex, "m0")}</div>
+    <div class="field"><label class="f" for="age">${t("age")}</label><input class="inp" id="age" data-calc="age" type="number" inputmode="numeric" min="14" max="90" placeholder="${t("agePh")}" value="${esc(C2.age)}"></div>
+    <div class="field"><label class="f" for="weight">${t("weight")}</label><div class="unitwrap"><input class="inp" id="weight" data-calc="w" type="number" inputmode="decimal" step="0.1" placeholder="180" value="${esc(C2.w)}">
+      <div id="wUnitSeg">${seg("cWU", [{ v: "lb", l: "lb" }, { v: "kg", l: "kg" }], C2.wUnit, "m0")}</div></div></div>
+    <div class="field"><label class="f">${t("height")}</label><div class="unitwrap">
+      ${C2.hUnit === "ft" ? `<div class="two"><input class="inp" id="hft" data-calc="hft" type="number" inputmode="numeric" placeholder="${t("ft")}" value="${esc(C2.hft)}"><input class="inp" id="hin" data-calc="hin" type="number" inputmode="numeric" placeholder="${t("inch")}" value="${esc(C2.hin)}"></div>`
+        : `<div><input class="inp" id="hcm" data-calc="hcm" type="number" inputmode="numeric" placeholder="cm" value="${esc(C2.hcm)}"></div>`}
+      <div id="hUnitSeg">${seg("cHU", [{ v: "ft", l: "ft" }, { v: "cm", l: "cm" }], C2.hUnit, "m0")}</div></div></div>
+    <div class="field"><label class="f" for="act">${t("actQ")}</label><p class="muted small" style="margin:-2px 0 8px">${t("actHint")}</p>
+      <select class="inp" id="act" data-calc="act">${[["1.2", 1], ["1.375", 2], ["1.55", 3], ["1.725", 4], ["1.9", 5]].map(([v, n]) => `<option value="${v}" ${C2.act === v ? "selected" : ""}>${t("act" + n)}</option>`).join("")}</select></div>
+    <div class="field"><label class="f">${t("goal")}</label><div id="goalSeg">${seg("cGoal", [{ v: "bajar", l: t("gBajar") }, { v: "mantener", l: t("gMantener") }, { v: "ganar", l: t("gGanar") }], C2.goal, "m0")}</div></div>
+    <div class="err" id="calcErr" hidden></div>
+    <button class="btn" data-act="calc" id="calcBtn">${t("calc")}</button>
+  </div>
+  ${C2.result ? resultCard(C2.result) : ""}
+  <div class="disc">${t("calcDisc")}</div>`;
+}
+function resultCard(r) {
+  const k = { bajar: "resBajar", mantener: "resMantener", ganar: "resGanar" }[r.goal];
+  return `<div class="card result" id="calcResult"><div class="lbl">${t("resKicker")}</div>
+    <div class="kpis"><div class="kpi"><b id="rKcal">${fmt(r.kcal)}</b><span>${t("kcalDay")}</span></div><div class="kpi"><b id="rProt">${r.prot} g</b><span>${t("protG")}</span></div></div>
+    <p id="rText" style="margin:0 0 10px;font-size:17px">${t(k, { k: fmt(r.kcal), d: fmt(r.diff), t: fmt(r.tdee), p: r.prot })}</p>
+    <p class="muted small" style="margin:0 0 12px">${t("resDetail", { b: fmt(r.bmr), t: fmt(r.tdee), m: Math.round(r.prot / 4) })}</p>
+    <a class="btn ghost" id="ctaCalc" href="${esc(CONFIG.COACHING_URL)}" target="_blank" rel="noopener">${t("resCta")}</a></div>`;
 }
 function calculate({ sex, age, kg, cm, act, goal }) {
   const bmr = 10 * kg + 6.25 * cm - 5 * age + (sex === "h" ? 5 : -161);   // Mifflin-St Jeor
@@ -707,40 +1224,63 @@ function calculate({ sex, age, kg, cm, act, goal }) {
   const r10 = n => Math.round(n / 10) * 10;
   return { bmr: r10(bmr), tdee: r10(tdee), kcal: r10(kcal), diff: r10(Math.abs(diff)), prot: Math.round(prot / 5) * 5, goal };
 }
-function showResult(r) {
-  $("#calcResult").hidden = false;
-  $("#rKcal").textContent = fmt(r.kcal); $("#rProt").textContent = r.prot + " g";
-  const txt = {
-    bajar: `Para bajar grasa, come unas ${fmt(r.kcal)} calorías al día (unas ${fmt(r.diff)} menos de las ~${fmt(r.tdee)} que gastas) y al menos ${r.prot} g de proteína.`,
-    mantener: `Para mantener tu peso, come unas ${fmt(r.kcal)} calorías al día, más o menos lo que gastas, con al menos ${r.prot} g de proteína.`,
-    ganar: `Para ganar músculo, come unas ${fmt(r.kcal)} calorías al día (unas ${fmt(r.diff)} más de lo que gastas) con al menos ${r.prot} g de proteína, y entrena fuerte.`
-  }[r.goal];
-  $("#rText").textContent = txt;
-  $("#rDetail").textContent = `Tu cuerpo gasta ~${fmt(r.bmr)} calorías en reposo y ~${fmt(r.tdee)} con tu actividad. Tip: reparte la proteína en 3–4 comidas (unos ${Math.round(r.prot / 4)} g cada una).`;
+function doCalc() {
+  const C2 = S.calc, err = m => { $("#calcErr").textContent = m; $("#calcErr").hidden = !m; };
+  const age = +C2.age, w = +C2.w, kg = C2.wUnit === "kg" ? w : w / 2.20462;
+  const cm = C2.hUnit === "cm" ? +C2.hcm : ((+C2.hft || 0) * 12 + (+C2.hin || 0)) * 2.54;
+  if (!age || age < 14 || age > 90) return err(t("errAge"));
+  if (!w || kg < 35 || kg > 300) return err(t("errW"));
+  if (!cm || cm < 120 || cm > 230) return err(t("errH"));
+  C2.result = calculate({ sex: C2.sex, age, kg, cm, act: +C2.act, goal: C2.goal }); save(); renderTab();
+  $("#calcResult").scrollIntoView({ block: "start" });
 }
-$("#calcBtn").onclick = () => {
-  syncCalcInputs();
-  const err = m => { $("#calcErr").textContent = m; $("#calcErr").hidden = !m; };
-  const age = +c.age, w = +c.w;
-  const kg = c.wUnit === "kg" ? w : w / 2.20462;
-  const cm = c.hUnit === "cm" ? +c.hcm : ((+c.hft || 0) * 12 + (+c.hin || 0)) * 2.54;
-  if (!age || age < 14 || age > 90) return err("Escribe tu edad (entre 14 y 90 años).");
-  if (!w || kg < 35 || kg > 300) return err("Escribe tu peso correctamente.");
-  if (!cm || cm < 120 || cm > 230) return err("Escribe tu estatura correctamente.");
-  err("");
-  c.result = calculate({ sex: c.sex, age, kg, cm, act: +c.act, goal: c.goal }); save();
-  showResult(c.result);
-  $("#calcResult").scrollIntoView({ behavior: "smooth", block: "start" });
-};
+document.addEventListener("input", e => { const k = e.target.dataset?.calc; if (k) { S.calc[k] = e.target.value; save(); } });
+document.addEventListener("change", e => { const k = e.target.dataset?.calc; if (k) { S.calc[k] = e.target.value; save(); } });
 
-/* ---------- Hoy ---------- */
-const HABITS = [
-  { id: "entrenar", t: "Entrené (o caminé 30 min)", s: "Se marca solo al terminar tu rutina" },
-  { id: "proteina", t: "Comí proteína en cada comida", s: "Huevo, pollo, pescado, frijoles, yogur…" },
-  { id: "agua", t: "Tomé 8 vasos de agua", s: "Unos 2 litros durante el día" },
-  { id: "pasos", t: "Caminé 7,000 pasos", s: "O unos 45 minutos en total" },
-  { id: "dormir", t: "Dormí 7–8 horas", s: "El descanso también cuenta" }
-];
+function vPor() {
+  const P = S.plate, n = PLATE[P.sex][P.goal], M = MEALS[P.meal];
+  const units = { p: "palms", v: "fists", c: "cupped", f: "thumbs" }, cats = { p: "pP", v: "pV", c: "pC", f: "pF" };
+  return `<div class="note"><p>${t("porIntro")}</p></div>
+  <div class="hands">${HANDS.map(h => `<div class="hand"><div class="e">${h.e}</div><b>${esc(L(h.n))}</b><span>${esc(L(h.d))}</span></div>`).join("")}</div>
+  <div class="card plate" id="plateCard" style="margin-top:14px"><h3>${t("plateTitle")}</h3>
+    <label class="f">${t("plateFor")}</label>
+    ${seg("pSex", [{ v: "h", l: t("man") }, { v: "m", l: t("woman") }], P.sex)}
+    ${seg("pGoal", [{ v: "bajar", l: t("gBajar") }, { v: "mantener", l: t("gMantener") }, { v: "ganar", l: t("gGanar") }], P.goal)}
+    ${seg("pMeal", [{ v: "desayuno", l: t("desayuno") }, { v: "almuerzo", l: t("almuerzo") }, { v: "cena", l: t("cena") }], P.meal)}
+    ${plateSvg(n)}
+    ${["p", "v", "c", "f"].map(k => `<div class="prow"><div class="e">${HANDS.find(h => h.id === k).e}</div><div><b>${n[k]} ${t(units[k]).split("|")[n[k] === 1 ? 0 : 1]} · ${t(cats[k])}</b><span class="muted small">${esc(L(M[k]))}</span></div></div>`).join("")}
+    <p class="muted small" style="margin:12px 0 0">${t("plateTip")}</p></div>`;
+}
+function plateSvg(n) {
+  const e = id => HANDS.find(h => h.id === id).e;
+  return `<svg class="platesvg" viewBox="0 0 240 200" role="img" aria-label="${t("plateTitle").replace(/<[^>]+>/g, "")}">
+    <circle cx="105" cy="100" r="92" fill="#0E1A2E" stroke="#62749A" stroke-width="3"/>
+    <path d="M105 100 L105 14 A86 86 0 0 0 105 186 Z" fill="#62749A"/>
+    <path d="M105 100 L105 14 A86 86 0 0 1 191 100 Z" fill="#FF5F1F"/>
+    <path d="M105 100 L191 100 A86 86 0 0 1 105 186 Z" fill="#F6F1E9"/>
+    <circle cx="214" cy="168" r="18" fill="#FFC24B"/>
+    <g font-family="Montserrat,system-ui,sans-serif" font-weight="900" text-anchor="middle">
+      <text x="62" y="108" font-size="22" fill="#F6F1E9">${n.v} ${e("v")}</text>
+      <text x="142" y="72" font-size="20" fill="#160904">${n.p} ${e("p")}</text>
+      <text x="142" y="146" font-size="20" fill="#160904">${n.c} ${e("c")}</text>
+      <text x="214" y="175" font-size="15" fill="#160904">${n.f}${e("f")}</text></g></svg>`;
+}
+function vTip() {
+  return `<div class="note"><p>${t("tipIntro")}</p></div>
+  <div id="foodList">${FOODS.map(f => `<div class="card food"><h3>${esc(L(f.n))}</h3><div class="muted small">${esc(L(f.p))}</div>
+    <div class="chips"><span class="chip k"><b>~${fmt(f.k)}</b> ${t("kcal")}</span><span class="chip p"><b>~${f.g}</b> ${t("protShort")}</span><span class="chip">${t("est")}</span></div>
+    <div class="swap"><span class="lbl2">${t("swap")}</span>${esc(L(f.s))}</div></div>`).join("")}</div>`;
+}
+function vSup() {
+  const total = GROCERY.reduce((a, g) => a + g.p, 0), money = n => "$" + n.toFixed(2);
+  return `<div class="note"><p>${t("supIntro")}</p></div>
+  <div class="card"><ul class="groc" id="grocList">${GROCERY.map(g => `<li><div><b>${esc(L(g.n))}</b><span class="muted small">${esc(L(g.q))}</span></div><div class="price">~${money(g.p)}</div>
+    <div class="tip">💡 <b>${t("saveTip")}:</b> ${esc(L(g.t))}</div></li>`).join("")}</ul>
+    <div class="row total"><b>${t("supTotal")}</b><span class="big2" id="grocTotal">~${money(total)}</span></div><p class="muted small" style="margin:2px 0 0;text-align:right">${t("perWeek")}</p></div>`;
+}
+
+/* ---------- HOY ---------- */
+const HABITS = [["entrenar", "hEntrenar"], ["proteina", "hProteina"], ["agua", "hAgua"], ["pasos", "hPasos"], ["dormir", "hDormir"]];
 const dayOk = k => Object.values(S.checks[k] || {}).filter(Boolean).length >= 3;
 const shift = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
 function streak() {
@@ -748,76 +1288,187 @@ function streak() {
   let n = 0; while (dayOk(todayKey(d)) && n < 3650) { n++; d = shift(d, -1); }
   return n;
 }
-function renderHoy() {
-  const t = todayKey(), today = S.checks[t] || {};
-  const label = new Date().toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long" });
-  $("#todayLabel").textContent = label.charAt(0).toUpperCase() + label.slice(1) + " · marca lo que cumpliste hoy.";
-  $("#checks").innerHTML = HABITS.map(h => `<button class="check ${today[h.id] ? "on" : ""}" data-h="${h.id}"><span class="box"></span><span>${h.t}<small>${h.s}</small></span></button>`).join("");
-  $$("#checks .check").forEach(b => b.onclick = () => {
-    const k = todayKey(); S.checks[k] = S.checks[k] || {}; const was = dayOk(k);
-    S.checks[k][b.dataset.h] = !S.checks[k][b.dataset.h]; save(); renderHoy();
-    if (!was && dayOk(k)) toast("¡Día cumplido! 🔥 Tu racha sigue creciendo.");
-  });
-  const n = streak();
-  $("#streakNum").textContent = n;
-  $("#streakTxt").textContent = n === 1 ? "día seguido" : "días seguidos";
-  const days = ["D", "L", "M", "M", "J", "V", "S"];
-  $("#week").innerHTML = Array.from({ length: 7 }, (_, i) => { const d = shift(new Date(), i - 6), k = todayKey(d);
-    return `<div><i class="${dayOk(k) ? "ok" : ""} ${i === 6 ? "today" : ""}"></i>${days[d.getDay()]}</div>`; }).join("");
+function vHoy() {
+  const k = todayKey(), today = S.checks[k] || {}, n = streak(), wd = t("weekdays").split(",");
+  const label = new Date().toLocaleDateString(loc(), { weekday: "long", day: "numeric", month: "long" });
+  return `<div class="kicker">${t("hoyKicker")}</div><h2>${t("hoyTitle")}</h2>
+  <p class="sub" id="todayLabel">${t("hoySub", { date: label.charAt(0).toUpperCase() + label.slice(1) })}</p>
+  ${mindCard()}
+  <div class="card"><div class="streak"><div class="flame">🔥</div><div><div class="big" id="streakNum">${n}</div><div class="muted small">${n === 1 ? t("streakOne") : t("streakMany")}</div></div></div>
+    <div class="week">${Array.from({ length: 7 }, (_, i) => { const d = shift(new Date(), i - 6); return `<div><i class="${dayOk(todayKey(d)) ? "ok" : ""} ${i === 6 ? "today" : ""}"></i>${wd[d.getDay()]}</div>`; }).join("")}</div></div>
+  <div id="checks">${HABITS.map(([id, key]) => `<button type="button" class="check ${today[id] ? "on" : ""}" data-act="habit" data-h="${id}"><span class="box"></span><span>${t(key)}<small>${t(key + "S")}</small></span></button>`).join("")}</div>
+  <p class="muted small" style="margin:0 2px 14px">${t("streakNote")}</p>
+  ${r30Card()}`;
+}
+const BADGES = [7, 14, 21, 30];
+const r30Count = () => Object.values(S.r30.done).filter(Boolean).length;
+const r30Cur = () => (S.r30.start ? Math.max(1, Math.min(30, daysBetween(S.r30.start, todayKey()) + 1)) : 0);
+let shareURL = "";
+function badgesHtml(cnt) {
+  return `<div class="badges">${BADGES.map(b => `<div class="badge ${cnt >= b ? "on" : ""}" data-badge="${b}"><i>${b}</i>${t("badge", { n: b })}</div>`).join("")}</div>`;
+}
+function r30Card() {
+  if (!S.r30.start) return `<div class="card" id="r30"><div class="kicker">${t("r30Kicker")}</div><h3>${t("r30Title")}</h3>
+    <p class="muted" style="margin:0 0 12px">${t("r30Intro")}</p>${badgesHtml(0)}<div style="height:14px"></div>
+    <button class="btn" data-act="r30start">${t("r30Start")}</button></div>`;
+  const cur = r30Cur(), sel = S.r30.sel && S.r30.sel <= 30 ? S.r30.sel : cur, cnt = r30Count(), isDone = !!S.r30.done[sel];
+  return `<div class="card" id="r30"><div class="kicker">${t("r30Kicker")}</div>
+    <div class="row"><div class="big2" id="r30Day">${t("r30Day", { n: cur })}</div></div>
+    <p class="muted small" style="margin:2px 0 0" id="r30CountTxt">${t("r30Count", { n: cnt })}</p>
+    <div class="grid30" id="grid30">${Array.from({ length: 30 }, (_, i) => { const d = i + 1;
+      return `<button type="button" data-act="r30sel" data-v="${d}" class="${S.r30.done[d] ? "done" : ""} ${d === cur ? "cur" : ""} ${d > cur ? "lock" : ""} ${d === sel ? "sel" : ""}" aria-label="${t("day", { n: d })}">${d}</button>`; }).join("")}</div>
+    <div class="task" id="r30Task"><div class="lbl">${t("r30Task", { n: sel })}</div><p style="margin:6px 0 12px;font-size:17px;font-weight:600">${esc(L(RETO30[sel - 1]))}</p>
+      ${sel <= cur ? `<button class="btn ${isDone ? "ghost" : ""}" data-act="r30mark" data-v="${sel}" id="r30MarkBtn">${isDone ? t("r30Done") : t("r30Mark")}</button>` : `<p class="muted small" style="margin:0">${t("r30Future", { n: sel })}</p>`}</div>
+    <div class="lbl" style="margin:4px 0 10px">${t("r30Badges")}</div>${badgesHtml(cnt)}
+    <div style="height:14px"></div><button class="btn ghost" data-act="r30share" id="r30ShareBtn">${t("r30Share")}</button>
+    ${shareURL ? `<img class="sharePrev" id="sharePrev" src="${shareURL}" alt=""><p class="muted small" style="text-align:center;margin:0 0 8px">${t("r30Saved")}</p><a class="btn ghost" id="shareDl" href="${shareURL}" download="reto-30-dias-balmore.png">${t("r30Download")}</a>` : ""}
+    <p style="text-align:center;margin:10px 0 0"><button class="linkbtn small" data-act="r30restart">${t("r30Restart")}</button></p></div>`;
+}
+async function makeShareCanvas() {
+  try { await Promise.all(["900 190px Montserrat", "800 34px Montserrat", "600 48px Inter"].map(f => document.fonts.load(f))); } catch (e) {}
+  const W = 1080, H = 1920, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const x = cv.getContext("2d"), cur = r30Cur(), cnt = r30Count();
+  x.fillStyle = "#0E1A2E"; x.fillRect(0, 0, W, H);
+  let g = x.createRadialGradient(W, 0, 0, W, 0, 900); g.addColorStop(0, "rgba(64,108,190,.30)"); g.addColorStop(1, "rgba(64,108,190,0)"); x.fillStyle = g; x.fillRect(0, 0, W, H);
+  g = x.createRadialGradient(0, H, 0, 0, H, 800); g.addColorStop(0, "rgba(255,95,31,.07)"); g.addColorStop(1, "rgba(255,95,31,0)"); x.fillStyle = g; x.fillRect(0, 0, W, H);
+  const M = 96, F = (w, s, f = "Montserrat") => `${w} ${s}px ${f}, system-ui, sans-serif`;
+  x.textBaseline = "alphabetic";
+  // marca
+  x.fillStyle = "#FF5F1F"; x.beginPath(); x.arc(M + 48, 196, 48, 0, Math.PI * 2); x.fill();
+  x.fillStyle = "#160904"; x.font = F(900, 36); x.textAlign = "center"; x.fillText(CONFIG.BRAND_NAME.split(/\s+/).map(w => w[0]).slice(0, 2).join(""), M + 48, 209);
+  x.textAlign = "left"; x.fillStyle = "#F6F1E9"; x.font = F(800, 40); x.fillText(CONFIG.BRAND_NAME, M + 120, 190);
+  x.fillStyle = "#A3AEC2"; x.font = F(600, 30, "Inter"); x.fillText(CONFIG.SOCIAL.instagram?.handle || "", M + 120, 232);
+  // kicker + titular
+  x.fillStyle = "#FF5F1F"; x.fillRect(M, 384, 46, 6); x.font = F(800, 34); if ("letterSpacing" in x) x.letterSpacing = "5px"; x.fillText(t("shareKicker"), M + 66, 398); if ("letterSpacing" in x) x.letterSpacing = "0px";
+  const parts = t("shareDay", { n: cur }).split(" "), w0 = parts[0] + " ";
+  x.font = F(900, 190); x.fillStyle = "#F6F1E9"; x.fillText(w0, M - 6, 600); x.fillStyle = "#FF5F1F"; x.fillText(parts.slice(1).join(" "), M - 6 + x.measureText(w0).width, 600);
+  x.fillStyle = "#F6F1E9"; x.font = F(600, 52, "Inter"); x.fillText(t("shareDone", { n: cnt }), M, 690);
+  // cuadrícula de 30 días
+  const cs = 128, gap = 24, gx = (W - (6 * cs + 5 * gap)) / 2, gy = 780;
+  for (let i = 0; i < 30; i++) {
+    const d = i + 1, cx = gx + (i % 6) * (cs + gap), cy = gy + Math.floor(i / 6) * (cs + gap), done = S.r30.done[d];
+    x.beginPath(); x.roundRect ? x.roundRect(cx, cy, cs, cs, 22) : x.rect(cx, cy, cs, cs);
+    x.fillStyle = done ? "#FF5F1F" : "#1A2742"; x.fill();
+    x.lineWidth = 4; x.strokeStyle = d === cur ? "#FF5F1F" : done ? "#FF5F1F" : "#2A3A5A"; x.stroke();
+    x.fillStyle = done ? "#160904" : d > cur ? "#62749A" : "#A3AEC2"; x.font = F(800, 42); x.textAlign = "center"; x.fillText(String(d), cx + cs / 2, cy + cs / 2 + 15); x.textAlign = "left";
+  }
+  // insignias
+  const by = 1620;
+  BADGES.forEach((b, i) => { const bx = M + 70 + i * ((W - 2 * M - 140) / 3), on = cnt >= b;
+    x.beginPath(); x.arc(bx, by, 62, 0, Math.PI * 2); x.fillStyle = on ? "#FFC24B" : "#2A3A5A"; x.fill();
+    x.fillStyle = on ? "#160904" : "#A3AEC2"; x.font = F(900, 46); x.textAlign = "center"; x.fillText(String(b), bx, by + 16); x.textAlign = "left"; });
+  // pie
+  x.fillStyle = "#A3AEC2"; x.font = F(600, 34, "Inter"); x.textAlign = "center";
+  x.fillText(`${t("shareJoin")} ${CONFIG.APP_URL}`, W / 2, 1800);
+  x.fillStyle = "#FF5F1F"; x.font = F(800, 44); x.fillText(CONFIG.SOCIAL.instagram?.handle || CONFIG.BRAND_NAME, W / 2, 1862); x.textAlign = "left";
+  return cv;
+}
+async function shareR30() {
+  const cv = await makeShareCanvas();
+  shareURL = cv.toDataURL("image/png"); renderTab();
+  $("#sharePrev")?.scrollIntoView({ block: "center" });
+  const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+  const file = blob && new File([blob], "reto-30-dias-balmore.png", { type: "image/png" });
+  if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file], title: t("r30Title").replace(/<[^>]+>/g, ""), text: CONFIG.SOCIAL.instagram?.handle || "" }); } catch (e) {}
+  } else { $("#shareDl")?.click(); }
 }
 
-/* ---------- Progreso ---------- */
-const toUnit = kg => S.pUnit === "kg" ? kg : kg * 2.20462;
-const r1 = n => (Math.round(n * 10) / 10).toLocaleString("es-MX");
-bindSeg("#pUnitSeg", () => S.pUnit, v => { S.pUnit = v; renderProgreso(); });
-function renderProgreso() {
-  $("#pUnitLbl").textContent = S.pUnit;
-  if (!$("#pDate").value) $("#pDate").value = todayKey();
-  const W = [...S.weights].sort((a, b) => a.d.localeCompare(b.d));
-  const u = S.pUnit;
-  if (W.length) {
-    const first = toUnit(W[0].kg), last = toUnit(W[W.length - 1].kg), ch = last - first;
-    $("#pStats").innerHTML = `<div><b>${r1(first)}</b><span>Inicio</span></div><div><b>${r1(last)}</b><span>Actual</span></div>
-      <div><b style="color:${ch <= 0 ? "var(--gold)" : "var(--text)"}">${ch > 0 ? "+" : ""}${r1(ch)}</b><span>Cambio (${u})</span></div>`;
-  } else $("#pStats").innerHTML = "";
-  $("#chartWrap").innerHTML = chart(W);
-  $("#pLog").innerHTML = W.length ? [...W].reverse().map(e => `<li><span>${new Date(e.d + "T12:00").toLocaleDateString("es-MX", { day: "numeric", month: "short", year: "numeric" })}</span>
-    <span><b>${r1(toUnit(e.kg))} ${u}</b><button class="del" data-d="${e.d}" aria-label="Borrar">×</button></span></li>`).join("")
-    : `<li class="muted">Todavía no hay registros. ¡Anota tu primer peso!</li>`;
-  $$("#pLog .del").forEach(b => b.onclick = () => { if (confirm("¿Borrar este registro?")) { S.weights = S.weights.filter(e => e.d !== b.dataset.d); save(); renderProgreso(); } });
+/* ---------- PROGRESO ---------- */
+const toUnit = kg => (S.pUnit === "kg" ? kg : kg * 2.20462);
+function vProgreso() {
+  return `<div class="kicker">${t("proKicker")}</div><h2>${t("proTitle")}</h2>
+  <div id="proSub">${seg("proSub", [{ v: "mio", l: t("proMine") }, { v: "balmore", l: t("proBalmore") }], S.proSub)}</div>
+  ${S.proSub === "balmore" ? vBalmore() : vMio()}`;
 }
-function chart(W) {
+function vMio() {
+  const W = [...S.weights].sort((a, b) => a.d.localeCompare(b.d)), u = S.pUnit;
+  let stats = "";
+  if (W.length) { const f = toUnit(W[0].kg), l = toUnit(W[W.length - 1].kg), ch = l - f;
+    stats = `<div><b>${r1(f)}</b><span>${t("first")}</span></div><div><b>${r1(l)}</b><span>${t("current")}</span></div><div><b style="color:${ch <= 0 ? "var(--gold)" : "var(--text)"}">${ch > 0 ? "+" : ""}${r1(ch)}</b><span>${t("change")} (${u})</span></div>`; }
+  return `<p class="sub">${t("proSub")}</p>
+  <div class="card"><div class="two">
+      <div class="field" style="margin-bottom:10px"><label class="f" for="pDate">${t("date")}</label><input class="inp" id="pDate" type="date" style="font-size:16px"></div>
+      <div class="field" style="margin-bottom:10px"><label class="f" for="pW">${t("weight")} (<span id="pUnitLbl">${u}</span>)</label><input class="inp" id="pW" type="number" inputmode="decimal" step="0.1" placeholder="180"></div></div>
+    <div class="err" id="pErr" hidden></div><button class="btn" data-act="pSave" id="pSave">${t("saveW")}</button></div>
+  <div class="card"><div class="row" style="margin-bottom:8px"><h3 style="margin:0">${t("yourW")}</h3><div id="pUnitSeg" style="width:116px">${seg("pUnit", [{ v: "lb", l: "lb" }, { v: "kg", l: "kg" }], u, "m0 sm")}</div></div>
+    <div class="stats" id="pStats">${stats}</div><div id="chartWrap">${chart(W.map(e => ({ d: e.d, v: toUnit(e.kg) })))}</div></div>
+  <div class="card"><h3>${t("history")}</h3><ul class="log" id="pLog">${W.length ? [...W].reverse().map(e => `<li><span>${dFull(e.d)}</span>
+    <span><b>${r1(toUnit(e.kg))} ${u}</b><button class="del" data-act="pDel" data-d="${e.d}" aria-label="${t("delAria")}">×</button></span></li>`).join("") : `<li class="muted">${t("noLog")}</li>`}</ul></div>`;
+}
+function vBalmore() {
+  const rb = CONFIG.RETO_BALMORE, E = [...rb.ENTRIES].sort((a, b) => a.date.localeCompare(b.date)), s0 = E[0]?.weight, last = E[E.length - 1]?.weight, u = rb.UNIT;
+  return `<div class="card story" id="bStory"><div class="logo" style="width:52px;height:52px;font-size:18px">${esc(CONFIG.BRAND_NAME.split(/\s+/).map(w => w[0]).slice(0, 2).join(""))}</div><p style="margin:0">${t("bStory")}</p></div>
+  <div class="stats four" id="bStats"><div><b>${s0} ${u}</b><span>${t("bStart")}</span></div><div><b>${last} ${u}</b><span>${t("bNow")}</span></div>
+    <div><b style="color:var(--gold)">${r1(Math.max(0, s0 - last))}</b><span>${t("bLost")} (${u})</span></div><div><b>${r1(Math.max(0, last - rb.GOAL_MAX))}</b><span>${t("bLeft")} (${u})</span></div></div>
+  <div class="card"><div class="row" style="margin-bottom:8px"><h3 style="margin:0">${t("bGoal")}: <span class="hl">${rb.GOAL_MIN}–${rb.GOAL_MAX} ${u}</span></h3></div>
+    <div id="bChart">${chart(E.map(e => ({ d: e.date, v: e.weight })), { band: [rb.GOAL_MIN, rb.GOAL_MAX] })}</div></div>
+  <div class="card"><h3>${t("bLog")}</h3><ul class="log" id="bLog">${[...E].reverse().map(e => `<li style="display:block"><div class="row"><span>${dFull(e.date)}</span><b>${r1(e.weight)} ${u}</b></div>${e.note ? `<div class="muted small">${esc(L(e.note))}</div>` : ""}</li>`).join("")}</ul>
+    ${E.length === 1 ? `<p class="muted small" style="margin:8px 0 0">${t("bOnlyStart")}</p>` : ""}</div>
+  <button class="btn" data-act="go" data-tab="hoy">${t("bJoin")}</button><div style="height:14px"></div>`;
+}
+function chart(P, opt = {}) {
   const w = 340, h = 190, pl = 40, pr = 14, pt = 14, pb = 28;
-  if (!W.length) return `<svg class="chart" viewBox="0 0 ${w} ${h}"><rect x="0" y="0" width="${w}" height="${h}" rx="12" fill="#0E1A2E"/><text x="${w / 2}" y="${h / 2}" text-anchor="middle" font-size="13" fill="#A3AEC2" font-family="Inter,system-ui">Aquí verás tu gráfica 📉</text></svg>`;
-  const ts = W.map(e => new Date(e.d + "T12:00").getTime()), vs = W.map(e => toUnit(e.kg));
+  if (!P.length) return `<svg class="chart" viewBox="0 0 ${w} ${h}"><rect x="0" y="0" width="${w}" height="${h}" rx="12" fill="#0E1A2E"/><text x="${w / 2}" y="${h / 2}" text-anchor="middle" font-size="13" fill="#A3AEC2" font-family="Inter,system-ui">${t("chartEmpty")}</text></svg>`;
+  const ts = P.map(e => new Date(e.d + "T12:00").getTime()), vs = P.map(e => e.v);
   let t0 = Math.min(...ts), t1 = Math.max(...ts); if (t0 === t1) { t0 -= 864e5 * 3; t1 += 864e5 * 3; }
-  let v0 = Math.min(...vs), v1 = Math.max(...vs); const padv = Math.max(1, (v1 - v0) * 0.15); v0 -= padv; v1 += padv;
-  const X = t => pl + (t - t0) / (t1 - t0) * (w - pl - pr), Y = v => pt + (1 - (v - v0) / (v1 - v0)) * (h - pt - pb);
+  let v0 = Math.min(...vs, ...(opt.band || [])), v1 = Math.max(...vs, ...(opt.band || [])); const padv = Math.max(1, (v1 - v0) * 0.12); v0 -= padv; v1 += padv;
+  const X = tt => pl + (tt - t0) / (t1 - t0) * (w - pl - pr), Y = v => pt + (1 - (v - v0) / (v1 - v0)) * (h - pt - pb);
   let g = `<svg class="chart" viewBox="0 0 ${w} ${h}" font-family="Inter,system-ui,sans-serif">`;
-  for (let i = 0; i <= 3; i++) { const v = v0 + (v1 - v0) * i / 3, y = Y(v);
-    g += `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}" stroke="#2A3A5A"/><text x="${pl - 6}" y="${y + 4}" text-anchor="end" font-size="10" fill="#A3AEC2">${Math.round(v)}</text>`; }
-  const pts = W.map((e, i) => [X(ts[i]), Y(vs[i])]);
-  if (pts.length > 1) g += `<path d="M${pts[0][0]},${h - pb} L${pts.map(p => p.join(",")).join(" L")} L${pts[pts.length - 1][0]},${h - pb} Z" fill="rgba(64,108,190,.22)"/>` +
-    `<polyline points="${pts.map(p => p.join(",")).join(" ")}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
+  if (opt.band) g += `<rect x="${pl}" y="${Y(opt.band[1])}" width="${w - pl - pr}" height="${Y(opt.band[0]) - Y(opt.band[1])}" fill="rgba(255,194,75,.14)"/><text x="${w - pr - 4}" y="${Y(opt.band[1]) + 13}" text-anchor="end" font-size="10" font-weight="700" fill="#FFC24B">${t("bGoal")} ${opt.band[0]}–${opt.band[1]}</text>`;
+  for (let i = 0; i <= 3; i++) { const v = v0 + (v1 - v0) * i / 3, y = Y(v); g += `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}" stroke="#2A3A5A"/><text x="${pl - 6}" y="${y + 4}" text-anchor="end" font-size="10" fill="#A3AEC2">${Math.round(v)}</text>`; }
+  const pts = P.map((e, i) => [X(ts[i]), Y(vs[i])]);
+  if (pts.length > 1) g += `<path d="M${pts[0][0]},${h - pb} L${pts.map(p => p.join(",")).join(" L")} L${pts[pts.length - 1][0]},${h - pb} Z" fill="rgba(64,108,190,.22)"/><polyline points="${pts.map(p => p.join(",")).join(" ")}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
   pts.forEach(p => g += `<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="#0E1A2E" stroke="var(--accent)" stroke-width="2.5"/>`);
-  const dl = t => new Date(t).toLocaleDateString("es-MX", { day: "numeric", month: "short" });
-  g += `<text x="${pl}" y="${h - 8}" font-size="10" fill="#A3AEC2">${dl(ts[0])}</text>`;
-  if (W.length > 1) g += `<text x="${w - pr}" y="${h - 8}" font-size="10" fill="#A3AEC2" text-anchor="end">${dl(ts[ts.length - 1])}</text>`;
+  g += `<text x="${pl}" y="${h - 8}" font-size="10" fill="#A3AEC2">${dShort(P[0].d)}</text>`;
+  if (P.length > 1) g += `<text x="${w - pr}" y="${h - 8}" font-size="10" fill="#A3AEC2" text-anchor="end">${dShort(P[P.length - 1].d)}</text>`;
   return g + `</svg>`;
 }
-$("#pSave").onclick = () => {
-  const d = $("#pDate").value, v = parseFloat($("#pW").value), err = m => { $("#pErr").textContent = m; $("#pErr").hidden = !m; };
-  if (!d) return err("Elige una fecha.");
-  const kg = S.pUnit === "kg" ? v : v / 2.20462;
-  if (!v || kg < 30 || kg > 320) return err("Escribe un peso válido.");
-  err(""); S.weights = S.weights.filter(e => e.d !== d); S.weights.push({ d, kg: Math.round(kg * 100) / 100 }); save();
-  $("#pW").value = ""; renderProgreso(); toast("Peso guardado ✅");
-};
 
-/* ---------- Inicio ---------- */
-applyBrand();
-go(S.tab || "inicio");
+/* ---------- Acciones ---------- */
+const ACT = {
+  lang: () => { S.lang = S.lang === "es" ? "en" : "es"; save(); render(); },
+  tab: el => go(el.dataset.tab),
+  go: el => go(el.dataset.tab, el.dataset.sub),
+  mode: el => { S.mode = el.dataset.v; save(); renderTab(); },
+  freq: el => { S.freq = el.dataset.v; save(); renderTab(); },
+  day: el => { S.day = +el.dataset.v; save(); renderTab(); },
+  week: el => { S.week = +el.dataset.v; save(); renderTab(); },
+  weekRestart: () => { S.planStart = todayKey(); S.week = 1; save(); renderTab(); },
+  set: el => { const k = el.dataset.k, s = +el.dataset.s; ensureSetsDate(); const arr = S.sets.done[k] || []; arr[s] = !arr[s]; S.sets.done[k] = arr; el.classList.toggle("done", !!arr[s]); save(); updateProgress(true); },
+  reset: () => { dayEx().forEach((_, i) => delete S.sets.done[setKey(i)]); save(); renderTab(); },
+  comSub: el => { S.comSub = el.dataset.v; save(); renderTab(); },
+  cSex: el => { S.calc.sex = el.dataset.v; save(); renderTab(); },
+  cGoal: el => { S.calc.goal = el.dataset.v; save(); renderTab(); },
+  cWU: el => { const v = el.dataset.v, C2 = S.calc, w = parseFloat(C2.w); if (w && v !== C2.wUnit) C2.w = (v === "kg" ? w / 2.20462 : w * 2.20462).toFixed(1).replace(/\.0$/, ""); C2.wUnit = v; save(); renderTab(); },
+  cHU: el => { const v = el.dataset.v, C2 = S.calc;
+    if (v !== C2.hUnit) { if (v === "cm") { const ft = +C2.hft || 0, inch = +C2.hin || 0; if (ft || inch) C2.hcm = String(Math.round((ft * 12 + inch) * 2.54)); }
+      else { const cm = +C2.hcm; if (cm) { const tt = Math.round(cm / 2.54); C2.hft = String(Math.floor(tt / 12)); C2.hin = String(tt % 12); } } }
+    C2.hUnit = v; save(); renderTab(); },
+  calc: () => doCalc(),
+  pSex: el => { S.plate.sex = el.dataset.v; save(); renderTab(); },
+  pGoal: el => { S.plate.goal = el.dataset.v; save(); renderTab(); },
+  pMeal: el => { S.plate.meal = el.dataset.v; save(); renderTab(); },
+  habit: el => { const k = todayKey(); S.checks[k] = S.checks[k] || {}; const was = dayOk(k); S.checks[k][el.dataset.h] = !S.checks[k][el.dataset.h]; save(); const y = scrollY; renderTab(); scrollTo(0, y); if (!was && dayOk(k)) toast(t("dayToast")); },
+  r30start: () => { S.r30 = { start: todayKey(), done: {}, sel: 0 }; save(); renderTab(); },
+  r30sel: el => { S.r30.sel = +el.dataset.v; save(); const y = scrollY; renderTab(); scrollTo(0, y); },
+  r30mark: el => { const d = +el.dataset.v; if (d > r30Cur()) return; const before = r30Count(); S.r30.done[d] = !S.r30.done[d]; save(); const y = scrollY; renderTab(); scrollTo(0, y);
+    const after = r30Count(); const b = BADGES.find(b => before < b && after >= b); if (b) toast(t("r30BadgeToast", { n: b })); },
+  r30share: () => shareR30(),
+  r30restart: () => { if (confirm(t("r30Confirm"))) { S.r30 = { start: todayKey(), done: {}, sel: 0 }; shareURL = ""; save(); renderTab(); } },
+  proSub: el => { S.proSub = el.dataset.v; save(); renderTab(); },
+  pUnit: el => { S.pUnit = el.dataset.v; save(); renderTab(); },
+  pSave: () => { const d = $("#pDate").value, v = parseFloat($("#pW").value), err = m => { $("#pErr").textContent = m; $("#pErr").hidden = !m; };
+    if (!d) return err(t("errDate")); const kg = S.pUnit === "kg" ? v : v / 2.20462; if (!v || kg < 30 || kg > 320) return err(t("errWeight"));
+    S.weights = S.weights.filter(e => e.d !== d); S.weights.push({ d, kg: Math.round(kg * 100) / 100 }); save(); renderTab(); toast(t("savedW")); },
+  pDel: el => { if (confirm(t("delConfirm"))) { S.weights = S.weights.filter(e => e.d !== el.dataset.d); save(); renderTab(); } },
+  leadAgain: () => { S.lead = { sent: false, name: "" }; save(); renderTab(); }
+};
+document.addEventListener("click", e => { const el = e.target.closest("[data-act]"); if (el && ACT[el.dataset.act]) { if (el.tagName === "BUTTON" && el.type !== "submit") e.preventDefault(); ACT[el.dataset.act](el, e); } });
+
+render();
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
+
 </script>
 </body>
 </html>
