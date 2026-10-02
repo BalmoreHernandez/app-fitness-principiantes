@@ -1,5 +1,7 @@
 # App Fitness para Principiantes
 
+**Master your body, mind and money.** (eslogan de Balmore; se muestra en inglés en ambos idiomas).
+
 App de Balmore Hernandez (@BalmoreHernandez.sv) para principiantes, en español con versión en inglés (botón ES/EN). Pestañas: Inicio, Rutina, Comida, Hoy y Progreso.
 
 - **Rutina:** planes de 3 o 5 días y Exprés de 20–30 min, en gimnasio o en casa, con progresión de 4 semanas.
