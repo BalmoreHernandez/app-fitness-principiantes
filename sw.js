@@ -1,5 +1,5 @@
 // Opcional: permite abrir la app sin internet cuando está publicada en https.
-const CACHE = "fitness-principiantes-v6";
+const CACHE = "fitness-principiantes-v7";
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "./index.html"]))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener("fetch", e => {
