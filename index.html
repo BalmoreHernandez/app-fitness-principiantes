@@ -144,6 +144,18 @@ select.inp option{background:var(--card);color:var(--text)}
 .stats div{background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:10px;text-align:center}
 .stats b{display:block;font-family:var(--fh);font-weight:900;font-size:20px}
 .stats span{font-size:12px;color:var(--muted);font-weight:600}
+.rphotos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rphoto{margin:0;min-width:0}
+.rphoto img,.rphoto .ph{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:2px solid var(--line);background:var(--bg)}
+.rphoto .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:2px dashed var(--edge);color:var(--muted);text-align:center;padding:12px;font-family:var(--fh);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;line-height:1.4}
+.rphoto .ph .ico{width:28px;height:28px}
+.rphoto figcaption{margin-top:6px;font-size:12.5px;font-weight:700;line-height:1.35;color:var(--text)}
+.rphoto figcaption b{color:var(--accent)}
+.rstrip{display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px}
+.rstrip .rphoto{flex:0 0 30%}
+.rstrip figcaption{font-size:11.5px}
+.rphoto .nw{white-space:nowrap}
+.rthumb{display:block;width:56px;height:70px;object-fit:cover;border-radius:12px;border:2px solid var(--line);flex:none}
 .socials{display:grid;gap:10px}
 .socials a{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;border-radius:14px;background:var(--bg);border:2px solid var(--line);color:var(--text);text-decoration:none}
 .socials a svg{width:26px;height:26px;flex:none}
@@ -311,11 +323,12 @@ const CONFIG = {
   // Videos por ejercicio (opcional). El botón "Ver video" solo aparece si hay link. Ej.: goblet: "https://youtu.be/xxxx"
   // (También puedes poner videoUrl directamente en un ejercicio de EX.)
   VIDEOS: {},
-  // RETO CON BALMORE: agrega una entrada por semana { date: "AAAA-MM-DD", weight: libras, note: "texto" o { es, en } }
+  // RETO CON BALMORE: agrega una entrada por semana { date: "AAAA-MM-DD", weight: libras, note: "texto" o { es, en }, photo: "assets/reto/AAAA-MM-DD.webp" (opcional) }
+  // Foto semanal: sube AAAA-MM-DD.webp (≈800×1000, 4:5) y AAAA-MM-DD.jpg (respaldo) a assets/reto/ y pon photo en la entrada de ese día.
   RETO_BALMORE: {
     GOAL_MIN: 200, GOAL_MAX: 210, UNIT: "lb",
     ENTRIES: [
-      { date: "2026-10-02", weight: 250, note: { es: "Día 1. Aquí empieza todo.", en: "Day 1. This is where it all starts." } }
+      { date: "2026-10-02", weight: 250, photo: "assets/reto/2026-10-02.webp", note: { es: "Día 1. Aquí empieza todo.", en: "Day 1. This is where it all starts." } }
     ]
   }
 };
@@ -395,7 +408,7 @@ const I18N = {
     langAria: "Cambiar idioma a inglés",
     tabInicio: "Inicio", tabRutina: "Rutina", tabComida: "Comida", tabHoy: "Hoy", tabProgreso: "Progreso",
     cta: "¿Quieres un plan personalizado?", ctaGo: "Trabaja conmigo →",
-    heroKicker: "App gratis · Principiantes", hello: "¡Hola! Soy", heroP: "Si estás empezando desde cero y no sabes por dónde arrancar, esta app es para ti. Sin complicaciones: entrena de 3 a 5 días a la semana dependiendo de tu disponibilidad, come mejor y mira tu progreso.",
+    heroKicker: "App gratis · Principiantes", hello: "¡Hola! Soy", heroP: "Si estás empezando a entrenar o eres nuevo en el mundo del fitness y no sabes por dónde arrancar, esta app es para ti. Sin complicaciones: entrena de 3 a 5 días a la semana dependiendo de tu disponibilidad, come mejor y mira tu progreso.",
     mindKicker: "Mentalidad del día", mindBy: "— Balmore",
     retoBKicker: "Reto con Balmore", retoBTeaser: "Mi meta: perder grasa corporal, ganar más músculo y bajar de 250 a 200–210 lb (40 a 50 libras), entrenando de lunes a viernes y comiendo 2,400 calorías al día. Mira mi peso real, semana a semana.", retoBGo: "Ver mi reto →",
     rulesTitle: "3 reglas para <span class=\"hl\">empezar</span>",
@@ -474,13 +487,14 @@ const I18N = {
     delAria: "Borrar", delConfirm: "¿Borrar este registro?", errDate: "Elige una fecha.", errWeight: "Escribe un peso válido.", savedW: "Peso guardado ✅",
     bStory: "Soy Balmore: papá, emprendedor y coach. Entre la familia, el negocio y el entrenamiento, sé lo que es sentir que no te alcanza el día. El 2 de octubre de 2026 me subí a la báscula y marcó 250 libras. Mi meta: perder grasa corporal, ganar más músculo y bajar de 250 a 200–210 lb (40 a 50 libras), entrenando de lunes a viernes y comiendo 2,400 calorías al día. No te voy a vender perfección: voy a entrenar con esta misma app, comer mejor y compartir aquí mi peso real cada semana, con lo bueno y lo difícil. Si yo puedo balancear familia, negocio y entrenamiento, tú también puedes. Hagámoslo juntos.",
     bStart: "Inicio", bNow: "Ahora", bLost: "Bajado", bLeft: "Falta", bGoal: "Meta", bLog: "Mis registros semanales", bJoin: "Únete al reto de 30 días",
-    bOnlyStart: "Semana 1. Los próximos registros aparecerán aquí cada semana."
+    bOnlyStart: "Semana 1. Los próximos registros aparecerán aquí cada semana.",
+    bPhotos: "Fotos de progreso", bDay: "Día", bNextPhoto: "Próxima foto: lunes", bPhotoAlt: "Foto de progreso de Balmore, cuerpo completo: {lbl}"
   },
   en: {
     tagline: "Master your body, mind and money.", langBtn: "ES", langAria: "Switch language to Spanish",
     tabInicio: "Home", tabRutina: "Workout", tabComida: "Food", tabHoy: "Today", tabProgreso: "Progress",
     cta: "Want a personalized plan?", ctaGo: "Work with me →",
-    heroKicker: "Free app · Beginners", hello: "Hi! I'm", heroP: "If you're starting from zero and don't know where to begin, this app is for you. No complications: train 3 to 5 days a week depending on your schedule, eat better, and watch your progress.",
+    heroKicker: "Free app · Beginners", hello: "Hi! I'm", heroP: "If you're new to training or fitness and don't know where to start, this app is for you. No complications: train 3 to 5 days a week depending on your schedule, eat better, and watch your progress.",
     mindKicker: "Today's mindset", mindBy: "— Balmore",
     retoBKicker: "Challenge with Balmore", retoBTeaser: "My goal: lose body fat, build more muscle, and go from 250 to 200–210 lb (40 to 50 pounds), training Monday to Friday and eating 2,400 calories a day. Follow my real weight, week by week.", retoBGo: "See my challenge →",
     rulesTitle: "3 rules to <span class=\"hl\">get started</span>",
@@ -555,7 +569,8 @@ const I18N = {
     delAria: "Delete", delConfirm: "Delete this entry?", errDate: "Pick a date.", errWeight: "Enter a valid weight.", savedW: "Weight saved ✅",
     bStory: "I'm Balmore: a dad, an entrepreneur, and a coach. Between family, business, and training, I know what it feels like when there aren't enough hours in the day. On October 2, 2026, I stepped on the scale and it read 250 pounds. My goal: lose body fat, build more muscle, and go from 250 to 200–210 lb (40 to 50 pounds), training Monday to Friday and eating 2,400 calories a day. I'm not going to sell you perfection: I'll train with this same app, eat better, and share my real weight here every week, the good and the hard. If I can balance family, business, and training, so can you. Let's do this together.",
     bStart: "Start", bNow: "Now", bLost: "Lost", bLeft: "To go", bGoal: "Goal", bLog: "My weekly check-ins", bJoin: "Join the 30-day challenge",
-    bOnlyStart: "Week 1. New check-ins will show up here every week."
+    bOnlyStart: "Week 1. New check-ins will show up here every week.",
+    bPhotos: "Progress photos", bDay: "Day", bNextPhoto: "Next photo: Monday", bPhotoAlt: "Balmore's full-body progress photo: {lbl}"
   }
 };
 
@@ -1083,6 +1098,7 @@ const mindCard = () => `<div class="mind"><div class="kicker">${t("mindKicker")}
 /* ---------- INICIO ---------- */
 function vInicio() {
   const rb = CONFIG.RETO_BALMORE, E = rb.ENTRIES, startW = E[0]?.weight, last = E[E.length - 1]?.weight;
+  const lastPhoto = [...E].sort((a, b) => a.date.localeCompare(b.date)).filter(e => e.photo).pop();
   const pct = startW && last != null ? Math.max(0, Math.min(100, (startW - last) / (startW - rb.GOAL_MAX) * 100)) : 0;
   const names = { instagram: "Instagram", tiktok: "TikTok", facebook: "Facebook", youtube: "YouTube" };
   const sicons = {
@@ -1095,8 +1111,8 @@ function vInicio() {
   <div class="card hero"><div class="kicker">${t("heroKicker")}</div>
     <h2 id="heroTitle">${t("hello")} <span class="hl">${esc(CONFIG.BRAND_NAME.split(" ")[0])}</span></h2><p>${t("heroP")}</p></div>
   ${mindCard()}
-  <div class="card" id="retoTeaser"><div class="kicker">${t("retoBKicker")}</div>
-    <h3>${startW} → ${rb.GOAL_MIN}–${rb.GOAL_MAX} ${rb.UNIT}</h3>
+  <div class="card" id="retoTeaser"><div class="row" style="align-items:center;margin-bottom:8px"><div style="min-width:0"><div class="kicker">${t("retoBKicker")}</div>
+    <h3 style="margin:0">${startW} → ${rb.GOAL_MIN}–${rb.GOAL_MAX} ${rb.UNIT}</h3></div>${lastPhoto ? retoImg(lastPhoto, "rthumb", t("bDay") + " " + retoDay(lastPhoto.date) + " · " + dFull(lastPhoto.date) + " · " + r1(lastPhoto.weight) + " " + rb.UNIT) : ""}</div>
     <p class="muted" style="margin:0 0 10px">${t("retoBTeaser")}</p>
     <div class="bar" style="margin-bottom:12px"><i style="width:${Math.max(2, pct)}%"></i></div>
     <button class="btn ghost" data-act="go" data-tab="progreso" data-sub="balmore">${t("retoBGo")}</button></div>
@@ -1440,11 +1456,29 @@ function vMio() {
   <div class="card"><h3>${t("history")}</h3><ul class="log" id="pLog">${W.length ? [...W].reverse().map(e => `<li><span>${dFull(e.d)}</span>
     <span><b>${r1(toUnit(e.kg))} ${u}</b><button class="del" data-act="pDel" data-d="${e.d}" aria-label="${t("delAria")}">×</button></span></li>`).join("") : `<li class="muted">${t("noLog")}</li>`}</ul></div>`;
 }
+/* Fotos de progreso: entradas de RETO_BALMORE.ENTRIES con photo (webp + jpg de respaldo con el mismo nombre) */
+function retoDay(d) { const s0 = CONFIG.RETO_BALMORE.ENTRIES.map(e => e.date).sort()[0]; return Math.round((new Date(d + "T12:00") - new Date(s0 + "T12:00")) / 864e5) + 1; }
+function retoImg(e, cls, lbl) {
+  const src = esc(e.photo), jpg = /\.webp$/i.test(e.photo) ? esc(e.photo.replace(/\.webp$/i, ".jpg")) : "";
+  const img = `<img class="${cls}" src="${jpg || src}" alt="${esc(t("bPhotoAlt", { lbl }))}" loading="lazy" decoding="async" width="800" height="1000">`;
+  return jpg ? `<picture><source srcset="${src}" type="image/webp">${img}</picture>` : img;
+}
+function retoPic(e) {
+  const day = t("bDay") + " " + retoDay(e.date), rest = dFull(e.date) + " · " + r1(e.weight) + " " + CONFIG.RETO_BALMORE.UNIT;
+  return `<figure class="rphoto">${retoImg(e, "", day + " · " + rest)}<figcaption><b class="nw">${day}</b>&nbsp;· <span class="nw">${dFull(e.date)}</span>&nbsp;· <span class="nw">${r1(e.weight)} ${CONFIG.RETO_BALMORE.UNIT}</span></figcaption></figure>`;
+}
+function retoPhotos(E) {
+  const P = E.filter(e => e.photo); if (!P.length) return "";
+  const next = `<div class="rphoto"><div class="ph"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${t("bNextPhoto")}</div></div>`;
+  return `<div class="card" id="bPhotos"><h3>${t("bPhotos")}</h3><div class="rphotos">${retoPic(P[0])}${P.length > 1 ? retoPic(P[P.length - 1]) : next}</div>
+    ${P.length > 2 ? `<div class="rstrip">${P.slice(1, -1).reverse().map(retoPic).join("")}</div>` : ""}</div>`;
+}
 function vBalmore() {
   const rb = CONFIG.RETO_BALMORE, E = [...rb.ENTRIES].sort((a, b) => a.date.localeCompare(b.date)), s0 = E[0]?.weight, last = E[E.length - 1]?.weight, u = rb.UNIT;
   return `<div class="card story" id="bStory"><div class="logo" style="width:52px;height:52px">${logoSvg()}</div><div><p style="margin:0">${t("bStory")}</p><p class="lbl slogan">${esc(slogan())}</p></div></div>
   <div class="stats four" id="bStats"><div><b>${s0} ${u}</b><span>${t("bStart")}</span></div><div><b>${last} ${u}</b><span>${t("bNow")}</span></div>
     <div><b style="color:var(--gold)">${r1(Math.max(0, s0 - last))}</b><span>${t("bLost")} (${u})</span></div><div><b>${r1(Math.max(0, last - rb.GOAL_MAX))}</b><span>${t("bLeft")} (${u})</span></div></div>
+  ${retoPhotos(E)}
   <div class="card"><div class="row" style="margin-bottom:8px"><h3 style="margin:0">${t("bGoal")}: <span class="hl">${rb.GOAL_MIN}–${rb.GOAL_MAX} ${u}</span></h3></div>
     <div id="bChart">${chart(E.map(e => ({ d: e.date, v: e.weight })), { band: [rb.GOAL_MIN, rb.GOAL_MAX] })}</div></div>
   <div class="card"><h3>${t("bLog")}</h3><ul class="log" id="bLog">${[...E].reverse().map(e => `<li style="display:block"><div class="row"><span>${dFull(e.date)}</span><b>${r1(e.weight)} ${u}</b></div>${e.note ? `<div class="muted small">${esc(L(e.note))}</div>` : ""}</li>`).join("")}</ul>
