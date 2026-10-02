@@ -226,6 +226,21 @@ nav button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;heig
 .chip.k{color:var(--text)} .chip.k b{color:var(--accent)}
 .chip.p{color:var(--text)} .chip.p b{color:var(--gold)}
 .swap{font-size:14.5px}
+.fcat+.fcat{margin-top:22px}
+.ftag{display:inline-block;margin:0 0 6px;padding:2px 9px;border-radius:99px;background:var(--bg);border:2px solid var(--line);font-size:12px;font-weight:700;color:var(--muted)}
+.ing{margin-top:10px;border-top:2px solid var(--line);padding-top:8px}
+.ing summary{cursor:pointer;font-family:var(--fh);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);list-style:none}
+.ing summary::-webkit-details-marker{display:none}
+.ing summary::after{content:" +"}
+.ing[open] summary::after{content:" –"}
+.ing ul{margin:8px 0 6px;padding-left:20px;font-size:14px}
+.ing li{margin:3px 0}
+.ing li::marker{color:var(--accent)}
+.src{margin:6px 0 0;font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
+.src a,.srcnote a{color:inherit}
+.srcnote{margin-top:16px}
+.srcnote p{font-size:13px;color:var(--muted)}
+.groc.extras .price{font-size:16px;color:var(--muted)}
 .lbl2{display:block;font-family:var(--fh);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
 .groc{list-style:none;margin:0;padding:0}
 .groc li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 0;border-top:2px solid var(--line)}
@@ -460,7 +475,7 @@ const I18N = {
     doneToast: "¡Entrenamiento completado! 💪 Ya quedó marcado en Hoy.",
     // Comida
     comKicker: "Paso 1 · Come bien", comTitle: "Tu <span class=\"hl\">comida</span>",
-    subCalc: "Calculadora", subPor: "Porciones", subTip: "Comida típica", subSup: "Súper barato",
+    subCalc: "Calculadora", subPor: "Porciones", subTip: "Comida latina", subSup: "Súper barato",
     calcIntro: "Descubre cuántas calorías y cuánta proteína necesitas al día.",
     sex: "Sexo", man: "Hombre", woman: "Mujer", age: "Edad", agePh: "Ej. 30", weight: "Peso", height: "Estatura", ft: "pies", inch: "pulg.",
     actQ: "¿Qué tan activo eres?", actHint: "Si trabajas de pie o caminas mucho, sube un nivel.",
@@ -477,9 +492,12 @@ const I18N = {
     plateTitle: "Arma tu <span class=\"hl\">plato</span>", plateFor: "Por comida, para:", meal: "Comida", desayuno: "Desayuno", almuerzo: "Almuerzo", cena: "Cena",
     pP: "proteína", pV: "verduras", pC: "carbohidratos", pF: "grasas", palms: "palma|palmas", fists: "puño|puños", cupped: "mano ahuecada|manos ahuecadas", thumbs: "pulgar|pulgares",
     plateTip: "Come despacio y para cuando estés satisfecho, no lleno. Si tienes más hambre, suma verduras o proteína.",
-    tipIntro: "Calorías y proteína <b>estimadas</b> por porción típica; cambian según el tamaño y la receta. Nada está prohibido: usa el cambio inteligente.",
+    tipIntro: "Platos de toda Latinoamérica. Calorías y proteína <b>estimadas</b> por porción típica; cambian según el tamaño y la receta. Nada está prohibido: usa el cambio inteligente.",
+    ingLbl: "Ingredientes y fuentes", srcLbl: "Fuentes", srcNote: "<b>Fuentes:</b> {fdc}; {incap}; {smae}. Consultadas el 2 oct 2026. Todos los valores son estimados para la porción indicada.", srcIncap: "INCAP, Tabla de Composición de Alimentos de Centroamérica (2018)", srcSmae: "Sistema Mexicano de Alimentos Equivalentes (SMAE)", srcV1: "fact-check v1 de la app",
+    cat_desayuno: "Desayuno", cat_comida: "Almuerzo o cena", cat_snack: "Merienda", cat_acomp: "Acompañamiento", cat_bebida: "Bebida", cat_postre: "Postre",
     est: "estimado", kcal: "kcal", protShort: "g proteína", swap: "Cambio inteligente",
-    supIntro: "Lista semanal para 1 persona, enfocada en proteína y básicos. <b>Precios estimados</b> en USD (mercados y supermercados de El Salvador, 2026); pueden variar.",
+    supIntro: "Lista semanal para 1 persona, enfocada en proteína y básicos. <b>Precios estimados</b> en USD (supermercados de El Salvador, octubre 2026). Los precios cambian según el país y la temporada.",
+    extrasTitle: "Extras para variar (opcional)", extrasNote: "No se suman al total.",
     supTotal: "Total aproximado", perWeek: "por semana", saveTip: "Ahorro",
     // Hoy
     hoyKicker: "Paso 3 · Hábitos", hoyTitle: "Tu día de <span class=\"hl\">hoy</span>", hoySub: "{date} · marca lo que cumpliste hoy.",
@@ -545,7 +563,7 @@ const I18N = {
     start: "Start", end: "Finish", step: "Step", hold: "Hold the position", figAria: "start and finish position",
     doneToast: "Workout complete! 💪 Checked off in Today.",
     comKicker: "Step 1 · Eat well", comTitle: "Your <span class=\"hl\">food</span>",
-    subCalc: "Calculator", subPor: "Portions", subTip: "Salvadoran food", subSup: "Budget groceries",
+    subCalc: "Calculator", subPor: "Portions", subTip: "Latin food", subSup: "Budget groceries",
     calcIntro: "Find out how many calories and how much protein you need each day.",
     sex: "Sex", man: "Male", woman: "Female", age: "Age", agePh: "e.g. 30", weight: "Weight", height: "Height", ft: "ft", inch: "in",
     actQ: "How active are you?", actHint: "If you work on your feet or walk a lot, go up one level.",
@@ -562,9 +580,12 @@ const I18N = {
     plateTitle: "Build your <span class=\"hl\">plate</span>", plateFor: "Per meal, for:", meal: "Meal", desayuno: "Breakfast", almuerzo: "Lunch", cena: "Dinner",
     pP: "protein", pV: "vegetables", pC: "carbs", pF: "fats", palms: "palm|palms", fists: "fist|fists", cupped: "cupped hand|cupped hands", thumbs: "thumb|thumbs",
     plateTip: "Eat slowly and stop when you're satisfied, not stuffed. Still hungry? Add more vegetables or protein.",
-    tipIntro: "<b>Estimated</b> calories and protein per typical portion; they vary with size and recipe. Nothing is off-limits: use the smart swap.",
+    tipIntro: "Dishes from across Latin America. <b>Estimated</b> calories and protein per typical portion; they vary with size and recipe. Nothing is off-limits: use the smart swap.",
+    ingLbl: "Ingredients & sources", srcLbl: "Sources", srcNote: "<b>Sources:</b> {fdc}; {incap}; {smae}. Accessed Oct 2, 2026. All values are estimates for the stated portion.", srcIncap: "INCAP, Central American Food Composition Table (2018)", srcSmae: "Mexican System of Food Equivalents (SMAE)", srcV1: "the app's v1 fact-check",
+    cat_desayuno: "Breakfast", cat_comida: "Lunch or dinner", cat_snack: "Snack", cat_acomp: "Side", cat_bebida: "Drink", cat_postre: "Dessert",
     est: "estimated", kcal: "kcal", protShort: "g protein", swap: "Smart swap",
-    supIntro: "Weekly list for 1 person, focused on protein and staples. <b>Estimated prices</b> in USD (El Salvador markets and supermarkets, 2026); they may vary.",
+    supIntro: "Weekly list for 1 person, focused on protein and staples. <b>Estimated prices</b> in USD (El Salvador supermarkets, October 2026). Prices vary by country and season.",
+    extrasTitle: "Extras for variety (optional)", extrasNote: "Not included in the total.",
     supTotal: "Approximate total", perWeek: "per week", saveTip: "Save",
     hoyKicker: "Step 3 · Habits", hoyTitle: "Your day <span class=\"hl\">today</span>", hoySub: "{date} · check off what you did today.",
     streakOne: "day in a row", streakMany: "days in a row", streakNote: "Your streak grows each day you check at least 3 of the 5 habits. It doesn't have to be perfect!",
@@ -631,7 +652,7 @@ const EX_EN = {
   pressMaq: ["Machine chest press", ["Set the seat so the handles line up with your chest.", "Keep your back against the pad; press forward without locking your elbows.", "Return slowly until you feel a stretch in your chest."]],
   elevLat: ["Dumbbell lateral raise", ["Stand with the dumbbells at your sides, elbows slightly bent.", "Raise your arms out to the sides to shoulder height.", "Lower slowly, over 2–3 seconds, without swinging."]],
   pajaro: ["Bent-over dumbbell reverse fly", ["Hinge forward with a flat back and soft knees, like in the row.", "Open your arms out to the sides with a slight bend in your elbows.", "Squeeze your shoulder blades at the top and lower slowly."]],
-  curlMartillo: ["Dumbbell hammer curl", ["Palms facing your body, like you're holding a hammer.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
+  curlMartillo: ["Dumbbell hammer curl", ["Stand with a dumbbell in each hand, palms facing each other, like you're holding a hammer.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
   extNuca: ["Overhead dumbbell triceps extension", ["Sit tall and hold one dumbbell with both hands above your head.", "Bend your elbows and lower the dumbbell behind your head.", "Straighten your arms without flaring your elbows; abs tight."]],
   pressPisoBot: ["Floor chest press with water bottles", ["Lie on your back with your knees bent and feet flat on the floor.", "Lower the bottles until your elbows lightly touch the floor.", "Press up until your arms are straight."]],
   aperturasBot: ["Floor chest fly with water bottles", ["Lie on your back on the floor, arms above your chest, elbows slightly bent.", "Open your arms out to the sides until your elbows lightly touch the floor.", "Bring your arms back together over your chest, like hugging a tree."]],
@@ -639,7 +660,7 @@ const EX_EN = {
   yPiso: ["Prone Y raise", ["Lie face down, arms stretched forward in a Y, thumbs up.", "Lift just your arms and a little of your chest, squeezing your shoulder blades.", "Hold 2 seconds and lower slowly; your legs stay on the floor."]],
   elevLatBot: ["Water-bottle lateral raise", ["Stand with the bottles at your sides, elbows slightly bent.", "Raise your arms out to the sides to shoulder height.", "Lower slowly, over 2–3 seconds, without swinging."]],
   pajaroBot: ["Bent-over water-bottle reverse fly", ["Hinge forward with a flat back and soft knees.", "Open your arms out to the sides with a slight bend in your elbows.", "Squeeze your shoulder blades at the top and lower slowly."]],
-  curlMartilloBot: ["Water-bottle hammer curl", ["Hold the bottles by the neck, palms facing your body.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
+  curlMartilloBot: ["Water-bottle hammer curl", ["Hold the bottles by the neck, palms facing each other.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
   extNucaBot: ["Overhead water-bottle triceps extension", ["Sit on a sturdy chair and hold a gallon jug or bottle with both hands above your head.", "Bend your elbows and lower it behind your head.", "Straighten your arms without flaring your elbows; abs tight."]]
 };
 
@@ -671,15 +692,15 @@ const ROUTINE = {
         ex: [rx("curl", 3, "10–12", 60), rx("pushdown", 3, "10–12", 60), rx("curlMartillo", 2, "12", 60), rx("extNuca", 2, "12", 60), rx("cinta", 1, "10–15 min (opcional)", 0)] }
     ],
     x: [
-      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho", en: "Chest" },
+      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho (con apoyo de hombro frontal y tríceps)", en: "Chest (front shoulders and triceps assist)" },
         ex: [rx("pressPecho", 3, "10", 45), rx("pressMaq", 3, "12", 45), rx("flexInc", 3, "8–10", 45)] },
-      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Espalda", en: "Back" },
+      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Dorsales, espalda media y espalda baja", en: "Lats, mid back, and lower back" },
         ex: [rx("jalon", 3, "10", 45), rx("remoDb", 3, "10", 45), rx("superman", 3, "10", 45)] },
       { t: { es: "Piernas y glúteos · 20–30 min", en: "Legs & glutes · 20–30 min" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
         ex: [rx("goblet", 3, "12", 45), rx("rdl", 3, "10", 45), rx("zancadaDb", 3, "8 por pierna", 45), rx("puenteDb", 3, "12", 45)] },
-      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros", en: "Shoulders" },
+      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros (frente, lado y atrás)", en: "Shoulders (front, side, rear)" },
         ex: [rx("pressHombro", 3, "10", 45), rx("elevLat", 3, "12", 45), rx("pajaro", 3, "12", 45)] },
-      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps y tríceps", en: "Biceps and triceps" },
+      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps, tríceps y antebrazo", en: "Biceps, triceps, and forearms" },
         ex: [rx("curl", 3, "12", 45), rx("pushdown", 3, "12", 45), rx("curlMartillo", 3, "12", 45), rx("extNuca", 3, "12", 45)] }
     ]
   },
@@ -705,15 +726,15 @@ const ROUTINE = {
         ex: [rx("curlBot", 3, "12", 60), rx("fondosSilla", 3, "8–10", 60), rx("curlMartilloBot", 2, "12", 60), rx("extNucaBot", 2, "12", 60), rx("caminata", 1, "10–15 min (opcional)", 0)] }
     ],
     x: [
-      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho", en: "Chest" },
+      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho (con apoyo de hombro frontal y tríceps)", en: "Chest (front shoulders and triceps assist)" },
         ex: [rx("flexInc", 3, "10", 45), rx("flexRod", 3, "6–10", 45), rx("pressPisoBot", 3, "12", 45)] },
-      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Espalda", en: "Back" },
+      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Dorsales, espalda media y espalda baja", en: "Lats, mid back, and lower back" },
         ex: [rx("remoBag", 3, "12", 45), rx("remoUnaBag", 3, "10 por brazo", 45), rx("superman", 3, "10", 45)] },
       { t: { es: "Piernas y glúteos · 20–30 min", en: "Legs & glutes · 20–30 min" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
         ex: [rx("sentadilla", 3, "15", 45), rx("rdlBag", 3, "12", 45), rx("zancada", 3, "8 por pierna", 45), rx("puente", 3, "15", 45)] },
-      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros", en: "Shoulders" },
+      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros (frente, lado y atrás)", en: "Shoulders (front, side, rear)" },
         ex: [rx("pressBot", 3, "12", 45), rx("elevLatBot", 3, "12", 45), rx("pajaroBot", 3, "12", 45)] },
-      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps y tríceps", en: "Biceps and triceps" },
+      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps, tríceps y antebrazo", en: "Biceps, triceps, and forearms" },
         ex: [rx("curlBot", 3, "12", 45), rx("fondosSilla", 3, "8–10", 45), rx("curlMartilloBot", 3, "12", 45), rx("extNucaBot", 3, "12", 45)] }
     ]
   }
@@ -723,7 +744,7 @@ const ROUTINE = {
 const EX_TIP = {
   pressPecho: { es: "Baja en 2 segundos y empuja fuerte, con los omóplatos juntos contra el banco.", en: "Lower for 2 seconds, then press hard with your shoulder blades squeezed into the bench." },
   pressInc: { es: "Banco bajo (unos 30°); si lo subes más, trabaja más hombro que pecho.", en: "Keep the bench low (about 30°); any higher and it turns into a shoulder exercise." },
-  pressMaq: { es: "Ajusta el asiento para que los agarres queden a la altura del pecho.", en: "Set the seat so the handles line up with your chest." },
+  pressMaq: { es: "Saca el aire al empujar y mantén los hombros abajo, lejos de las orejas.", en: "Breathe out as you push and keep your shoulders down, away from your ears." },
   flexInc: { es: "Mientras más alta la superficie, más fácil. Cuando te salgan todas, usa una más baja.", en: "The higher the surface, the easier. Once you hit all the reps, use a lower one." },
   flexRod: { es: "Si no te salen todas, termina la serie con flexión inclinada.", en: "If you can't finish the set, switch to incline push-ups." },
   pressPisoBot: { es: "Los codos tocan el piso suave y subes; el piso protege tus hombros.", en: "Let your elbows touch the floor softly, then press; the floor protects your shoulders." },
@@ -755,12 +776,12 @@ const EX_TIP = {
   elevLatBot: { es: "Peso ligero: sube solo hasta la altura de los hombros, sin impulso.", en: "Go light: raise only to shoulder height, no swinging." },
   pajaro: { es: "Peso muy ligero; piensa en abrir los brazos, no en subirlos.", en: "Very light weight; think about opening your arms wide, not lifting them." },
   pajaroBot: { es: "Peso muy ligero; piensa en abrir los brazos, no en subirlos.", en: "Very light weight; think about opening your arms wide, not lifting them." },
-  planchaLat: { es: "Si cuesta mucho, apoya la rodilla de abajo.", en: "Too hard? Rest your bottom knee on the floor." },
+  planchaLat: { es: "Cabeza, cadera y pies en línea; si la cadera se cae, descansa y vuelve a empezar.", en: "Head, hips, and feet in one line; if your hips sag, rest and start again." },
   bicho: { es: "Saca el aire al estirar; la espalda baja nunca se despega del piso.", en: "Breathe out as you reach; your lower back never leaves the floor." },
   curl: { es: "Sin balancearte; si necesitas impulso, baja el peso.", en: "No swinging; if you need momentum, go lighter." },
   curlBot: { es: "Sin balancearte; cuando las botellas se sientan fáciles, usa galones.", en: "No swinging; when the bottles feel easy, switch to gallon jugs." },
-  curlMartillo: { es: "Palmas viéndose una a la otra todo el tiempo, como si sostuvieras un martillo.", en: "Palms face each other the whole time, like you're holding a hammer." },
-  curlMartilloBot: { es: "Palmas viéndose una a la otra todo el tiempo, como si sostuvieras un martillo.", en: "Palms face each other the whole time, like you're holding a hammer." },
+  curlMartillo: { es: "Mantén las palmas viéndose una a la otra todo el tiempo; no gires las muñecas al subir.", en: "Keep your palms facing each other the whole time; don't twist your wrists as you curl." },
+  curlMartilloBot: { es: "Mantén las palmas viéndose una a la otra todo el tiempo; no gires las muñecas al subir.", en: "Keep your palms facing each other the whole time; don't twist your wrists as you curl." },
   pushdown: { es: "Solo se mueven los antebrazos; los codos se quedan fijos a los lados.", en: "Only your forearms move; your elbows stay pinned to your sides." },
   extNuca: { es: "Codos apuntando al techo y cerca de la cabeza; baja lento.", en: "Elbows point at the ceiling and stay close to your head; lower slowly." },
   extNucaBot: { es: "Codos apuntando al techo y cerca de la cabeza; baja lento.", en: "Elbows point at the ceiling and stay close to your head; lower slowly." },
@@ -802,7 +823,7 @@ const RETO30 = [
   { es: "Pésate, anota y compara con la semana 1.", en: "Weigh in, log it, and compare with week 1." },
   { es: "Toma un vaso de agua antes de cada comida.", en: "Drink a glass of water before every meal." },
   { es: "Entrena hoy completando todas tus series.", en: "Train today and finish all your sets." },
-  { es: "Elige el cambio inteligente en tu comida típica favorita.", en: "Pick the smart swap for your favorite Salvadoran dish." },
+  { es: "Elige el cambio inteligente en tu comida típica favorita.", en: "Pick the smart swap for your favorite traditional dish." },
   { es: "Suma 2 minutos de plancha en total (en partes).", en: "Do 2 minutes of plank in total (in parts)." },
   { es: "Cena ligero y temprano.", en: "Have a light, early dinner." },
   { es: "Invita a alguien a hacer el reto contigo.", en: "Invite someone to do the challenge with you." },
@@ -818,7 +839,7 @@ const FAQ = [
   { q: { es: "¿Necesito suplementos?", en: "Do I need supplements?" },
     a: { es: "No para empezar. Comida, proteína, sueño y entrenar te dan casi todo el resultado. Si no llegas a tu proteína con comida, un batido de proteína es práctico. La creatina monohidratada (3–5 g al día) es de las que tienen más evidencia. Evita los 'quemadores de grasa'.", en: "Not to get started. Food, protein, sleep, and training give you almost all of the results. If you can't reach your protein with food, a protein shake is convenient. Creatine monohydrate (3–5 g a day) is one of the best-studied supplements. Skip 'fat burners.'" } },
   { q: { es: "¿Qué como antes de entrenar?", en: "What should I eat before training?" },
-    a: { es: "Algo ligero 1–2 horas antes: carbohidrato con un poco de proteína. Por ejemplo: guineo con yogur, pan con huevo o avena. Si entrenas muy temprano y comer te cae pesado, puedes entrenar en ayunas y comer después.", en: "Something light 1–2 hours before: carbs with a little protein. For example: a banana with yogurt, toast with egg, or oatmeal. If you train very early and eating feels heavy, you can train fasted and eat afterward." } },
+    a: { es: "Algo ligero 1–2 horas antes: carbohidrato con un poco de proteína. Por ejemplo: banano con yogur, pan con huevo o avena. Si entrenas muy temprano y comer te cae pesado, puedes entrenar en ayunas y comer después.", en: "Something light 1–2 hours before: carbs with a little protein. For example: a banana with yogurt, toast with egg, or oatmeal. If you train very early and eating feels heavy, you can train fasted and eat afterward." } },
   { q: { es: "¿Y qué como después de entrenar?", en: "And what should I eat after training?" },
     a: { es: "Una comida normal con proteína en las siguientes horas: pollo, huevos, atún o frijoles con queso, más tortilla o arroz. No necesitas un batido especial; lo que más importa es tu total del día.", en: "A normal meal with protein in the next few hours: chicken, eggs, tuna, or beans with cheese, plus tortillas or rice. You don't need a special shake; your daily total matters most." } },
   { q: { es: "¿Qué es mejor para bajar grasa: cardio o pesas?", en: "What's better for fat loss: cardio or weights?" },
@@ -826,7 +847,7 @@ const FAQ = [
   { q: { es: "¿Puedo bajar grasa solo de la panza?", en: "Can I lose fat just from my belly?" },
     a: { es: "No. No se puede quemar grasa de una sola zona haciendo abdominales. Bajas grasa de todo el cuerpo comiendo en déficit, y tu genética decide de dónde sale primero. Los abdominales fortalecen, pero no 'queman' la panza.", en: "No. You can't burn fat from one spot by doing crunches. You lose fat from your whole body by eating in a deficit, and your genetics decide where it comes off first. Ab exercises build strength but don't 'burn' belly fat." } },
   { q: { es: "¿Cuánta agua debo tomar?", en: "How much water should I drink?" },
-    a: { es: "Una guía simple: unos 8 vasos (2 litros) al día, y más si hace calor o sudas mucho. Si tu orina es clarita, vas bien. Con el calor de El Salvador, carga siempre tu botella.", en: "A simple guide: about 8 glasses (2 liters) a day, more if it's hot or you sweat a lot. If your urine is pale, you're doing fine. In El Salvador's heat, always carry your bottle." } },
+    a: { es: "Una guía simple: unos 8 vasos (2 litros) al día, y más si hace calor o sudas mucho. Si tu orina es clarita, vas bien. Si vives en un lugar caluroso, carga siempre tu botella.", en: "A simple guide: about 8 glasses (2 liters) a day, more if it's hot or you sweat a lot. If your urine is pale, you're doing fine. If you live somewhere hot, always carry your bottle." } },
   { q: { es: "¿Puedo tomar alcohol?", en: "Can I drink alcohol?" },
     a: { es: "Puedes, pero frena tu progreso: una cerveza tiene unas 150 calorías, el alcohol abre el apetito y empeora el sueño. Si tomas, que sea poco y de vez en cuando.", en: "You can, but it slows your progress: a beer has about 150 calories, and alcohol increases appetite and worsens sleep. If you drink, keep it light and occasional." } },
   { q: { es: "¿Cuánto debo dormir?", en: "How much should I sleep?" },
@@ -838,95 +859,237 @@ const FAQ = [
   { q: { es: "No veo resultados, ¿qué hago?", en: "I'm not seeing results. What should I do?" },
     a: { es: "Dale 3–4 semanas siendo constante. Revisa: ¿cumples tus calorías y proteína casi todos los días? ¿Duermes 7 horas o más? ¿Entrenas 3 días o más? Si todo es sí y no bajas en 3 semanas, quita 100–200 calorías.", en: "Give it 3–4 consistent weeks. Check: are you hitting your calories and protein most days? Sleeping 7+ hours? Training 3+ days? If it's all yes and nothing changes in 3 weeks, cut 100–200 calories." } },
   { q: { es: "¿Puedo comer pupusas y bajar de peso?", en: "Can I eat pupusas and still lose weight?" },
-    a: { es: "Sí. Ninguna comida está prohibida: importan la cantidad y la frecuencia. Dos pupusas con bastante curtido caben en tu plan. Revisa la guía de Comida salvadoreña para cambios inteligentes.", en: "Yes. No food is off-limits: amount and frequency matter. Two pupusas with plenty of curtido fit your plan. Check the Salvadoran food guide for smart swaps." } },
+    a: { es: "Sí. Ninguna comida está prohibida: importan la cantidad y la frecuencia. Dos pupusas con bastante curtido caben en tu plan. Revisa la guía de Comida latina para cambios inteligentes.", en: "Yes. No food is off-limits: amount and frequency matter. Two pupusas with plenty of curtido fit your plan. Check the Latin food guide for smart swaps." } },
   { q: { es: "¿Cuánto descanso entre series?", en: "How long should I rest between sets?" },
-    a: { es: "De 60 a 90 segundos en la rutina normal, y de 30 a 45 en la exprés. En ejercicios pesados puedes descansar hasta 2 minutos.", en: "60 to 90 seconds in the regular routine, and 30 to 45 in the express one. On heavy exercises you can rest up to 2 minutes." } },
+    a: { es: "Cada ejercicio te dice su descanso. En la rutina de 3 o 5 días: 90 segundos en los ejercicios grandes (press, remos, prensa, peso muerto), 60 en los pequeños (brazos, elevaciones) y 45 en los de abdomen. En la exprés: 45 segundos entre ejercicios y de 60 a 90 al final de cada vuelta. Si un ejercicio pesado te deja sin aire, descansa hasta 2 minutos.", en: "Each exercise shows its rest time. In the 3- or 5-day routine: 90 seconds on big exercises (presses, rows, leg press, deadlifts), 60 on small ones (arms, raises), and 45 on core. In the express one: 45 seconds between exercises and 60 to 90 after each round. If a heavy exercise leaves you out of breath, rest up to 2 minutes." } },
   { q: { es: "¿Qué hago si me duele una articulación o tengo una condición de salud?", en: "What if a joint hurts or I have a health condition?" },
     a: { es: "Para y consulta a tu médico o fisioterapeuta. Esta app es una guía general y no reemplaza la atención médica. Mientras tanto, cambia el ejercicio por uno que no te duela.", en: "Stop and see your doctor or physical therapist. This app is a general guide and doesn't replace medical care. Meanwhile, swap the exercise for one that doesn't hurt." } }
 ];
 
-/* ---------- Comida salvadoreña (valores ESTIMADOS por porción típica) ---------- */
+/* ---------- Comida latina (valores ESTIMADOS por porción típica; datos: food-guide-v2.md de Zack, generados con food-v2/gen-food.mjs) ---------- */
+const FOOD_CATS = ["desayuno", "comida", "snack", "acomp", "bebida", "postre"];
 const FOODS = [
-  { n: { es: "Pupusa revuelta", en: "Pupusa revuelta (pork, beans & cheese)" }, p: { es: "1 pupusa mediana (~125 g)", en: "1 medium pupusa (~125 g)" }, k: 320, g: 12,
-    s: { es: "Come 2, no 4. Llena medio plato de curtido y acompaña con agua o café sin azúcar.", en: "Have 2, not 4. Fill half your plate with curtido and drink water or unsweetened coffee." } },
-  { n: { es: "Pupusa de frijol con queso", en: "Bean & cheese pupusa" }, p: { es: "1 pupusa mediana (~125 g)", en: "1 medium pupusa (~125 g)" }, k: 290, g: 10,
-    s: { es: "Buena opción. Suma proteína aparte (un huevo o un vaso de leche) y mucho curtido.", en: "A good pick. Add protein on the side (an egg or a glass of milk) and lots of curtido." } },
-  { n: { es: "Pupusa de queso con loroco", en: "Cheese & loroco pupusa" }, p: { es: "1 pupusa mediana (~125 g)", en: "1 medium pupusa (~125 g)" }, k: 320, g: 15,
-    s: { es: "Pide queso con loroco o con ayote: un poco menos de grasa que solo queso duro.", en: "Choose cheese with loroco or squash: a bit less fat than cheese alone." } },
-  { n: { es: "Pupusa de chicharrón", en: "Chicharrón (pork) pupusa" }, p: { es: "1 pupusa mediana (~125 g)", en: "1 medium pupusa (~125 g)" }, k: 290, g: 14,
-    s: { es: "Es de las más grasosas: cámbiala por una de pollo o de frijol con queso.", en: "One of the fattiest: swap it for chicken or bean & cheese." } },
-  { n: { es: "Pan con pollo", en: "Pan con pollo (chicken sandwich)" }, p: { es: "1 pan francés (~90 g) con 1 pieza de pollo guisado (~100 g de carne)", en: "1 French roll (~90 g) with 1 piece of stewed chicken (~100 g meat)" }, k: 550, g: 30,
+  { id: "huevosRancheros", c: "desayuno", r: { es: "México", en: "Mexico" },
+    n: { es: "Huevos rancheros", en: "Huevos rancheros (ranch-style eggs)" },
+    p: { es: "2 huevos + 2 tortillas de maíz (30 g c/u), ½ taza de frijoles de olla y salsa ranchera", en: "2 eggs + 2 corn tortillas (30 g each), ½ cup whole beans & ranchera sauce" }, k: 530, g: 29,
+    i: { es: ["2 huevos (100 g)", "1 cdta de aceite (5 g)", "2 tortillas de maíz (60 g)", "Salsa ranchera casera: tomate, cebolla y chile (100 g)", "½ taza de frijoles de olla (90 g)", "Queso fresco (20 g)"], en: ["2 eggs (100 g)", "1 tsp oil (5 g)", "2 corn tortillas (60 g)", "Homemade ranchera sauce: tomato, onion & chili (100 g)", "½ cup whole stewed beans (90 g)", "Queso fresco (20 g)"] },
+    s: { es: "Cocina los huevos con unas gotas de aceite en sartén antiadherente y usa frijoles de olla, no refritos. La versión de fonda (huevos y tortillas fritos, frijoles refritos y más queso) llega a ~800 kcal.", en: "Cook the eggs with a few drops of oil in a nonstick pan and use whole beans, not refried. The diner version (fried eggs and tortillas, refried beans, extra cheese) reaches ~800 kcal." } },
+  { id: "chilaquiles", c: "desayuno", r: { es: "México", en: "Mexico" },
+    n: { es: "Chilaquiles verdes light con pollo", en: "Light green chilaquiles with chicken" },
+    p: { es: "1 plato: 3 tortillas horneadas (no fritas) + 90 g de pollo deshebrado y salsa verde", en: "1 plate: 3 baked (not fried) tortillas + 90 g shredded chicken & salsa verde" }, k: 470, g: 41,
+    i: { es: ["3 tortillas de maíz en triángulos, horneadas (90 g)", "Salsa verde de tomate verde (½ taza, 120 g)", "Pechuga de pollo cocida y deshebrada (90 g)", "Queso fresco (20 g)", "2 cdas de yogur griego natural en vez de crema (30 g)", "Cebolla y cilantro (20 g)"], en: ["3 corn tortillas cut into wedges, baked (90 g)", "Tomatillo salsa verde (½ cup, 120 g)", "Cooked, shredded chicken breast (90 g)", "Queso fresco (20 g)", "2 tbsp plain Greek yogurt instead of crema (30 g)", "Onion & cilantro (20 g)"] },
+    s: { es: "Hornea o tuesta las tortillas en el comal en vez de freírlas, y cambia la crema por yogur griego. Unos chilaquiles de fonda (totopos fritos, crema y queso) rondan las ~700 kcal.", en: "Bake or toast the tortillas on a comal instead of frying them, and swap the crema for Greek yogurt. Diner-style chilaquiles (fried chips, crema, and cheese) run about ~700 kcal." } },
+  { id: "arepaPericos", c: "desayuno", r: { es: "Venezuela y Colombia", en: "Venezuela & Colombia" },
+    n: { es: "Arepa con huevos pericos y queso", en: "Arepa with perico eggs & cheese" },
+    p: { es: "1 arepa mediana (50 g de harina, ~110 g cocida) + 2 huevos pericos + 20 g de queso blanco", en: "1 medium arepa (50 g flour, ~110 g cooked) + 2 perico eggs + 20 g white cheese" }, k: 450, g: 21,
+    i: { es: ["Harina de maíz precocida (50 g → 1 arepa a la plancha, sin aceite)", "2 huevos (100 g)", "Tomate picado (40 g)", "Cebolla o cebollín (20 g)", "1 cdta de aceite (5 g)", "Queso blanco rallado (20 g)"], en: ["Precooked corn flour (50 g → 1 griddle arepa, no oil)", "2 eggs (100 g)", "Diced tomato (40 g)", "Onion or scallion (20 g)", "1 tsp oil (5 g)", "Grated white cheese (20 g)"] },
+    s: { es: "Ásala en budare o sartén sin aceite, no frita. Para más proteína, rellénala también con pollo desmechado o agrega 2 claras al perico (+7 g de proteína, ~35 kcal).", en: "Cook it on a griddle or dry pan, not fried. For more protein, also stuff it with shredded chicken or add 2 egg whites to the perico (+7 g protein, ~35 kcal)." } },
+  { id: "mangu", c: "desayuno", r: { es: "República Dominicana", en: "Dominican Republic" },
+    n: { es: "Mangú con huevos y queso a la plancha", en: "Mangú with eggs & grilled cheese" },
+    p: { es: "1 plato: 1 plátano verde majado (~200 g cocido) + 2 huevos + 30 g de queso a la plancha y cebolla encurtida", en: "1 plate: 1 mashed green plantain (~200 g cooked) + 2 eggs + 30 g grilled cheese & pickled onion" }, k: 550, g: 21,
+    i: { es: ["Plátano verde hervido y majado (200 g)", "1 cdta de mantequilla (5 g)", "Cebolla morada con vinagre (40 g)", "½ cdta de aceite para la cebolla (2.5 g)", "2 huevos hervidos o pochados (100 g)", "Queso de freír a la plancha, sin aceite (30 g)"], en: ["Boiled, mashed green plantain (200 g)", "1 tsp butter (5 g)", "Red onion in vinegar (40 g)", "½ tsp oil for the onion (2.5 g)", "2 boiled or poached eggs (100 g)", "Frying cheese, grilled without oil (30 g)"] },
+    s: { es: "Así se aligeran 'los tres golpes': cambia el salami frito por huevos y el queso frito por queso a la plancha. Con salami y todo frito, el plato puede pasar de ~900 kcal.", en: "This is a lighter 'los tres golpes': swap the fried salami for eggs and the fried cheese for grilled cheese. With salami and everything fried, the plate can top ~900 kcal." } },
+  { id: "avena", c: "desayuno", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Avena con leche y banano", en: "Oatmeal with milk & banana" },
+    p: { es: "1 tazón: 50 g de avena (½ taza) + 1 taza de leche descremada + 1 banano mediano", en: "1 bowl: 50 g oats (½ cup) + 1 cup skim milk + 1 medium banana" }, k: 380, g: 17,
+    i: { es: ["Avena en hojuelas (50 g)", "1 taza de leche descremada (250 ml)", "1 banano (guineo) mediano (118 g)", "Canela al gusto, sin azúcar"], en: ["Rolled oats (50 g)", "1 cup skim milk (250 ml)", "1 medium banana (118 g)", "Cinnamon to taste, no sugar"] },
+    s: { es: "Endulza con el banano y canela, no con azúcar. Para más proteína, mezcla al final ½ taza de yogur griego natural (+~60 kcal y ~11 g de proteína).", en: "Sweeten with the banana and cinnamon, not sugar. For more protein, stir in ½ cup plain Greek yogurt at the end (+~60 kcal and ~11 g protein)." } },
+  { id: "desayunoTipico", c: "desayuno", r: { es: "El Salvador", en: "El Salvador" },
+    n: { es: "Desayuno típico salvadoreño", en: "Typical Salvadoran breakfast" },
+    p: { es: "2 huevos, ½ taza de frijoles fritos, ½ plátano frito, 2 cdas de crema, 1 oz de queso fresco y 2 tortillas", en: "2 eggs, ½ cup refried beans, ½ fried plantain, 2 tbsp cream, 1 oz fresh cheese & 2 tortillas" }, k: 900, g: 33,
+    i: { es: ["2 huevos fritos (110 g)", "Frijoles fritos (½ taza, 130 g)", "½ plátano maduro frito (75 g)", "Crema (2 cdas, 30 g)", "Queso fresco (1 oz, 28 g)", "2 tortillas de maíz (80 g)"], en: ["2 fried eggs (110 g)", "Refried beans (½ cup, 130 g)", "½ fried ripe plantain (75 g)", "Cream (2 tbsp, 30 g)", "Fresh cheese (1 oz, 28 g)", "2 corn tortillas (80 g)"] },
+    s: { es: "Versión ligera (~580 kcal, ~29 g de proteína): 2 huevos picados con tomate y cebolla, ½ taza de frijoles de olla, ½ plátano asado, 1 oz de queso fresco y 1 tortilla.", en: "Lighter version (~580 kcal, ~29 g protein): 2 eggs scrambled with tomato and onion, ½ cup whole beans, ½ grilled plantain, 1 oz fresh cheese & 1 tortilla." } },
+  { id: "tacosPollo", c: "comida", r: { es: "México", en: "Mexico" },
+    n: { es: "Tacos de pollo asado", en: "Grilled chicken tacos" },
+    p: { es: "3 tacos: 3 tortillas de maíz (30 g c/u) + 120 g de pechuga asada, cebolla, cilantro, salsa y aguacate", en: "3 tacos: 3 corn tortillas (30 g each) + 120 g grilled chicken breast, onion, cilantro, salsa & avocado" }, k: 510, g: 44,
+    i: { es: ["3 tortillas de maíz (90 g)", "Pechuga de pollo asada (120 g cocida)", "1 cdta de aceite (5 g)", "Cebolla y cilantro picados (30 g)", "Salsa roja o verde (3 cdas, 45 g)", "Aguacate (30 g)"], en: ["3 corn tortillas (90 g)", "Grilled chicken breast (120 g cooked)", "1 tsp oil (5 g)", "Chopped onion & cilantro (30 g)", "Red or green salsa (3 tbsp, 45 g)", "Avocado (30 g)"] },
+    s: { es: "Pide tortilla de maíz (no de harina), pollo asado en vez de tacos dorados, y sin queso ni crema. Acompaña con frijoles de olla o ensalada; la salsa y el limón dan sabor casi sin calorías.", en: "Choose corn tortillas (not flour), grilled chicken instead of fried tacos dorados, and skip the cheese and crema. Add whole beans or a salad; salsa and lime add flavor with almost no calories." } },
+  { id: "tostadasTinga", c: "comida", r: { es: "México", en: "Mexico" },
+    n: { es: "Tostadas de tinga de pollo", en: "Chicken tinga tostadas" },
+    p: { es: "2 tostadas horneadas + 100 g de tinga de pollo, frijoles, lechuga y queso fresco", en: "2 baked tostadas + 100 g chicken tinga, beans, lettuce & queso fresco" }, k: 480, g: 44,
+    i: { es: ["2 tortillas de maíz horneadas como tostadas (60 g)", "Pollo deshebrado (100 g cocido)", "Salsa de tomate con chipotle (60 g)", "Cebolla (20 g)", "1 cdta de aceite (5 g)", "Frijoles de olla machacados (¼ taza, 45 g)", "Lechuga (30 g)", "Queso fresco (15 g)", "1 cda de yogur griego en vez de crema (15 g)"], en: ["2 corn tortillas baked into tostadas (60 g)", "Shredded chicken (100 g cooked)", "Tomato-chipotle sauce (60 g)", "Onion (20 g)", "1 tsp oil (5 g)", "Mashed whole beans (¼ cup, 45 g)", "Lettuce (30 g)", "Queso fresco (15 g)", "1 tbsp Greek yogurt instead of crema (15 g)"] },
+    s: { es: "Hornea las tortillas hasta que queden crujientes y usa yogur griego en vez de crema. Con crema, más queso y frijoles refritos, llegan a ~630 kcal.", en: "Bake the tortillas until crisp and use Greek yogurt instead of crema. With crema, extra cheese, and refried beans, they reach ~630 kcal." } },
+  { id: "pupusas", c: "comida", r: { es: "El Salvador", en: "El Salvador" },
+    n: { es: "Pupusas revueltas con curtido", en: "Pupusas revueltas with curtido" },
+    p: { es: "2 pupusas medianas (~125 g c/u) + 1 taza de curtido y salsa de tomate", en: "2 medium pupusas (~125 g each) + 1 cup curtido & tomato sauce" }, k: 620, g: 23,
+    i: { es: ["2 pupusas revueltas: chicharrón, frijol y queso (250 g)", "Curtido: repollo (70 g)", "Curtido: zanahoria (20 g)", "Curtido: cebolla y vinagre (10 g)", "Salsa de tomate (60 g)"], en: ["2 pupusas revueltas: pork, beans & cheese (250 g)", "Curtido: cabbage (70 g)", "Curtido: carrot (20 g)", "Curtido: onion & vinegar (10 g)", "Tomato sauce (60 g)"] },
+    s: { es: "Come 2, no 4 (4 pupusas pasan de ~1,200 kcal). Todas tienen calorías parecidas (~290–320 c/u), así que lo que más cambia es cuántas comes. Llena medio plato de curtido y suma proteína aparte: un huevo duro o un vaso de leche descremada.", en: "Have 2, not 4 (4 pupusas top ~1,200 kcal). All fillings land in a similar range (~290–320 each), so how many you eat matters most. Fill half your plate with curtido and add protein on the side: a hard-boiled egg or a glass of skim milk." } },
+  { id: "panConPollo", c: "comida", r: { es: "El Salvador", en: "El Salvador" },
+    n: { es: "Pan con pollo", en: "Pan con pollo (chicken sandwich)" },
+    p: { es: "1 pan francés (~90 g) con 1 pieza de pollo guisado (~100 g de carne)", en: "1 French roll (~90 g) with 1 piece of stewed chicken (~100 g meat)" }, k: 550, g: 30,
+    i: { es: ["Pan francés (~90 g)", "1 pieza de pollo guisado (~100 g de carne)", "Salsa de tomate del guiso", "Lechuga o berro, tomate, pepino y rábano"], en: ["French roll (~90 g)", "1 piece stewed chicken (~100 g meat)", "Tomato stew sauce", "Lettuce or watercress, tomato, cucumber & radish"] },
     s: { es: "Pide extra pollo y verdura, sin mayonesa extra, y quítale la piel al pollo.", en: "Ask for extra chicken and veggies, no extra mayo, and remove the chicken skin." } },
-  { n: { es: "Casamiento", en: "Casamiento (rice & beans)" }, p: { es: "1 taza", en: "1 cup" }, k: 350, g: 11,
-    s: { es: "Sirve media taza (un puño) y suma huevo, pollo o queso fresco para la proteína.", en: "Serve half a cup (one fist) and add egg, chicken, or fresh cheese for protein." } },
-  { n: { es: "Tamal de pollo", en: "Chicken tamal" }, p: { es: "1 tamal mediano (~140 g)", en: "1 medium tamale (~140 g)" }, k: 250, g: 10,
+  { id: "casamiento", c: "acomp", r: { es: "El Salvador, Nicaragua y Costa Rica", en: "El Salvador, Nicaragua & Costa Rica" },
+    n: { es: "Casamiento o gallo pinto", en: "Casamiento or gallo pinto (rice & beans)" },
+    p: { es: "1 taza (~170 g)", en: "1 cup (~170 g)" }, k: 380, g: 11,
+    i: { es: ["Arroz y frijoles enteros cocidos, sofritos con cebolla, chile dulce y aceite (170 g)"], en: ["Cooked rice and whole beans, sautéed with onion, sweet pepper & oil (170 g)"] },
+    s: { es: "Sirve media taza (un puño), cocínalo con solo 1 cdta de aceite y suma huevo, pollo o queso fresco para la proteína.", en: "Serve half a cup (one fist), cook it with just 1 tsp of oil, and add egg, chicken, or queso fresco for protein." } },
+  { id: "casado", c: "comida", r: { es: "Costa Rica", en: "Costa Rica" },
+    n: { es: "Casado con pollo a la plancha", en: "Casado with grilled chicken" },
+    p: { es: "1 plato: 120 g de pollo + ¾ taza de arroz, ½ taza de frijoles, ensalada y plátano maduro al horno", en: "1 plate: 120 g chicken + ¾ cup rice, ½ cup beans, salad & baked ripe plantain" }, k: 630, g: 50,
+    i: { es: ["Pechuga de pollo a la plancha (120 g cocida)", "1 cdta de aceite (5 g)", "Arroz blanco (¾ taza, 120 g)", "Frijoles negros de olla (½ taza, 90 g)", "Ensalada: repollo (50 g)", "Ensalada: tomate y limón (50 g)", "Plátano maduro al horno (60 g)"], en: ["Grilled chicken breast (120 g cooked)", "1 tsp oil (5 g)", "White rice (¾ cup, 120 g)", "Whole black beans (½ cup, 90 g)", "Salad: cabbage (50 g)", "Salad: tomato & lime (50 g)", "Baked ripe plantain (60 g)"] },
+    s: { es: "Ya es un plato balanceado. Pide el plátano al horno (el frito suma ~140 kcal más), doble ensalada y, si estás bajando grasa, media porción de arroz.", en: "It's already a balanced plate. Ask for baked plantain (fried adds ~140 kcal), double salad, and half the rice if you're cutting fat." } },
+  { id: "tamalPollo", c: "comida", r: { es: "México y Centroamérica", en: "Mexico & Central America" },
+    n: { es: "Tamal de pollo", en: "Chicken tamale" },
+    p: { es: "1 tamal mediano (~140 g)", en: "1 medium tamale (~140 g)" }, k: 250, g: 10,
+    i: { es: ["Masa de maíz con manteca o aceite", "Pollo y salsa de tomate", "Envuelto en hoja de plátano o de maíz"], en: ["Corn masa with lard or oil", "Chicken & tomato sauce", "Wrapped in banana leaf or corn husk"] },
     s: { es: "Uno solo con ensalada. Evita acompañarlo con café o chocolate con mucha azúcar.", en: "Just one, with a salad. Skip the very sweet coffee or hot chocolate on the side." } },
-  { n: { es: "Tamal de elote", en: "Sweet corn tamal" }, p: { es: "1 tamal (~100 g)", en: "1 tamale (~100 g)" }, k: 260, g: 3,
-    s: { es: "Tiene poca proteína: acompáñalo con huevo, requesón o un vaso de leche.", en: "Low in protein: pair it with eggs, requesón (ricotta-style cheese), or a glass of milk." } },
-  { n: { es: "Yuca frita con chicharrón", en: "Fried cassava with chicharrón" }, p: { es: "1 plato: ~200 g de yuca + ~80 g de chicharrón + curtido", en: "1 plate: ~200 g cassava + ~80 g chicharrón + curtido" }, k: 780, g: 27,
-    s: { es: "Pide yuca sancochada con curtido, y el chicharrón solo del tamaño de tu palma.", en: "Order boiled cassava with curtido, and keep the chicharrón to a palm-size portion." } },
-  { n: { es: "Yuca sancochada", en: "Boiled cassava" }, p: { es: "1 taza", en: "1 cup" }, k: 320, g: 3,
-    s: { es: "Porción de un puño, y súmale una proteína: pollo, pescado o huevo.", en: "A fist-size portion, plus a protein: chicken, fish, or eggs." } },
-  { n: { es: "Plátano frito", en: "Fried plantain" }, p: { es: "1 plátano maduro", en: "1 ripe plantain" }, k: 350, g: 2,
-    s: { es: "Hazlo asado o al horno (unas 220 kcal) y come medio si quieres bajar grasa.", en: "Bake or grill it (about 220 kcal) and have half if you're cutting fat." } },
-  { n: { es: "Desayuno típico", en: "Typical Salvadoran breakfast" }, p: { es: "2 huevos, ½ taza de frijoles fritos, ½ plátano frito, 2 cdas de crema, 1 oz de queso fresco y 2 tortillas", en: "2 eggs, ½ cup refried beans, ½ fried plantain, 2 tbsp cream, 1 oz fresh cheese & 2 tortillas" }, k: 900, g: 33,
-    s: { es: "Huevos y frijoles sí; plátano asado o medio, queso fresco en vez de duro y 1 cucharada de crema.", en: "Keep the eggs and beans; grilled or half plantain, fresh cheese instead of aged, and 1 tbsp of cream." } },
-  { n: { es: "Sopa de res", en: "Beef soup (sopa de res)" }, p: { es: "1 plato: ~100 g de carne cocida + yuca, ½ elote y verduras", en: "1 bowl: ~100 g cooked beef + cassava, ½ ear of corn & veggies" }, k: 490, g: 38,
-    s: { es: "¡Excelente! Más verdura y carne, menos yuca y elote, y 1–2 tortillas.", en: "Great choice! More veggies and meat, less cassava and corn, and 1–2 tortillas." } },
-  { n: { es: "Sopa de gallina india", en: "Hen soup (sopa de gallina india)" }, p: { es: "1 plato: 1 pieza (~120 g de carne) + papa, güisquil y elote", en: "1 bowl: 1 piece (~120 g meat) + potato, chayote & corn" }, k: 530, g: 38,
-    s: { es: "Quita la piel y la grasa de encima. Acompaña con arroz o con tortilla, no con los dos.", en: "Remove the skin and skim the fat. Pair it with rice or tortillas, not both." } },
-  { n: { es: "Tortilla de maíz", en: "Corn tortilla" }, p: { es: "1 tortilla mediana (~40 g)", en: "1 medium tortilla (~40 g)" }, k: 90, g: 2,
-    s: { es: "Cuenta tus tortillas: 2 por comida si quieres bajar grasa.", en: "Count your tortillas: 2 per meal if you're cutting fat." } },
-  { n: { es: "Frijoles fritos (molidos)", en: "Refried beans" }, p: { es: "½ taza", en: "½ cup" }, k: 200, g: 8,
-    s: { es: "Prefiere frijoles de olla (unas 120 kcal): misma proteína, mucha menos grasa.", en: "Choose whole stewed beans (about 120 kcal): same protein, much less fat." } },
-  { n: { es: "Quesadilla salvadoreña", en: "Salvadoran quesadilla (sweet cheese cake)" }, p: { es: "1 porción (~100 g)", en: "1 slice (~100 g)" }, k: 380, g: 7,
-    s: { es: "Es postre: una porción pequeña con café sin azúcar, y no todos los días.", en: "It's dessert: a small slice with unsweetened coffee, and not every day." } },
-  { n: { es: "Horchata", en: "Horchata" }, p: { es: "1 vaso de 16 oz", en: "1 16-oz glass" }, k: 250, g: 3,
-    s: { es: "Pídela con poca azúcar o toma medio vaso. Mejor: agua con limón o fresco sin azúcar.", en: "Ask for less sugar or have half a glass. Better: lemon water or an unsweetened fresco." } },
-  { n: { es: "Kolashanpan o gaseosa", en: "Kolashanpan or soda" }, p: { es: "1 botella de 600 ml", en: "1 600-ml bottle" }, k: 300, g: 0,
-    s: { es: "Cámbiala por la versión cero azúcar o por agua mineral con limón.", en: "Switch to the zero-sugar version or sparkling water with lime." } },
-  { n: { es: "Chilate con nuegados", en: "Chilate with nuegados" }, p: { es: "1 taza + 3 nuegados con miel", en: "1 cup + 3 nuegados with syrup" }, k: 450, g: 5,
-    s: { es: "Disfruta el chilate solo (unas 120 kcal) o con un solo nuegado.", en: "Enjoy the chilate alone (about 120 kcal) or with just one nuegado." } },
-  { n: { es: "Pastelitos de carne", en: "Meat pastelitos (fried turnovers)" }, p: { es: "3 pastelitos (~45 g c/u)", en: "3 pastelitos (~45 g each)" }, k: 450, g: 12,
-    s: { es: "Come 1–2 con bastante curtido y suma una proteína magra en la comida.", en: "Have 1–2 with plenty of curtido and add lean protein to the meal." } },
-  { n: { es: "Pollo frito", en: "Fried chicken" }, p: { es: "2 piezas (pierna + muslo)", en: "2 pieces (drumstick + thigh)" }, k: 500, g: 37,
-    s: { es: "Cámbialo por pollo asado o a la plancha, sin piel (unas 300 kcal).", en: "Swap it for grilled or roasted chicken, skinless (about 300 kcal)." } }
+  { id: "arrozConPollo", c: "comida", r: { es: "Colombia, Perú, Puerto Rico y Cuba", en: "Colombia, Peru, Puerto Rico & Cuba" },
+    n: { es: "Arroz con pollo", en: "Arroz con pollo (chicken & rice)" },
+    p: { es: "1 plato: ~1 taza de arroz (180 g) + 120 g de pollo sin piel y verduras", en: "1 plate: ~1 cup rice (180 g) + 120 g skinless chicken & vegetables" }, k: 550, g: 40,
+    i: { es: ["Arroz cocido en caldo con achiote o culantro (180 g)", "Pollo sin piel, guisado (120 g)", "½ cda de aceite (7 g)", "Arvejas o chícharos (30 g)", "Zanahoria (30 g)", "Pimiento o chile dulce (15 g)", "Cebolla (15 g)"], en: ["Rice cooked in broth with annatto or cilantro (180 g)", "Skinless stewed chicken (120 g)", "½ tbsp oil (7 g)", "Peas (30 g)", "Carrot (30 g)", "Bell pepper (15 g)", "Onion (15 g)"] },
+    s: { es: "Sirve más pollo y verduras y menos arroz, sin la piel del pollo. Acompáñalo con ensalada en vez de papas fritas o tostones.", en: "Serve more chicken and vegetables and less rice, without the chicken skin. Pair it with a salad instead of fries or tostones." } },
+  { id: "sancocho", c: "comida", r: { es: "Colombia, Panamá, República Dominicana y Venezuela", en: "Colombia, Panama, Dominican Republic & Venezuela" },
+    n: { es: "Sancocho de pollo", en: "Chicken sancocho (soup)" },
+    p: { es: "1 plato hondo: 120 g de pollo + yuca, plátano verde, papa y ½ mazorca", en: "1 large bowl: 120 g chicken + cassava, green plantain, potato & ½ ear of corn" }, k: 590, g: 36,
+    i: { es: ["Presa de pollo sin piel (120 g de carne)", "Yuca (80 g)", "Plátano verde (60 g)", "Papa (60 g)", "½ mazorca o elote (50 g de granos)", "Cebolla, ajo y cilantro (30 g)", "Grasa del caldo (~5 g)"], en: ["Skinless chicken piece (120 g meat)", "Cassava (80 g)", "Green plantain (60 g)", "Potato (60 g)", "½ ear of corn (50 g kernels)", "Onion, garlic & cilantro (30 g)", "Fat in the broth (~5 g)"] },
+    s: { es: "Elige 2 de los almidones (yuca, plátano, papa o mazorca), no los 4; quita la piel y la grasa de encima, y sírvelo sin el arroz de acompañante (ahorras ~200 kcal).", en: "Pick 2 of the starches (cassava, plantain, potato, or corn), not all 4; remove the skin and skim the fat, and skip the side of rice (saves ~200 kcal)." } },
+  { id: "pabellon", c: "comida", r: { es: "Venezuela", en: "Venezuela" },
+    n: { es: "Pabellón criollo", en: "Pabellón criollo (shredded beef, black beans & rice)" },
+    p: { es: "1 plato: 100 g de carne mechada + ⅔ taza de caraotas, ¾ taza de arroz y tajadas al horno", en: "1 plate: 100 g shredded beef + ⅔ cup black beans, ¾ cup rice & baked plantain slices" }, k: 720, g: 44,
+    i: { es: ["Carne mechada de falda (100 g cocida)", "Sofrito: tomate (30 g)", "Sofrito: pimiento (15 g)", "Sofrito: cebolla (15 g)", "1 cdta de aceite (5 g)", "Caraotas negras (⅔ taza, 120 g)", "Arroz blanco (130 g)", "Tajadas de plátano maduro al horno (60 g)"], en: ["Shredded flank steak (100 g cooked)", "Sofrito: tomato (30 g)", "Sofrito: bell pepper (15 g)", "Sofrito: onion (15 g)", "1 tsp oil (5 g)", "Black beans (⅔ cup, 120 g)", "White rice (130 g)", "Baked ripe plantain slices (60 g)"] },
+    s: { es: "Con tajadas fritas y caraotas con azúcar y mucho aceite, el plato llega a ~1,000 kcal. Hornea las tajadas, desgrasa la carne mechada y sirve más caraotas y menos arroz.", en: "With fried plantain slices and beans cooked with sugar and lots of oil, the plate reaches ~1,000 kcal. Bake the plantain, trim the fat from the beef, and serve more beans and less rice." } },
+  { id: "ceviche", c: "comida", r: { es: "Perú, Ecuador, México y Centroamérica", en: "Peru, Ecuador, Mexico & Central America" },
+    n: { es: "Ceviche de pescado", en: "Fish ceviche" },
+    p: { es: "1 plato: 150 g de pescado blanco + cebolla morada, limón, camote y elote", en: "1 plate: 150 g white fish + red onion, lime, sweet potato & corn" }, k: 300, g: 34,
+    i: { es: ["Pescado blanco muy fresco: corvina, tilapia o similar (150 g)", "Jugo de limón (40 g)", "Cebolla morada (40 g)", "Tomate y cilantro, al estilo centroamericano (40 g)", "Camote (batata) cocido (100 g)", "Elote o choclo cocido (50 g)"], en: ["Very fresh white fish: corvina, tilapia, or similar (150 g)", "Lime juice (40 g)", "Red onion (40 g)", "Tomato & cilantro, Central American style (40 g)", "Boiled sweet potato (100 g)", "Cooked corn (50 g)"] },
+    s: { es: "De las mejores opciones: mucha proteína y poca grasa. Evita la versión con mayonesa o salsa rosada y los chips o tostones fritos; si quieres algo crujiente, 4 galletas saladas suman ~50 kcal.", en: "One of the best options: high protein, low fat. Skip versions with mayo or pink sauce and fried chips or tostones; if you want crunch, 4 saltine crackers add ~50 kcal." } },
+  { id: "lomoSaltado", c: "comida", r: { es: "Perú", en: "Peru" },
+    n: { es: "Lomo saltado", en: "Lomo saltado (beef stir-fry)" },
+    p: { es: "1 plato: 120 g de res salteada con cebolla y tomate + 100 g de papas al horno y ¾ taza de arroz", en: "1 plate: 120 g beef stir-fried with onion & tomato + 100 g baked potatoes & ¾ cup rice" }, k: 620, g: 45,
+    i: { es: ["Lomo o sirloin de res en tiras (120 g cocido)", "2 cdtas de aceite (10 g)", "Cebolla morada (60 g)", "Tomate (60 g)", "Ají amarillo o pimiento (10 g)", "Sillao o salsa de soya (1 cda, 15 g)", "Papas en bastones al horno (100 g)", "Arroz blanco (130 g)"], en: ["Beef tenderloin or sirloin strips (120 g cooked)", "2 tsp oil (10 g)", "Red onion (60 g)", "Tomato (60 g)", "Ají amarillo or bell pepper (10 g)", "Soy sauce (1 tbsp, 15 g)", "Oven-baked potato wedges (100 g)", "White rice (130 g)"] },
+    s: { es: "En restaurante suele venir con papas fritas, más aceite y doble arroz (~1,000 kcal o más). En casa: papas al horno, solo 2 cdtas de aceite y media porción de arroz.", en: "Restaurants usually serve it with fries, more oil, and a double portion of rice (~1,000 kcal or more). At home: baked potatoes, just 2 tsp of oil, and half the rice." } },
+  { id: "asado", c: "comida", r: { es: "Argentina y Uruguay", en: "Argentina & Uruguay" },
+    n: { es: "Asado de res magra con chimichurri y ensalada", en: "Lean grilled beef with chimichurri & salad" },
+    p: { es: "1 plato: 150 g de carne magra asada + 1 cda de chimichurri, ensalada mixta y 1 papa mediana al horno", en: "1 plate: 150 g lean grilled beef + 1 tbsp chimichurri, mixed salad & 1 medium baked potato" }, k: 580, g: 51,
+    i: { es: ["Corte magro asado: cuadril, lomo o peceto (150 g cocido)", "Chimichurri: perejil, ajo y aceite (1 cda, ~9 g de aceite)", "Lechuga (60 g)", "Tomate (60 g)", "Cebolla (30 g)", "1 cdta de aceite para la ensalada (5 g)", "Papa al horno (150 g)"], en: ["Lean grilled cut: rump, tenderloin, or eye of round (150 g cooked)", "Chimichurri: parsley, garlic & oil (1 tbsp, ~9 g oil)", "Lettuce (60 g)", "Tomato (60 g)", "Onion (30 g)", "1 tsp oil for the salad (5 g)", "Baked potato (150 g)"] },
+    s: { es: "Elige cortes magros y deja para ocasiones especiales el chorizo, la morcilla y la costilla con grasa: un solo chorizo (~100 g) suma ~300 kcal.", en: "Choose lean cuts and save chorizo, blood sausage, and fatty ribs for special occasions: one chorizo (~100 g) adds ~300 kcal." } },
+  { id: "empanadas", c: "snack", r: { es: "Argentina y Chile", en: "Argentina & Chile" },
+    n: { es: "Empanadas de carne al horno", en: "Baked beef empanadas" },
+    p: { es: "2 empanadas medianas al horno (~100 g c/u)", en: "2 medium baked empanadas (~100 g each)" }, k: 480, g: 30,
+    i: { es: ["2 tapas de masa para horno (68 g)", "Carne molida magra 90/10 (80 g cocida)", "Cebolla (40 g)", "Huevo duro picado (20 g)", "1 cdta de aceite (5 g)"], en: ["2 baking-dough discs (68 g)", "Lean 90/10 ground beef (80 g cooked)", "Onion (40 g)", "Chopped hard-boiled egg (20 g)", "1 tsp oil (5 g)"] },
+    s: { es: "Mejor al horno que fritas, con carne magra y bastante cebolla. Fritas y con carne grasosa pueden llegar a ~670 kcal las 2. Con 2 y una ensalada tienes una comida completa.", en: "Baked beats fried; use lean meat and plenty of onion. Fried with fatty meat, 2 can reach ~670 kcal. Two plus a salad make a full meal." } },
+  { id: "ensaladaAtun", c: "snack", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Ensalada de atún con galletas saladas", en: "Tuna salad with saltine crackers" },
+    p: { es: "1 lata de atún en agua (~100 g escurrido) + tomate, cebolla, aguacate y 5 galletas saladas", en: "1 can tuna in water (~100 g drained) + tomato, onion, avocado & 5 saltines" }, k: 250, g: 28,
+    i: { es: ["Atún en agua, escurrido (1 lata, 100 g)", "Tomate (50 g)", "Cebolla y cilantro (20 g)", "Jugo de limón (10 g)", "Aguacate (30 g)", "5 galletas saladas (15 g)"], en: ["Tuna in water, drained (1 can, 100 g)", "Tomato (50 g)", "Onion & cilantro (20 g)", "Lime juice (10 g)", "Avocado (30 g)", "5 saltine crackers (15 g)"] },
+    s: { es: "Usa atún en agua y limón en vez de mayonesa (cada cucharada de mayonesa suma ~90 kcal). También queda bien sobre tostadas horneadas o en hojas de lechuga.", en: "Use tuna in water and lime instead of mayo (each tablespoon of mayo adds ~90 kcal). It also works on baked tostadas or in lettuce cups." } },
+  { id: "yogurFruta", c: "snack", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Yogur griego con fruta y avena", en: "Greek yogurt with fruit & oats" },
+    p: { es: "1 envase de yogur griego natural sin azúcar (170 g) + ⅔ taza de mango o papaya + 2 cdas de avena", en: "1 cup plain unsweetened Greek yogurt (170 g) + ⅔ cup mango or papaya + 2 tbsp oats" }, k: 210, g: 19,
+    i: { es: ["Yogur griego natural sin azúcar (170 g)", "Mango o papaya picados (100 g)", "2 cdas de avena (15 g)"], en: ["Plain unsweetened Greek yogurt (170 g)", "Diced mango or papaya (100 g)", "2 tbsp oats (15 g)"] },
+    s: { es: "Elige yogur natural sin azúcar: los de sabor traen ~15 g de azúcar añadida por envase. Endulza con la fruta y canela.", en: "Choose plain unsweetened yogurt: flavored ones carry ~15 g of added sugar per cup. Sweeten with the fruit and cinnamon." } },
+  { id: "frutaChile", c: "snack", r: { es: "México y Centroamérica", en: "Mexico & Central America" },
+    n: { es: "Fruta picada con limón y chile", en: "Cut fruit with lime & chili" },
+    p: { es: "1 vaso grande: 150 g de mango + 100 g de pepino + 100 g de piña", en: "1 large cup: 150 g mango + 100 g cucumber + 100 g pineapple" }, k: 160, g: 2,
+    i: { es: ["Mango (150 g)", "Pepino (100 g)", "Piña (100 g)", "Limón, sal y chile en polvo"], en: ["Mango (150 g)", "Cucumber (100 g)", "Pineapple (100 g)", "Lime, salt & chili powder"] },
+    s: { es: "Gran cambio en vez de papitas o dulces. Evita el chamoy y el azúcar, y súmale proteína (un yogur griego o 2 huevos duros) si es tu merienda principal.", en: "A great swap for chips or candy. Skip the chamoy and sugar, and add protein (a Greek yogurt or 2 hard-boiled eggs) if it's your main snack." } },
+  { id: "frijolesOlla", c: "acomp", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Frijoles de olla (negros o rojos)", en: "Whole stewed beans (black or red)" },
+    p: { es: "1 taza con un poco de caldo (~170 g)", en: "1 cup with a little broth (~170 g)" }, k: 220, g: 15,
+    i: { es: ["Frijoles cocidos sin manteca, con cebolla y ajo (170 g)"], en: ["Beans cooked without lard, with onion & garlic (170 g)"] },
+    s: { es: "Prefiérelos de olla en vez de refritos con manteca: los refritos tienen ~200 kcal por media taza, casi el doble. También se llaman caraotas, porotos o habichuelas.", en: "Choose whole stewed beans over refried beans made with lard: refried have ~200 kcal per half cup, almost double. Also called caraotas, porotos, or habichuelas." } },
+  { id: "tortilla", c: "acomp", r: { es: "México y Centroamérica", en: "Mexico & Central America" },
+    n: { es: "Tortilla de maíz", en: "Corn tortilla" },
+    p: { es: "1 tortilla mediana (~40 g)", en: "1 medium tortilla (~40 g)" }, k: 90, g: 2,
+    i: { es: ["Tortilla de maíz (40 g)"], en: ["Corn tortilla (40 g)"] },
+    s: { es: "Las tortillas mexicanas delgadas (~30 g) tienen ~65 kcal; las salvadoreñas, más gruesas, ~90. Cuenta 2 por comida si quieres bajar grasa.", en: "Thin Mexican tortillas (~30 g) have ~65 kcal; thicker Salvadoran ones, ~90. Count 2 per meal if you're cutting fat." } },
+  { id: "platanoFrito", c: "acomp", r: { es: "Centroamérica, el Caribe, Colombia y Venezuela", en: "Central America, the Caribbean, Colombia & Venezuela" },
+    n: { es: "Plátano maduro frito", en: "Fried ripe plantain" },
+    p: { es: "1 plátano maduro (~150 g frito)", en: "1 ripe plantain (~150 g fried)" }, k: 350, g: 2,
+    i: { es: ["Plátano maduro frito en aceite (150 g)"], en: ["Ripe plantain fried in oil (150 g)"] },
+    s: { es: "Hazlo al horno o asado (unas 220 kcal el plátano entero) y come medio si quieres bajar grasa.", en: "Bake or grill it (about 220 kcal for the whole plantain) and have half if you're cutting fat." } },
+  { id: "licuado", c: "bebida", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Licuado de banano con leche y avena", en: "Banana, milk & oat smoothie" },
+    p: { es: "1 vaso grande: 300 ml de leche descremada + 1 banano + 2 cdas de avena, sin azúcar", en: "1 large glass: 300 ml skim milk + 1 banana + 2 tbsp oats, no sugar" }, k: 290, g: 14,
+    i: { es: ["Leche descremada (300 ml)", "1 banano mediano (118 g)", "Avena (20 g)"], en: ["Skim milk (300 ml)", "1 medium banana (118 g)", "Oats (20 g)"] },
+    s: { es: "Pídelo o prepáralo sin azúcar ni leche condensada. Con 1 medida de proteína en polvo sube a ~38 g de proteína.", en: "Order or make it without sugar or condensed milk. With 1 scoop of protein powder it climbs to ~38 g of protein." } },
+  { id: "horchata", c: "bebida", r: { es: "México y El Salvador", en: "Mexico & El Salvador" },
+    n: { es: "Horchata", en: "Horchata" },
+    p: { es: "1 vaso de 16 oz (~480 ml)", en: "1 16-oz glass (~480 ml)" }, k: 260, g: 2,
+    i: { es: ["Horchata preparada, como se sirve (480 g)"], en: ["Horchata, as served (480 g)"] },
+    s: { es: "Pídela con poca azúcar o toma medio vaso. Mejor: agua con limón o un fresco sin azúcar.", en: "Ask for less sugar or have half a glass. Better: lime water or an unsweetened fresco." } },
+  { id: "gaseosa", c: "bebida", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Gaseosa o refresco regular", en: "Regular soda" },
+    p: { es: "1 botella de 600 ml", en: "1 600-ml bottle" }, k: 260, g: 0,
+    i: { es: ["Gaseosa regular de cola (600 ml ≈ 624 g)"], en: ["Regular cola (600 ml ≈ 624 g)"] },
+    s: { es: "Algunas de sabor, como Kolashanpan, llegan a ~300 kcal. Cámbiala por la versión cero azúcar o por agua mineral con limón.", en: "Some flavored sodas, like Kolashanpan, reach ~300 kcal. Switch to the zero-sugar version or sparkling water with lime." } },
+  { id: "arrozConLeche", c: "postre", r: { es: "Toda Latinoamérica", en: "All of Latin America" },
+    n: { es: "Arroz con leche", en: "Arroz con leche (rice pudding)" },
+    p: { es: "1 taza (~200 g)", en: "1 cup (~200 g)" }, k: 220, g: 6,
+    i: { es: ["Arroz con leche y azúcar (200 g)"], en: ["Rice pudding with milk & sugar (200 g)"] },
+    s: { es: "Prepáralo con leche descremada, canela y la mitad del azúcar, y sirve media taza (~110 kcal).", en: "Make it with skim milk, cinnamon, and half the sugar, and serve half a cup (~110 kcal)." } }
 ];
+const FOOD_SRC = { // fuentes por plato: fdc = IDs de USDA FoodData Central; o = incap | smae | off (Open Food Facts) | v1 (fact-check v1)
+  huevosRancheros: { fdc: ["171287", "172336", "175036", "174524", "173735", "172223", "2707191", "167666"], o: [] },
+  chilaquiles: { fdc: ["175036", "171824", "171477", "172223", "171312", "170000", "2708505"], o: [] },
+  arepaPericos: { fdc: ["168922", "171287", "170457", "170000", "172336", "172224"], o: ["incap"] },
+  mangu: { fdc: ["168216", "173410", "170000", "172336", "171287", "172224"], o: ["incap"] },
+  avena: { fdc: ["173904", "171269", "173944", "171312"], o: [] },
+  desayunoTipico: { fdc: [], o: ["v1"] },
+  tacosPollo: { fdc: ["175036", "171477", "172336", "170000", "174524", "171705", "2708519"], o: ["smae"] },
+  tostadasTinga: { fdc: ["175036", "171477", "170457", "170000", "172336", "173735", "169248", "172223", "171312", "171257"], o: [] },
+  pupusas: { fdc: ["2708611", "169975", "170393", "170000", "174524"], o: ["incap", "v1"] },
+  panConPollo: { fdc: ["2707661", "171066"], o: ["incap", "v1"] },
+  casamiento: { fdc: ["2708990"], o: ["incap"] },
+  casado: { fdc: ["171477", "172336", "168878", "173735", "169975", "170457", "169131", "168200"], o: ["incap"] },
+  tamalPollo: { fdc: ["2708573"], o: ["incap"] },
+  arrozConPollo: { fdc: ["168878", "171451", "172336", "170017", "170393", "170427", "170000"], o: [] },
+  sancocho: { fdc: ["171070", "169985", "168216", "170440", "169999", "170000", "172336", "168878"], o: ["incap"] },
+  pabellon: { fdc: ["168610", "170457", "170427", "170000", "172336", "173735", "168878", "169131", "168200"], o: [] },
+  ceviche: { fdc: ["175176", "168156", "170000", "170457", "168484", "169999", "172746"], o: [] },
+  lomoSaltado: { fdc: ["168635", "172336", "170000", "170457", "170427", "174277", "170093", "168878", "170698"], o: [] },
+  asado: { fdc: ["168635", "172336", "169248", "170457", "170000", "170093", "173859"], o: [] },
+  empanadas: { fdc: ["171794", "170000", "171287", "172336"], o: ["incap", "off"] },
+  ensaladaAtun: { fdc: ["171986", "170457", "170000", "168156", "171705", "172746", "171009"], o: [] },
+  yogurFruta: { fdc: ["171312", "169910", "173904", "170901"], o: [] },
+  frutaChile: { fdc: ["169910", "168409", "169124"], o: [] },
+  frijolesOlla: { fdc: ["173735", "167666"], o: ["smae"] },
+  tortilla: { fdc: ["175036"], o: ["incap", "smae"] },
+  platanoFrito: { fdc: ["168200", "169131"], o: [] },
+  licuado: { fdc: ["171269", "173944", "173904"], o: [] },
+  horchata: { fdc: ["171941", "2710602"], o: ["incap"] },
+  gaseosa: { fdc: ["174852", "2562629"], o: [] },
+  arrozConLeche: { fdc: ["2705685"], o: [] }
+};
 
-/* ---------- Súper barato: lista semanal para 1 persona (precios ESTIMADOS en USD) ---------- */
+/* ---------- Súper barato: lista semanal para 1 persona (precios ESTIMADOS en USD; o: true = extra opcional, no suma al total) ---------- */
 const GROCERY = [
-  { n: { es: "Huevos", en: "Eggs" }, q: { es: "Cartón de 30", en: "30-egg tray" }, p: 5.50, t: { es: "El cartón de 30 en el mercado sale más barato que por docena.", en: "A 30-egg tray at the market is cheaper than buying by the dozen." } },
-  { n: { es: "Pollo (pechuga o pierna-muslo)", en: "Chicken (breast or leg quarters)" }, q: { es: "3 lb", en: "3 lb" }, p: 6.00, t: { es: "Pierna-muslo sin piel es más barata que pechuga y rinde igual.", en: "Skinless leg quarters are cheaper than breast and go just as far." } },
-  { n: { es: "Atún en agua", en: "Tuna in water" }, q: { es: "4 latas", en: "4 cans" }, p: 5.00, t: { es: "Compra el paquete de 4 y busca 'en agua', no en aceite.", en: "Buy the 4-pack and look for 'in water,' not oil." } },
-  { n: { es: "Requesón o queso fresco", en: "Requesón or fresh cheese" }, q: { es: "1 lb", en: "1 lb" }, p: 3.00, t: { es: "El requesón tiene buena proteína y menos grasa que el queso duro.", en: "Requesón has good protein and less fat than aged cheese." } },
-  { n: { es: "Leche descremada", en: "Skim milk" }, q: { es: "2 litros", en: "2 liters" }, p: 3.15, t: { es: "La leche en bolsa o marca local suele costar menos.", en: "Bagged or local-brand milk is usually cheaper." } },
-  { n: { es: "Frijoles rojos (en grano)", en: "Red beans (dry)" }, q: { es: "2 lb", en: "2 lb" }, p: 2.60, t: { es: "Cocínalos en olla de presión: salen mucho más baratos que en bolsa o lata.", en: "Cook them in a pressure cooker: much cheaper than bagged or canned." } },
-  { n: { es: "Arroz", en: "Rice" }, q: { es: "2 lb", en: "2 lb" }, p: 1.50, t: { es: "Si tienes dónde guardarlo, el paquete de 5 lb rinde más.", en: "If you have storage, the 5-lb bag is better value." } },
-  { n: { es: "Tortillas", en: "Tortillas" }, q: { es: "30 unidades", en: "30 tortillas" }, p: 1.75, t: { es: "Las de la tortillería del barrio son más baratas y frescas.", en: "Neighborhood tortillería tortillas are cheaper and fresher." } },
-  { n: { es: "Avena en hojuelas", en: "Rolled oats" }, q: { es: "1 bolsa (800 g)", en: "1 bag (800 g)" }, p: 2.00, t: { es: "La avena en bolsa cuesta menos que la de caja y es igual.", en: "Bagged oats cost less than boxed and are the same." } },
-  { n: { es: "Papas o yuca", en: "Potatoes or cassava" }, q: { es: "3 lb", en: "3 lb" }, p: 2.85, t: { es: "Compra en el mercado y elige lo de temporada.", en: "Buy at the market and choose what's in season." } },
-  { n: { es: "Verduras (güisquil, repollo, tomate, cebolla, zanahoria)", en: "Vegetables (chayote, cabbage, tomato, onion, carrot)" }, q: { es: "Para la semana", en: "For the week" }, p: 8.00, t: { es: "El repollo y el güisquil rinden mucho y cuestan poco.", en: "Cabbage and chayote go a long way for very little." } },
-  { n: { es: "Guineos y fruta de temporada", en: "Bananas & seasonal fruit" }, q: { es: "10 guineos + 1 papaya o piña", en: "10 bananas + 1 papaya or pineapple" }, p: 4.50, t: { es: "La fruta de temporada del mercado es la más barata.", en: "Seasonal fruit at the market is the cheapest." } },
+  { n: { es: "Huevos", en: "Eggs" }, q: { es: "Cartón de 30", en: "30-egg tray" }, p: 5.85, t: { es: "El cartón de 30 sale más barato que por docena, y es tu proteína más barata.", en: "A 30-egg tray is cheaper than buying by the dozen, and it's your cheapest protein." } },
+  { n: { es: "Pollo (pechuga y pierna-muslo)", en: "Chicken (breast & leg quarters)" }, q: { es: "3 lb (1½ lb de cada uno)", en: "3 lb (1½ lb of each)" }, p: 5.80, t: { es: "La pierna-muslo sin piel es la más barata; la pechuga rinde para tacos, tinga y chilaquiles.", en: "Skinless leg quarters are the cheapest; breast goes far in tacos, tinga, and chilaquiles." } },
+  { n: { es: "Atún en agua", en: "Tuna in water" }, q: { es: "3 latas (140 g)", en: "3 cans (140 g)" }, p: 3.45, t: { es: "El paquete de 3 sale más barato. Busca 'en agua', no en aceite.", en: "The 3-pack is cheaper. Look for 'in water,' not oil." } },
+  { n: { es: "Requesón o queso fresco", en: "Requesón or queso fresco" }, q: { es: "1 lb", en: "1 lb" }, p: 3, t: { es: "El requesón tiene buena proteína y menos grasa que el queso duro.", en: "Requesón has good protein and less fat than aged cheese." } },
+  { n: { es: "Leche descremada", en: "Skim milk" }, q: { es: "2 litros", en: "2 liters" }, p: 3.15, t: { es: "Para la avena y los licuados. La marca local suele costar menos.", en: "For oatmeal and smoothies. Local brands usually cost less." } },
+  { n: { es: "Frijoles rojos o negros (en grano)", en: "Red or black beans (dry)" }, q: { es: "2 lb", en: "2 lb" }, p: 2.65, t: { es: "Cocínalos en olla de presión: salen mucho más baratos que en bolsa o lata.", en: "Cook them in a pressure cooker: much cheaper than ready-made or canned." } },
+  { n: { es: "Arroz", en: "Rice" }, q: { es: "2 lb", en: "2 lb" }, p: 1.50, t: { es: "Si tienes dónde guardarlo, la bolsa de 4 lb rinde más.", en: "If you have storage, the 4-lb bag is better value." } },
+  { n: { es: "Tortillas de maíz", en: "Corn tortillas" }, q: { es: "30 unidades", en: "30 tortillas" }, p: 1.75, t: { es: "Las de la tortillería del barrio son más baratas y frescas.", en: "Neighborhood tortillería tortillas are cheaper and fresher." } },
+  { n: { es: "Avena en hojuelas", en: "Rolled oats" }, q: { es: "1 bolsa (900 g)", en: "1 bag (900 g)" }, p: 2, t: { es: "La avena en bolsa cuesta menos que la de caja y es igual.", en: "Bagged oats cost less than boxed and are the same." } },
+  { n: { es: "Papas, yuca o camote", en: "Potatoes, cassava, or sweet potatoes" }, q: { es: "3 lb", en: "3 lb" }, p: 2.85, t: { es: "La papa y la yuca son las más baratas; el camote cuesta más en el súper que en el mercado.", en: "Potatoes and cassava are the cheapest; sweet potatoes cost more at the supermarket than at the market." } },
+  { n: { es: "Plátanos (verdes o maduros)", en: "Plantains (green or ripe)" }, q: { es: "3–4", en: "3–4" }, p: 1.15, t: { es: "Ásalos u hornéalos en vez de freírlos.", en: "Bake or grill them instead of frying." } },
+  { n: { es: "Verduras (tomate, cebolla, pimiento, repollo, zanahoria, lechuga)", en: "Vegetables (tomato, onion, bell pepper, cabbage, carrot, lettuce)" }, q: { es: "Para la semana", en: "For the week" }, p: 8.40, t: { es: "El repollo y la zanahoria rinden mucho y cuestan poco. En el mercado sale más barato.", en: "Cabbage and carrots go a long way for very little. The market is cheaper." } },
+  { n: { es: "Fruta: bananos y fruta de temporada", en: "Fruit: bananas & seasonal fruit" }, q: { es: "10 bananos + 1 papaya, piña o 3 mangos", en: "10 bananas + 1 papaya, pineapple, or 3 mangoes" }, p: 4.50, t: { es: "La fruta de temporada del mercado es la más barata.", en: "Seasonal fruit at the market is the cheapest." } },
   { n: { es: "Aguacate", en: "Avocado" }, q: { es: "2–3", en: "2–3" }, p: 2.50, t: { es: "Tu grasa saludable: una porción del tamaño de tu pulgar por comida.", en: "Your healthy fat: a thumb-size portion per meal." } },
-  { n: { es: "Plátanos", en: "Plantains" }, q: { es: "3", en: "3" }, p: 1.00, t: { es: "Ásalos u hornéalos en vez de freírlos.", en: "Bake or grill them instead of frying." } },
-  { n: { es: "Limón, ajo, sal y especias", en: "Lime, garlic, salt & spices" }, q: { es: "Básicos", en: "Basics" }, p: 2.00, t: { es: "El sabor sin calorías: cocina con limón, ajo y chile.", en: "Flavor without calories: cook with lime, garlic, and chili." } }
+  { n: { es: "Limón, ajo, cilantro y especias", en: "Limes, garlic, cilantro & spices" }, q: { es: "10 limones + básicos", en: "10 limes + basics" }, p: 3, t: { es: "El sabor sin calorías: cocina con limón, ajo, cilantro y chile.", en: "Flavor without calories: cook with lime, garlic, cilantro, and chili." } },
+  { n: { es: "Yogur griego natural sin azúcar", en: "Plain unsweetened Greek yogurt" }, q: { es: "1 kg", en: "1 kg" }, p: 4.65, o: true, t: { es: "Proteína fácil para meriendas: unos 16 g por envase de 170 g.", en: "Easy snack protein: about 16 g per 170 g cup." } },
+  { n: { es: "Pescado blanco o res magra", en: "White fish or lean beef" }, q: { es: "1 lb (alterna cada semana)", en: "1 lb (alternate weekly)" }, p: 4.50, o: true, t: { es: "Para el ceviche, el lomo saltado o el asado. La tilapia congelada suele estar en oferta.", en: "For ceviche, lomo saltado, or asado. Frozen tilapia is often on sale." } },
+  { n: { es: "Harina de maíz precocida (para arepas)", en: "Precooked corn flour (for arepas)" }, q: { es: "1 kg (dura 2–3 semanas)", en: "1 kg (lasts 2–3 weeks)" }, p: 2.20, o: true, t: { es: "Rinde unas 20 arepas. La marca de la tienda cuesta menos que la importada.", en: "Makes about 20 arepas. The store brand costs less than the imported one." } }
 ];
 
 /* ---------- Guía de porciones por mano ---------- */
 const HANDS = [
-  { id: "p", e: "✋", n: { es: "Palma = proteína", en: "Palm = protein" }, d: { es: "Pollo, res, pescado, huevos, atún, requesón.", en: "Chicken, beef, fish, eggs, tuna, requesón." } },
-  { id: "v", e: "👊", n: { es: "Puño = verduras", en: "Fist = vegetables" }, d: { es: "Ensalada, curtido, güisquil, ejotes, repollo.", en: "Salad, curtido, chayote, green beans, cabbage." } },
-  { id: "c", e: "🤲", n: { es: "Mano ahuecada = carbohidratos", en: "Cupped hand = carbs" }, d: { es: "Tortillas, arroz, frijoles, yuca, avena, fruta.", en: "Tortillas, rice, beans, cassava, oats, fruit." } },
-  { id: "f", e: "👍", n: { es: "Pulgar = grasas", en: "Thumb = fats" }, d: { es: "Aguacate, crema, queso, aceite, maní.", en: "Avocado, cream, cheese, oil, peanuts." } }
+  { id: "p", e: "✋", n: { es: "Palma = proteína", en: "Palm = protein" }, d: { es: "Pollo, res magra, pescado, huevos, atún, queso fresco, yogur griego.", en: "Chicken, lean beef, fish, eggs, tuna, queso fresco, Greek yogurt." } },
+  { id: "v", e: "👊", n: { es: "Puño = verduras", en: "Fist = vegetables" }, d: { es: "Ensalada, curtido, pico de gallo, güisquil (chayote), nopales, repollo, ejotes.", en: "Salad, curtido, pico de gallo, chayote, nopales, cabbage, green beans." } },
+  { id: "c", e: "🤲", n: { es: "Mano ahuecada = carbohidratos", en: "Cupped hand = carbs" }, d: { es: "Tortillas, arepa, arroz, frijoles, papa, yuca, plátano, avena, fruta.", en: "Tortillas, arepa, rice, beans, potato, cassava, plantain, oats, fruit." } },
+  { id: "f", e: "👍", n: { es: "Pulgar = grasas", en: "Thumb = fats" }, d: { es: "Aguacate, aceite, queso, crema, maní, chimichurri.", en: "Avocado, oil, cheese, cream, peanuts, chimichurri." } }
 ];
 const PLATE = { // porciones por comida
   h: { bajar: { p: 2, v: 2, c: 1, f: 1 }, mantener: { p: 2, v: 2, c: 2, f: 2 }, ganar: { p: 2, v: 2, c: 3, f: 2 } },
   m: { bajar: { p: 1, v: 2, c: 1, f: 1 }, mantener: { p: 1, v: 2, c: 1, f: 1 }, ganar: { p: 2, v: 1, c: 2, f: 1 } }
 };
 const MEALS = {
-  desayuno: { p: { es: "2–3 huevos picados o requesón", en: "2–3 scrambled eggs or requesón" }, v: { es: "Tomate, cebolla y chile en los huevos", en: "Tomato, onion, and pepper in the eggs" }, c: { es: "Tortillas o frijoles de olla", en: "Tortillas or whole stewed beans" }, f: { es: "Una tajada de aguacate", en: "A slice of avocado" } },
-  almuerzo: { p: { es: "Pollo guisado, res o pescado", en: "Stewed chicken, beef, or fish" }, v: { es: "Ensalada, curtido o verduras de la sopa", en: "Salad, curtido, or soup vegetables" }, c: { es: "Arroz, yuca o tortillas", en: "Rice, cassava, or tortillas" }, f: { es: "Aguacate o un poco de aceite", en: "Avocado or a little oil" } },
-  cena: { p: { es: "Atún, huevo o queso fresco", en: "Tuna, eggs, or fresh cheese" }, v: { es: "Güisquil, ejotes o repollo", en: "Chayote, green beans, or cabbage" }, c: { es: "Tortillas o un guineo", en: "Tortillas or a banana" }, f: { es: "Una cucharada de crema o queso", en: "A spoonful of cream or cheese" } }
+  desayuno: { p: { es: "2–3 huevos (rancheros o pericos), queso fresco o yogur griego", en: "2–3 eggs (rancheros or perico), queso fresco, or Greek yogurt" }, v: { es: "Tomate, cebolla y chile en los huevos", en: "Tomato, onion, and pepper in the eggs" }, c: { es: "Tortillas, arepa, avena o frijoles de olla", en: "Tortillas, arepa, oats, or whole beans" }, f: { es: "Una tajada de aguacate", en: "A slice of avocado" } },
+  almuerzo: { p: { es: "Pollo, res magra o pescado (a la plancha, guisado o en ceviche)", en: "Chicken, lean beef, or fish (grilled, stewed, or as ceviche)" }, v: { es: "Ensalada, curtido o verduras de la sopa", en: "Salad, curtido, or soup vegetables" }, c: { es: "Arroz, tortillas, papa, yuca o plátano", en: "Rice, tortillas, potato, cassava, or plantain" }, f: { es: "Aguacate o 1 cucharadita de aceite", en: "Avocado or 1 teaspoon of oil" } },
+  cena: { p: { es: "Atún, huevos, pollo deshebrado o queso fresco", en: "Tuna, eggs, shredded chicken, or queso fresco" }, v: { es: "Güisquil, ejotes, nopales o repollo", en: "Chayote, green beans, nopales, or cabbage" }, c: { es: "Tortillas, una arepa pequeña o una fruta", en: "Tortillas, a small arepa, or a piece of fruit" }, f: { es: "Aguacate o un poco de queso", en: "Avocado or a little cheese" } }
 };
 
 /* =====================================================================
@@ -1123,7 +1286,7 @@ const EX = {
     f: ELEV_F("db"), front: true },
   pajaro: { n: "Pájaros con mancuernas (inclinado)", tips: ["Inclínate con la espalda recta y las rodillas suaves, como en el remo.", "Abre los brazos hacia los lados con los codos un poco doblados.", "Junta los omóplatos arriba y baja lento."],
     f: PAJARO_F("db") },
-  curlMartillo: { n: "Curl martillo con mancuernas", tips: ["Palmas viendo hacia tu cuerpo, como si sostuvieras un martillo.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
+  curlMartillo: { n: "Curl martillo con mancuernas", tips: ["De pie, una mancuerna en cada mano con las palmas viéndose una a la otra, como si sostuvieras un martillo.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
     f: CURL_F("dbv") },
   extNuca: { n: "Extensión de tríceps sobre la cabeza con mancuerna", tips: ["Sentado y derecho, sostén una mancuerna con las dos manos arriba de la cabeza.", "Dobla los codos y baja la mancuerna detrás de la cabeza.", "Estira los brazos sin abrir los codos; abdomen firme."],
     f: EXTNUCA_F([]) },
@@ -1140,7 +1303,7 @@ const EX = {
     f: ELEV_F("dbv"), front: true },
   pajaroBot: { n: "Pájaros con botellas (inclinado)", tips: ["Inclínate con la espalda recta y las rodillas suaves.", "Abre los brazos hacia los lados con los codos un poco doblados.", "Junta los omóplatos arriba y baja lento."],
     f: PAJARO_F("dbv") },
-  curlMartilloBot: { n: "Curl martillo con botellas de agua", tips: ["Agarra las botellas por el cuello, palmas viendo hacia tu cuerpo.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
+  curlMartilloBot: { n: "Curl martillo con botellas de agua", tips: ["Agarra las botellas por el cuello, con las palmas viéndose una a la otra.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
     f: CURL_F("dbv") },
   extNucaBot: { n: "Extensión de tríceps sobre la cabeza con botella", tips: ["Sentado en una silla firme, sostén un galón o botella con las dos manos arriba de la cabeza.", "Dobla los codos y baja la botella detrás de la cabeza.", "Estira los brazos sin abrir los codos; abdomen firme."],
     f: EXTNUCA_F([{ k: "seg", a: ["P", -10, 3], b: ["P", -10, -24], w: 4 }]) }
@@ -1477,17 +1640,28 @@ function plateSvg(n) {
       <text x="214" y="175" font-size="15" fill="#160904">${n.f}${e("f")}</text></g></svg>`;
 }
 function vTip() {
-  return `<div class="note"><p>${t("tipIntro")}</p></div>
-  <div id="foodList">${FOODS.map(f => `<div class="card food"><h3>${esc(L(f.n))}</h3><div class="muted small">${esc(L(f.p))}</div>
+  const fdcUrl = id => `https://fdc.nal.usda.gov/food-details/${id}/nutrients`, a = (u, x) => `<a href="${u}" target="_blank" rel="noopener">${x}</a>`;
+  const OTHER = { incap: () => esc(t("srcIncap")), smae: () => esc(t("srcSmae")), off: () => a("https://ar.openfoodfacts.org/producto/7790236001300/tapas-para-empanadas-criollas-la-saltena", "Open Food Facts"), v1: () => esc(t("srcV1")) };
+  const src = id => { const s = FOOD_SRC[id]; if (!s) return "";
+    return `<p class="src"><b>${t("srcLbl")}:</b> ${[...s.fdc.map(n => a(fdcUrl(n), "USDA FDC " + n)), ...s.o.map(k => OTHER[k] ? OTHER[k]() : "")].filter(Boolean).join(" · ")}</p>`; };
+  const card = f => `<div class="card food"${f.id ? ` data-id="${f.id}"` : ""}>${f.r ? `<div class="ftag">📍 ${esc(L(f.r))}</div>` : ""}<h3>${esc(L(f.n))}</h3><div class="muted small">${esc(L(f.p))}</div>
     <div class="chips"><span class="chip k"><b>~${fmt(f.k)}</b> ${t("kcal")}</span><span class="chip p"><b>~${f.g}</b> ${t("protShort")}</span><span class="chip">${t("est")}</span></div>
-    <div class="swap"><span class="lbl2">${t("swap")}</span>${esc(L(f.s))}</div></div>`).join("")}</div>`;
+    <div class="swap"><span class="lbl2">${t("swap")}</span>${esc(L(f.s))}</div>${f.i ? `
+    <details class="ing"><summary>${t("ingLbl")}</summary><ul>${L(f.i).map(x => `<li>${esc(x)}</li>`).join("")}</ul>${src(f.id)}</details>` : ""}</div>`;
+  const groups = FOOD_CATS.map(c => [c, FOODS.filter(f => f.c === c)]).filter(([, l]) => l.length), loose = FOODS.filter(f => !FOOD_CATS.includes(f.c));
+  const note = t("srcNote").replace("{fdc}", a("https://fdc.nal.usda.gov/", "USDA FoodData Central")).replace("{incap}", a("https://www.fao.org/food-composition/tables-and-databases/detail/(multiple-countries--2018)-tabla-de-composici%C3%B3n-de-alimentos-de-centro-am%C3%A9rica/en", esc(t("srcIncap")))).replace("{smae}", a("https://fisiologia.facmed.unam.mx/wp-content/uploads/2019/02/2-Valoraci%C3%B3n-nutricional-Anexos.pdf", esc(t("srcSmae"))));
+  return `<div class="note"><p>${t("tipIntro")}</p></div>
+  <div id="foodList">${groups.map(([c, l]) => `<div class="fcat" data-cat="${c}"><div class="kicker">${t("cat_" + c)}</div>${l.map(card).join("")}</div>`).join("")}${loose.map(card).join("")}</div>
+  <div class="note srcnote" id="foodSources"><p>${note}</p></div>`;
 }
 function vSup() {
-  const total = GROCERY.reduce((a, g) => a + g.p, 0), money = n => "$" + n.toFixed(2);
+  const core = GROCERY.filter(g => !g.o), extras = GROCERY.filter(g => g.o), total = core.reduce((a, g) => a + g.p, 0), money = n => "$" + n.toFixed(2);
+  const li = g => `<li><div><b>${esc(L(g.n))}</b><span class="muted small">${esc(L(g.q))}</span></div><div class="price">~${money(g.p)}</div>
+    <div class="tip">💡 <b>${t("saveTip")}:</b> ${esc(L(g.t))}</div></li>`;
   return `<div class="note"><p>${t("supIntro")}</p></div>
-  <div class="card"><ul class="groc" id="grocList">${GROCERY.map(g => `<li><div><b>${esc(L(g.n))}</b><span class="muted small">${esc(L(g.q))}</span></div><div class="price">~${money(g.p)}</div>
-    <div class="tip">💡 <b>${t("saveTip")}:</b> ${esc(L(g.t))}</div></li>`).join("")}</ul>
-    <div class="row total"><b>${t("supTotal")}</b><span class="big2" id="grocTotal">~${money(total)}</span></div><p class="muted small" style="margin:2px 0 0;text-align:right">${t("perWeek")}</p></div>`;
+  <div class="card"><ul class="groc" id="grocList">${core.map(li).join("")}</ul>
+    <div class="row total"><b>${t("supTotal")}</b><span class="big2" id="grocTotal">~${money(total)}</span></div><p class="muted small" style="margin:2px 0 0;text-align:right">${t("perWeek")}</p></div>${extras.length ? `
+  <div class="card" id="grocExtrasCard"><div class="kicker">${t("extrasTitle")}</div><p class="muted small" style="margin:0 0 10px">${t("extrasNote")}</p><ul class="groc extras" id="grocExtras">${extras.map(li).join("")}</ul></div>` : ""}`;
 }
 
 /* ---------- HOY ---------- */
