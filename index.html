@@ -183,6 +183,17 @@ nav button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;heig
 .inl{background:none;border:none;padding:0;color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;font-size:inherit}
 .choose{font-size:14px;color:var(--muted);margin:-2px 2px 14px}
 .choose b{color:var(--text)}
+.dpills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.dpills button{flex:1 1 28%;min-height:58px;border-radius:16px;border:2px solid var(--edge);background:var(--card);color:var(--text);font-family:var(--fh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 4px;line-height:1.15}
+.dpills small{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dpills b{font-size:15px;font-weight:800}
+.dpills button.on{border-color:var(--accent);background:var(--accent-fill);color:var(--on-accent)}
+.dpills button.on small{color:var(--on-accent)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#dayTitle{font-size:21px;margin:2px 0 4px}
+#dayFocus{margin:0 0 10px}
+.extip{margin:0 0 10px;padding:9px 12px;background:var(--bg);border-left:4px solid var(--accent);border-radius:10px;font-size:14.5px;line-height:1.45}
+.extip b{color:var(--accent)}
 .pills.five{gap:6px}
 .pills.five button{font-size:13px;padding:0 2px}
 .daycap{font-family:var(--fh);font-weight:800;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin:0 0 2px}
@@ -430,13 +441,14 @@ const I18N = {
     foot: "App gratis",
     // Rutina
     rutKicker: "Paso 2 · Entrena", rutTitle: "Tu <span class=\"hl\">rutina</span>",
-    rutNote1: "Es una rutina general de fuerza para principiantes que trabaja todo tu cuerpo. Sirve para cualquier meta: <b>bajar grasa, ganar músculo o sentirte mejor</b>.",
-    rutNote2: "Lo que decide el resultado es tu comida: usa la <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculadora</button> para saber tus calorías y proteína. Si eliges 5 días, el día de cardio + core te ayuda extra a bajar grasa.",
+    rutNote1: "Es una rutina de fuerza para principiantes dividida por grupo muscular: cada día trabajas una parte del cuerpo (pecho, espalda, piernas, hombros o brazos), así te enfocas y descansas bien entre días. Sirve para cualquier meta: <b>bajar grasa, ganar músculo o sentirte mejor</b>.",
+    rutNote2: "Lo que decide el resultado es tu comida: usa la <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculadora</button> para saber tus calorías y proteína. Si quieres bajar más grasa, haz la caminata opcional al final del día o camina 20–30 minutos en tus días libres.",
     gym: "Gimnasio", casa: "En casa", f3: "3 días", f5: "5 días", fx: "Exprés",
-    choose: "<b>¿Cuál elijo?</b> 3 días si estás empezando o tienes poco tiempo. 5 días si puedes ser constante y te recuperas bien. <b>Exprés</b> (20–30 min) para tus días ocupados.",
-    sub3: "3 días por semana, cuerpo completo. Ejemplo: lunes, miércoles y viernes. Descansa 60–90 segundos entre series.",
-    sub5: "5 días por semana: tren superior, tren inferior y cardio + core. Ejemplo: lunes a viernes. Descansa 60–90 segundos entre series.",
-    subx: "Para días ocupados: haz los ejercicios seguidos en circuito, descansa 30–45 segundos entre ejercicios y 1 minuto al final de cada vuelta. Total: 20–30 minutos.",
+    choose: "<b>¿Cuál elijo?</b> <b>3 días</b> (empuje, jalón y piernas) si estás empezando o tienes poco tiempo: igual entrenas todo el cuerpo cada semana. <b>5 días</b> (un grupo muscular por día, con un día completo de brazos) si puedes ser constante y te recuperas bien. <b>Exprés</b> (20–30 min, un grupo por sesión) para tus días ocupados.",
+    sub3: "3 días por semana: empuje (pecho, hombros y tríceps), jalón (espalda y bíceps) y piernas. Ejemplo: lunes, miércoles y viernes. Descansa 90 segundos en los ejercicios grandes y 60 en los pequeños.",
+    sub5: "5 días por semana, un grupo muscular por día: pecho, espalda, piernas, hombros + core y brazos. Ejemplo: lunes a viernes. Descansa 90 segundos en los ejercicios grandes y 60 en los pequeños.",
+    subx: "Para días ocupados: un grupo muscular por sesión. Haz los ejercicios seguidos en circuito, descansa 45 segundos entre ejercicios y 60–90 segundos al final de cada vuelta. Total: 20–30 minutos. Sigue el orden de los días (1 al 5) aunque entrenes 3 o 4 veces por semana; después del día 5, vuelve al 1.",
+    rest: "Descanso {s} s", tipLbl: "Consejo", focusLbl: "Enfoque",
     weekKicker: "Progresión de 4 semanas", weekN: "Semana {n}", weekS: "S{n}",
     weekSince: "Empezaste el {date}. Según la fecha vas en la semana {n}.", weekGo: "Ir a la semana {n}", weekRestart: "Empezar de nuevo hoy",
     weekDone: "¡Terminaste las 4 semanas! Repite el ciclo con un poco más de peso.",
@@ -515,13 +527,14 @@ const I18N = {
     disc: "<b>Health notice:</b> this app is for information only and doesn't replace advice from a doctor or health professional. Check with your doctor before you start training or change your diet, especially if you have a health condition or an injury, or are pregnant. If you feel pain, dizziness, or shortness of breath, stop.",
     foot: "Free app",
     rutKicker: "Step 2 · Train", rutTitle: "Your <span class=\"hl\">workout</span>",
-    rutNote1: "This is a general beginner strength routine that works your whole body. It fits any goal: <b>losing fat, building muscle, or feeling better</b>.",
-    rutNote2: "Your food decides the result: use the <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculator</button> to find your calories and protein. If you choose 5 days, the cardio + core day gives fat loss an extra push.",
+    rutNote1: "This is a beginner strength routine split by muscle group: each day you train one part of your body (chest, back, legs, shoulders, or arms), so you can focus and recover well between days. It fits any goal: <b>losing fat, building muscle, or feeling better</b>.",
+    rutNote2: "Your food decides the result: use the <button class=\"inl\" data-act=\"go\" data-tab=\"comida\" data-sub=\"calc\">Calculator</button> to find your calories and protein. For extra fat loss, do the optional walk at the end of the day, or walk 20–30 minutes on your days off.",
     gym: "Gym", casa: "At home", f3: "3 days", f5: "5 days", fx: "Express",
-    choose: "<b>Which one?</b> 3 days if you're just starting or short on time. 5 days if you can stay consistent and recover well. <b>Express</b> (20–30 min) for your busy days.",
-    sub3: "3 days a week, full body. Example: Monday, Wednesday, and Friday. Rest 60–90 seconds between sets.",
-    sub5: "5 days a week: upper body, lower body, and cardio + core. Example: Monday to Friday. Rest 60–90 seconds between sets.",
-    subx: "For busy days: do the exercises back to back as a circuit, rest 30–45 seconds between exercises and 1 minute after each round. Total: 20–30 minutes.",
+    choose: "<b>Which one?</b> <b>3 days</b> (push, pull, and legs) if you're just starting or short on time: you still train your whole body every week. <b>5 days</b> (one muscle group per day, including a full arm day) if you can stay consistent and recover well. <b>Express</b> (20–30 min, one muscle group per session) for your busy days.",
+    sub3: "3 days a week: push (chest, shoulders, and triceps), pull (back and biceps), and legs. Example: Monday, Wednesday, and Friday. Rest 90 seconds on the big exercises and 60 on the small ones.",
+    sub5: "5 days a week, one muscle group per day: chest, back, legs, shoulders + core, and arms. Example: Monday to Friday. Rest 90 seconds on the big exercises and 60 on the small ones.",
+    subx: "For busy days: one muscle group per session. Do the exercises back to back as a circuit, rest 45 seconds between exercises and 60–90 seconds after each round. Total: 20–30 minutes. Follow the day order (1 to 5) even if you train 3 or 4 times a week; after day 5, start again at 1.",
+    rest: "Rest {s} sec", tipLbl: "Tip", focusLbl: "Focus",
     weekKicker: "4-week progression", weekN: "Week {n}", weekS: "W{n}",
     weekSince: "You started on {date}. By the calendar you're in week {n}.", weekGo: "Go to week {n}", weekRestart: "Start over today",
     weekDone: "You finished all 4 weeks! Repeat the cycle with a little more weight.",
@@ -613,57 +626,155 @@ const EX_EN = {
   extPiernas: ["Leg extension machine", ["Adjust the backrest so your knees line up with the seat edge.", "Straighten your legs without slamming at the top.", "Lower slowly, don't drop the weight."]],
   puenteUna: ["Single-leg glute bridge", ["One foot on the floor, the other leg straight.", "Lift your hips by pushing through your planted heel.", "Keep your hips level; switch legs."]],
   gobletBag: ["Backpack front squat", ["Hug the backpack against your chest.", "Sit down like there's a chair behind you, chest up.", "Stand up pushing through your whole foot."]],
-  pressBot: ["Water-bottle shoulder press", ["Sit tall on a sturdy chair.", "Start with the bottles at shoulder height.", "Press up without arching your lower back."]]
+  pressBot: ["Water-bottle shoulder press", ["Sit tall on a sturdy chair.", "Start with the bottles at shoulder height.", "Press up without arching your lower back."]],
+  // ----- split por grupo muscular -----
+  pressMaq: ["Machine chest press", ["Set the seat so the handles line up with your chest.", "Keep your back against the pad; press forward without locking your elbows.", "Return slowly until you feel a stretch in your chest."]],
+  elevLat: ["Dumbbell lateral raise", ["Stand with the dumbbells at your sides, elbows slightly bent.", "Raise your arms out to the sides to shoulder height.", "Lower slowly, over 2–3 seconds, without swinging."]],
+  pajaro: ["Bent-over dumbbell reverse fly", ["Hinge forward with a flat back and soft knees, like in the row.", "Open your arms out to the sides with a slight bend in your elbows.", "Squeeze your shoulder blades at the top and lower slowly."]],
+  curlMartillo: ["Dumbbell hammer curl", ["Palms facing your body, like you're holding a hammer.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
+  extNuca: ["Overhead dumbbell triceps extension", ["Sit tall and hold one dumbbell with both hands above your head.", "Bend your elbows and lower the dumbbell behind your head.", "Straighten your arms without flaring your elbows; abs tight."]],
+  pressPisoBot: ["Floor chest press with water bottles", ["Lie on your back with your knees bent and feet flat on the floor.", "Lower the bottles until your elbows lightly touch the floor.", "Press up until your arms are straight."]],
+  aperturasBot: ["Floor chest fly with water bottles", ["Lie on your back on the floor, arms above your chest, elbows slightly bent.", "Open your arms out to the sides until your elbows lightly touch the floor.", "Bring your arms back together over your chest, like hugging a tree."]],
+  remoUnaBag: ["One-arm backpack row (chair-supported)", ["Brace one hand and one knee on a sturdy chair.", "Back flat; pull the backpack toward your hip, elbow close to your body.", "Lower slowly, then switch arms."]],
+  yPiso: ["Prone Y raise", ["Lie face down, arms stretched forward in a Y, thumbs up.", "Lift just your arms and a little of your chest, squeezing your shoulder blades.", "Hold 2 seconds and lower slowly; your legs stay on the floor."]],
+  elevLatBot: ["Water-bottle lateral raise", ["Stand with the bottles at your sides, elbows slightly bent.", "Raise your arms out to the sides to shoulder height.", "Lower slowly, over 2–3 seconds, without swinging."]],
+  pajaroBot: ["Bent-over water-bottle reverse fly", ["Hinge forward with a flat back and soft knees.", "Open your arms out to the sides with a slight bend in your elbows.", "Squeeze your shoulder blades at the top and lower slowly."]],
+  curlMartilloBot: ["Water-bottle hammer curl", ["Hold the bottles by the neck, palms facing your body.", "Elbows tucked at your sides; curl up without swinging.", "Lower slowly, over 2–3 seconds."]],
+  extNucaBot: ["Overhead water-bottle triceps extension", ["Sit on a sturdy chair and hold a gallon jug or bottle with both hands above your head.", "Bend your elbows and lower it behind your head.", "Straighten your arms without flaring your elbows; abs tight."]]
 };
 
-/* ---------- Rutinas: [ejercicio, series, reps (es), reps (en)] ----------
-   freq "3" = 3 días, "5" = 5 días, "x" = exprés 20–30 min (circuito) */
-const rx = (id, sets, es, en) => [id, sets, es, en || es.replace("por pierna", "per leg").replace("por lado", "per side").replace("seg", "sec")];
+/* ---------- Rutinas por grupo muscular (spec de Zack, 2 oct 2026) ----------
+   [ejercicio, series, reps (es), reps (en), descanso en seg (0 = no se muestra)]
+   freq "3" = empuje / jalón / piernas, "5" = un grupo por día, "x" = exprés 20–30 min (circuito, días 1→5 y repetir)
+   t = título del día, s = etiqueta corta (botones de día), focus = músculos que trabaja */
+const rx = (id, sets, es, rest = 0) => [id, sets, es, es.replace("por pierna", "per leg").replace("por lado", "per side").replace("por brazo", "per arm").replace("seg", "sec").replace("(opcional)", "(optional)"), rest];
 const ROUTINE = {
   gym: {
     3: [
-      { t: { es: "Cuerpo completo A", en: "Full body A" }, ex: [rx("goblet", 3, "10"), rx("pressPecho", 3, "10"), rx("jalon", 3, "10"), rx("puenteDb", 3, "12"), rx("plancha", 3, "20–30 seg")] },
-      { t: { es: "Cuerpo completo B", en: "Full body B" }, ex: [rx("prensa", 3, "12"), rx("remoPolea", 3, "10"), rx("pressHombro", 3, "10"), rx("zancadaDb", 2, "8 por pierna"), rx("bicho", 3, "8 por lado")] },
-      { t: { es: "Cuerpo completo C", en: "Full body C" }, ex: [rx("rdl", 3, "10"), rx("jalon", 3, "10"), rx("flexInc", 3, "8–10"), rx("escalon", 2, "8 por pierna"), rx("plancha", 3, "20–30 seg")] }
+      { t: { es: "Empuje: pecho, hombros y tríceps", en: "Push: chest, shoulders & triceps" }, s: { es: "Empuje", en: "Push" }, focus: { es: "Pecho, hombros y tríceps", en: "Chest, shoulders, and triceps" },
+        ex: [rx("pressPecho", 3, "10", 90), rx("pressHombro", 3, "10", 90), rx("pressInc", 2, "10", 90), rx("elevLat", 2, "12", 60), rx("pushdown", 2, "12", 60)] },
+      { t: { es: "Jalón: espalda y bíceps", en: "Pull: back & biceps" }, s: { es: "Jalón", en: "Pull" }, focus: { es: "Espalda, hombro de atrás y bíceps", en: "Back, rear shoulders, and biceps" },
+        ex: [rx("jalon", 3, "10", 90), rx("remoPolea", 3, "10", 90), rx("pajaro", 2, "12", 60), rx("curl", 2, "10–12", 60), rx("curlMartillo", 2, "12", 60)] },
+      { t: { es: "Piernas y glúteos", en: "Legs & glutes" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("prensa", 3, "12", 90), rx("rdl", 3, "10", 90), rx("zancadaDb", 2, "8 por pierna", 90), rx("legCurl", 2, "12", 60), rx("puenteDb", 2, "12", 60), rx("calfDb", 2, "15", 45)] }
     ],
     5: [
-      { t: { es: "Tren superior", en: "Upper body" }, ex: [rx("pressPecho", 3, "10"), rx("jalon", 3, "10"), rx("pressHombro", 3, "10"), rx("remoPolea", 3, "10"), rx("pushdown", 2, "12")] },
-      { t: { es: "Tren inferior", en: "Lower body" }, ex: [rx("prensa", 3, "12"), rx("rdl", 3, "10"), rx("zancadaDb", 2, "8 por pierna"), rx("legCurl", 3, "12"), rx("calfDb", 3, "15")] },
-      { t: { es: "Cardio + core", en: "Cardio + core" }, ex: [rx("cinta", 1, "20–30 min"), rx("plancha", 3, "20–30 seg"), rx("bicho", 3, "8 por lado"), rx("planchaLat", 2, "15–20 seg por lado")] },
-      { t: { es: "Tren superior (variaciones)", en: "Upper body (variations)" }, ex: [rx("pressInc", 3, "10"), rx("remoDb", 3, "10"), rx("flexInc", 3, "8–10"), rx("curl", 2, "12"), rx("fondos", 2, "8–10")] },
-      { t: { es: "Tren inferior (variaciones)", en: "Lower body (variations)" }, ex: [rx("goblet", 3, "10"), rx("puenteDb", 3, "12"), rx("extPiernas", 3, "12"), rx("escalon", 2, "8 por pierna"), rx("calfDb", 3, "15")] }
+      { t: { es: "Pecho", en: "Chest" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho (con apoyo de hombro frontal y tríceps)", en: "Chest (front shoulders and triceps assist)" },
+        ex: [rx("pressPecho", 3, "10", 90), rx("pressInc", 3, "10", 90), rx("pressMaq", 2, "12", 60), rx("flexInc", 2, "8–10", 60), rx("cinta", 1, "10–15 min (opcional)", 0)] },
+      { t: { es: "Espalda", en: "Back" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Dorsales, espalda media y espalda baja", en: "Lats, mid back, and lower back" },
+        ex: [rx("jalon", 3, "10", 90), rx("remoPolea", 3, "10", 90), rx("remoDb", 2, "10–12", 60), rx("superman", 2, "10", 45), rx("cinta", 1, "10–15 min (opcional)", 0)] },
+      { t: { es: "Piernas y glúteos", en: "Legs & glutes" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("prensa", 3, "12", 90), rx("rdl", 3, "10", 90), rx("goblet", 2, "10", 90), rx("legCurl", 2, "12", 60), rx("puenteDb", 2, "12", 60), rx("calfDb", 2, "15", 45)] },
+      { t: { es: "Hombros + core", en: "Shoulders + core" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros (frente, lado y atrás) y abdomen", en: "Shoulders (front, side, rear) and core" },
+        ex: [rx("pressHombro", 3, "10", 90), rx("elevLat", 3, "12", 60), rx("pajaro", 2, "12", 60), rx("planchaLat", 2, "15–20 seg por lado", 45), rx("bicho", 2, "8 por lado", 45)] },
+      { t: { es: "Brazos: bíceps y tríceps", en: "Arms: biceps & triceps" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps, tríceps y antebrazo", en: "Biceps, triceps, and forearms" },
+        ex: [rx("curl", 3, "10–12", 60), rx("pushdown", 3, "10–12", 60), rx("curlMartillo", 2, "12", 60), rx("extNuca", 2, "12", 60), rx("cinta", 1, "10–15 min (opcional)", 0)] }
     ],
     x: [
-      { t: { es: "Exprés A · 20–30 min", en: "Express A · 20–30 min" }, ex: [rx("goblet", 3, "12"), rx("pressPecho", 3, "10"), rx("remoDb", 3, "10"), rx("plancha", 3, "30 seg")] },
-      { t: { es: "Exprés B · 20–30 min", en: "Express B · 20–30 min" }, ex: [rx("rdl", 3, "10"), rx("pressHombro", 3, "10"), rx("jalon", 3, "10"), rx("bicho", 3, "8 por lado")] }
+      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho", en: "Chest" },
+        ex: [rx("pressPecho", 3, "10", 45), rx("pressMaq", 3, "12", 45), rx("flexInc", 3, "8–10", 45)] },
+      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Espalda", en: "Back" },
+        ex: [rx("jalon", 3, "10", 45), rx("remoDb", 3, "10", 45), rx("superman", 3, "10", 45)] },
+      { t: { es: "Piernas y glúteos · 20–30 min", en: "Legs & glutes · 20–30 min" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("goblet", 3, "12", 45), rx("rdl", 3, "10", 45), rx("zancadaDb", 3, "8 por pierna", 45), rx("puenteDb", 3, "12", 45)] },
+      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros", en: "Shoulders" },
+        ex: [rx("pressHombro", 3, "10", 45), rx("elevLat", 3, "12", 45), rx("pajaro", 3, "12", 45)] },
+      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps y tríceps", en: "Biceps and triceps" },
+        ex: [rx("curl", 3, "12", 45), rx("pushdown", 3, "12", 45), rx("curlMartillo", 3, "12", 45), rx("extNuca", 3, "12", 45)] }
     ]
   },
   casa: {
     3: [
-      { t: { es: "Cuerpo completo A", en: "Full body A" }, ex: [rx("sentadilla", 3, "12"), rx("flexInc", 3, "8–10"), rx("remoBag", 3, "12"), rx("puente", 3, "15"), rx("plancha", 3, "20–30 seg")] },
-      { t: { es: "Cuerpo completo B", en: "Full body B" }, ex: [rx("zancada", 3, "8 por pierna"), rx("flexRod", 3, "6–10"), rx("superman", 3, "10"), rx("rdlBag", 3, "12"), rx("bicho", 3, "8 por lado")] },
-      { t: { es: "Cuerpo completo C", en: "Full body C" }, ex: [rx("escalon", 3, "10 por pierna"), rx("flexInc", 3, "10"), rx("remoBag", 3, "12"), rx("sentadilla", 3, "15"), rx("plancha", 3, "30 seg")] }
+      { t: { es: "Empuje: pecho, hombros y tríceps", en: "Push: chest, shoulders & triceps" }, s: { es: "Empuje", en: "Push" }, focus: { es: "Pecho, hombros y tríceps", en: "Chest, shoulders, and triceps" },
+        ex: [rx("flexInc", 3, "10", 90), rx("pressBot", 3, "12", 90), rx("flexRod", 2, "6–10", 60), rx("elevLatBot", 2, "12", 60), rx("fondosSilla", 2, "8–10", 60)] },
+      { t: { es: "Jalón: espalda y bíceps", en: "Pull: back & biceps" }, s: { es: "Jalón", en: "Pull" }, focus: { es: "Espalda, hombro de atrás y bíceps", en: "Back, rear shoulders, and biceps" },
+        ex: [rx("remoBag", 3, "12", 90), rx("remoUnaBag", 3, "10 por brazo", 60), rx("pajaroBot", 2, "12", 60), rx("superman", 2, "10", 45), rx("curlBot", 2, "12", 60), rx("curlMartilloBot", 2, "12", 60)] },
+      { t: { es: "Piernas y glúteos", en: "Legs & glutes" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("sentadilla", 3, "15", 90), rx("rdlBag", 3, "12", 90), rx("zancada", 2, "8 por pierna", 60), rx("puente", 2, "15", 60), rx("calf", 2, "15", 45)] }
     ],
     5: [
-      { t: { es: "Tren superior", en: "Upper body" }, ex: [rx("flexInc", 3, "8–10"), rx("remoBag", 3, "12"), rx("pressBot", 3, "12"), rx("fondosSilla", 2, "8–10"), rx("superman", 2, "10")] },
-      { t: { es: "Tren inferior", en: "Lower body" }, ex: [rx("sentadilla", 3, "12"), rx("zancada", 3, "8 por pierna"), rx("puente", 3, "15"), rx("rdlBag", 3, "12"), rx("calf", 3, "15")] },
-      { t: { es: "Cardio + core", en: "Cardio + core" }, ex: [rx("caminata", 1, "20–30 min"), rx("marcha", 3, "30 seg"), rx("plancha", 3, "20–30 seg"), rx("bicho", 3, "8 por lado"), rx("planchaLat", 2, "15–20 seg por lado")] },
-      { t: { es: "Tren superior (variaciones)", en: "Upper body (variations)" }, ex: [rx("flexRod", 3, "6–10"), rx("remoBag", 3, "12"), rx("curlBot", 3, "12"), rx("pressBot", 3, "10"), rx("superman", 3, "10")] },
-      { t: { es: "Tren inferior (variaciones)", en: "Lower body (variations)" }, ex: [rx("escalon", 3, "10 por pierna"), rx("gobletBag", 3, "12"), rx("puenteUna", 3, "8 por pierna"), rx("rdlBag", 3, "12"), rx("calf", 3, "15")] }
+      { t: { es: "Pecho", en: "Chest" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho (con apoyo de hombro frontal y tríceps)", en: "Chest (front shoulders and triceps assist)" },
+        ex: [rx("flexInc", 3, "10", 90), rx("flexRod", 3, "6–10", 90), rx("pressPisoBot", 2, "12", 60), rx("aperturasBot", 2, "12", 60), rx("caminata", 1, "10–15 min (opcional)", 0)] },
+      { t: { es: "Espalda", en: "Back" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Dorsales, espalda media y espalda baja", en: "Lats, mid back, and lower back" },
+        ex: [rx("remoBag", 3, "12", 90), rx("remoUnaBag", 3, "10 por brazo", 60), rx("superman", 2, "10", 45), rx("yPiso", 2, "10", 45), rx("caminata", 1, "10–15 min (opcional)", 0)] },
+      { t: { es: "Piernas y glúteos", en: "Legs & glutes" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("gobletBag", 3, "12", 90), rx("rdlBag", 3, "12", 90), rx("zancada", 2, "8 por pierna", 60), rx("puenteUna", 2, "8 por pierna", 60), rx("calf", 2, "15", 45)] },
+      { t: { es: "Hombros + core", en: "Shoulders + core" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros (frente, lado y atrás) y abdomen", en: "Shoulders (front, side, rear) and core" },
+        ex: [rx("pressBot", 3, "12", 90), rx("elevLatBot", 3, "12", 60), rx("pajaroBot", 2, "12", 60), rx("planchaLat", 2, "15–20 seg por lado", 45), rx("bicho", 2, "8 por lado", 45)] },
+      { t: { es: "Brazos: bíceps y tríceps", en: "Arms: biceps & triceps" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps, tríceps y antebrazo", en: "Biceps, triceps, and forearms" },
+        ex: [rx("curlBot", 3, "12", 60), rx("fondosSilla", 3, "8–10", 60), rx("curlMartilloBot", 2, "12", 60), rx("extNucaBot", 2, "12", 60), rx("caminata", 1, "10–15 min (opcional)", 0)] }
     ],
     x: [
-      { t: { es: "Exprés A · 20–30 min", en: "Express A · 20–30 min" }, ex: [rx("sentadilla", 3, "15"), rx("flexInc", 3, "10"), rx("remoBag", 3, "12"), rx("plancha", 3, "30 seg")] },
-      { t: { es: "Exprés B · 20–30 min", en: "Express B · 20–30 min" }, ex: [rx("zancada", 3, "8 por pierna"), rx("flexRod", 3, "8"), rx("puente", 3, "15"), rx("bicho", 3, "8 por lado")] }
+      { t: { es: "Pecho · 20–30 min", en: "Chest · 20–30 min" }, s: { es: "Pecho", en: "Chest" }, focus: { es: "Pecho", en: "Chest" },
+        ex: [rx("flexInc", 3, "10", 45), rx("flexRod", 3, "6–10", 45), rx("pressPisoBot", 3, "12", 45)] },
+      { t: { es: "Espalda · 20–30 min", en: "Back · 20–30 min" }, s: { es: "Espalda", en: "Back" }, focus: { es: "Espalda", en: "Back" },
+        ex: [rx("remoBag", 3, "12", 45), rx("remoUnaBag", 3, "10 por brazo", 45), rx("superman", 3, "10", 45)] },
+      { t: { es: "Piernas y glúteos · 20–30 min", en: "Legs & glutes · 20–30 min" }, s: { es: "Piernas", en: "Legs" }, focus: { es: "Cuádriceps, glúteos, femorales y pantorrillas", en: "Quads, glutes, hamstrings, and calves" },
+        ex: [rx("sentadilla", 3, "15", 45), rx("rdlBag", 3, "12", 45), rx("zancada", 3, "8 por pierna", 45), rx("puente", 3, "15", 45)] },
+      { t: { es: "Hombros · 20–30 min", en: "Shoulders · 20–30 min" }, s: { es: "Hombros", en: "Shoulders" }, focus: { es: "Hombros", en: "Shoulders" },
+        ex: [rx("pressBot", 3, "12", 45), rx("elevLatBot", 3, "12", 45), rx("pajaroBot", 3, "12", 45)] },
+      { t: { es: "Brazos · 20–30 min", en: "Arms · 20–30 min" }, s: { es: "Brazos", en: "Arms" }, focus: { es: "Bíceps y tríceps", en: "Biceps and triceps" },
+        ex: [rx("curlBot", 3, "12", 45), rx("fondosSilla", 3, "8–10", 45), rx("curlMartilloBot", 3, "12", 45), rx("extNucaBot", 3, "12", 45)] }
     ]
   }
+};
+
+/* Consejo corto por ejercicio (Zack): se muestra destacado arriba de los 3 pasos */
+const EX_TIP = {
+  pressPecho: { es: "Baja en 2 segundos y empuja fuerte, con los omóplatos juntos contra el banco.", en: "Lower for 2 seconds, then press hard with your shoulder blades squeezed into the bench." },
+  pressInc: { es: "Banco bajo (unos 30°); si lo subes más, trabaja más hombro que pecho.", en: "Keep the bench low (about 30°); any higher and it turns into a shoulder exercise." },
+  pressMaq: { es: "Ajusta el asiento para que los agarres queden a la altura del pecho.", en: "Set the seat so the handles line up with your chest." },
+  flexInc: { es: "Mientras más alta la superficie, más fácil. Cuando te salgan todas, usa una más baja.", en: "The higher the surface, the easier. Once you hit all the reps, use a lower one." },
+  flexRod: { es: "Si no te salen todas, termina la serie con flexión inclinada.", en: "If you can't finish the set, switch to incline push-ups." },
+  pressPisoBot: { es: "Los codos tocan el piso suave y subes; el piso protege tus hombros.", en: "Let your elbows touch the floor softly, then press; the floor protects your shoulders." },
+  aperturasBot: { es: "Codos un poco doblados todo el tiempo, como si abrazaras un árbol.", en: "Keep a slight bend in your elbows, like you're hugging a big tree." },
+  jalon: { es: "Jala con los codos, no con las manos, y no te tires hacia atrás.", en: "Pull with your elbows, not your hands, and don't lean way back." },
+  remoPolea: { es: "No balancees el torso; que trabaje la espalda, no la cintura.", en: "Don't rock your torso; let your back do the work, not your lower back." },
+  remoDb: { es: "Espalda recta como una mesa y la mirada al piso, un poco adelante.", en: "Back flat like a table, eyes on the floor a little ahead of you." },
+  superman: { es: "Lento y corto; no hace falta subir mucho.", en: "Slow and small; you don't need to lift high." },
+  yPiso: { es: "Pulgares hacia el techo y hombros lejos de las orejas.", en: "Thumbs toward the ceiling, shoulders away from your ears." },
+  remoBag: { es: "Llena la mochila hasta que las últimas 2 repeticiones cuesten.", en: "Load the backpack until the last 2 reps feel hard." },
+  remoUnaBag: { es: "Con la mano y la rodilla en la silla, tu espalda queda recta y protegida.", en: "With your hand and knee on the chair, your back stays flat and protected." },
+  prensa: { es: "No bloquees las rodillas arriba y baja solo hasta donde la cadera no se despegue.", en: "Don't lock your knees at the top; only go as low as your hips stay down." },
+  rdl: { es: "Las mancuernas bajan pegadas a las piernas; espalda recta siempre.", en: "Keep the dumbbells close to your legs and your back flat the whole time." },
+  rdlBag: { es: "La mochila baja pegada a las piernas; espalda recta siempre.", en: "Keep the backpack close to your legs and your back flat the whole time." },
+  goblet: { es: "Baja hasta donde mantengas la espalda recta; con el tiempo bajarás más.", en: "Go as low as you can with a straight back; depth comes with time." },
+  gobletBag: { es: "Baja hasta donde mantengas la espalda recta; para más reto, mete más peso a la mochila.", en: "Go as low as you can with a straight back; for more challenge, add weight to the backpack." },
+  sentadilla: { es: "Si te cuesta, practica sentándote y parándote de una silla.", en: "If it's hard, practice sitting down onto a chair and standing back up." },
+  zancadaDb: { es: "Empieza con mancuernas ligeras; el reto es el equilibrio.", en: "Start with light dumbbells; balance is the real challenge." },
+  zancada: { es: "Agárrate de una pared o una silla si pierdes el equilibrio.", en: "Hold a wall or a chair if you lose your balance." },
+  legCurl: { es: "Sube rápido y baja lento, en 3 segundos.", en: "Curl up quickly and lower slowly, over 3 seconds." },
+  puenteDb: { es: "Pon una toalla debajo de la mancuerna para que no te lastime la cadera.", en: "Put a towel under the dumbbell so it doesn't dig into your hips." },
+  puente: { es: "Aprieta glúteos arriba sin arquear la espalda baja.", en: "Squeeze your glutes at the top without arching your lower back." },
+  puenteUna: { es: "Si con una pierna no puedes, hazlo con las dos.", en: "If one leg is too hard, use both." },
+  calfDb: { es: "Pausa 1 segundo arriba, sin rebotar.", en: "Pause 1 second at the top, no bouncing." },
+  calf: { es: "Pausa 1 segundo arriba, sin rebotar.", en: "Pause 1 second at the top, no bouncing." },
+  pressHombro: { es: "Abdomen firme; si arqueas la espalda, baja el peso.", en: "Brace your abs; if your back arches, go lighter." },
+  pressBot: { es: "Abdomen firme; si arqueas la espalda, usa botellas más ligeras.", en: "Brace your abs; if your back arches, use lighter bottles." },
+  elevLat: { es: "Peso ligero: sube solo hasta la altura de los hombros, sin impulso.", en: "Go light: raise only to shoulder height, no swinging." },
+  elevLatBot: { es: "Peso ligero: sube solo hasta la altura de los hombros, sin impulso.", en: "Go light: raise only to shoulder height, no swinging." },
+  pajaro: { es: "Peso muy ligero; piensa en abrir los brazos, no en subirlos.", en: "Very light weight; think about opening your arms wide, not lifting them." },
+  pajaroBot: { es: "Peso muy ligero; piensa en abrir los brazos, no en subirlos.", en: "Very light weight; think about opening your arms wide, not lifting them." },
+  planchaLat: { es: "Si cuesta mucho, apoya la rodilla de abajo.", en: "Too hard? Rest your bottom knee on the floor." },
+  bicho: { es: "Saca el aire al estirar; la espalda baja nunca se despega del piso.", en: "Breathe out as you reach; your lower back never leaves the floor." },
+  curl: { es: "Sin balancearte; si necesitas impulso, baja el peso.", en: "No swinging; if you need momentum, go lighter." },
+  curlBot: { es: "Sin balancearte; cuando las botellas se sientan fáciles, usa galones.", en: "No swinging; when the bottles feel easy, switch to gallon jugs." },
+  curlMartillo: { es: "Palmas viéndose una a la otra todo el tiempo, como si sostuvieras un martillo.", en: "Palms face each other the whole time, like you're holding a hammer." },
+  curlMartilloBot: { es: "Palmas viéndose una a la otra todo el tiempo, como si sostuvieras un martillo.", en: "Palms face each other the whole time, like you're holding a hammer." },
+  pushdown: { es: "Solo se mueven los antebrazos; los codos se quedan fijos a los lados.", en: "Only your forearms move; your elbows stay pinned to your sides." },
+  extNuca: { es: "Codos apuntando al techo y cerca de la cabeza; baja lento.", en: "Elbows point at the ceiling and stay close to your head; lower slowly." },
+  extNucaBot: { es: "Codos apuntando al techo y cerca de la cabeza; baja lento.", en: "Elbows point at the ceiling and stay close to your head; lower slowly." },
+  fondosSilla: { es: "Baja solo hasta 90°. Si te molesta el hombro, cámbialo por extensión sobre la cabeza.", en: "Only go down to 90°. If your shoulder complains, swap it for the overhead extension." },
+  cinta: { es: "Opcional: quemas más calorías sin cansar las piernas para mañana.", en: "Optional: burns extra calories without tiring your legs for tomorrow." },
+  caminata: { es: "Opcional: quemas más calorías sin cansar las piernas para mañana.", en: "Optional: burns extra calories without tiring your legs for tomorrow." }
 };
 
 /* ---------- Progresión de 4 semanas ---------- */
 const WEEKS = [
   { sets: 0, reps: 0, min: 0, sec: 0, t: { es: "Técnica", en: "Technique" }, d: { es: "Aprende bien cada movimiento con un peso cómodo.", en: "Learn each movement well with a comfortable weight." } },
   { sets: 0, reps: 2, min: 5, sec: 10, t: { es: "Más repeticiones", en: "More reps" }, d: { es: "Mismo peso, 2 repeticiones más por serie (o un poco más de tiempo).", en: "Same weight, 2 more reps per set (or a bit more time)." } },
-  { sets: 1, reps: 0, min: 5, sec: 10, t: { es: "Más series", en: "More sets" }, d: { es: "Una serie más y sube un poquito el peso si la técnica está bien.", en: "One more set, and add a little weight if your form is solid." } },
-  { sets: 1, reps: 2, min: 10, sec: 20, t: { es: "Supera tu marca", en: "Beat your best" }, d: { es: "Una serie más y 2 repeticiones más. Al terminar, repite el ciclo con más peso.", en: "One more set and 2 more reps. When you finish, repeat the cycle with more weight." } }
+  { sets: 1, reps: 0, min: 5, sec: 10, t: { es: "Más series", en: "More sets" }, d: { es: "Una serie más en los 2 primeros ejercicios del día (en Exprés, una vuelta más) y sube un poquito el peso si la técnica está bien.", en: "One more set on the day's first 2 exercises (in Express, one more round), and add a little weight if your form is solid." } },
+  { sets: 1, reps: 2, min: 10, sec: 20, t: { es: "Supera tu marca", en: "Beat your best" }, d: { es: "Mantén esa serie extra y suma 2 repeticiones más. Al terminar, repite el ciclo con más peso.", en: "Keep that extra set and add 2 more reps. When you finish, repeat the cycle with more weight." } }
 ];
 
 /* ---------- Reto de 30 días ---------- */
@@ -868,9 +979,10 @@ function drawProps(J, props, front, inv) {
   }
   return s;
 }
-function drawFigure(J) {
+function drawFigure(J, front) {
   const pl = (pts, c, w) => `<polyline points="${pts.map(k => J[k].map(n => n.toFixed(1)).join(",")).join(" ")}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
-  return pl(["P", "K2", "A2", "T2"], C.far, 4.5) + pl(["N", "E2", "W2"], C.far, 4.5) +
+  const far = front ? C.near : C.far;
+  return pl(["P", "K2", "A2", "T2"], far, 4.5) + pl(["N", "E2", "W2"], far, 4.5) +
     pl(["N", "H"], C.near, 4.5) + pl(["N", "P"], C.near, 6) +
     pl(["P", "K1", "A1", "T1"], C.near, 4.8) + pl(["N", "E1", "W1"], C.near, 4.5) +
     `<circle cx="${J.H[0].toFixed(1)}" cy="${J.H[1].toFixed(1)}" r="${HEAD_R}" fill="${C.near}"/>`;
@@ -893,7 +1005,7 @@ function illustration(ex, name) {
       `<line x1="6" y1="${FLOOR + 1}" x2="114" y2="${FLOOR + 1}" stroke="#2A3A5A" stroke-width="1.5"/>` +
       `<text x="8" y="14" font-size="7.5" font-weight="800" letter-spacing=".9" fill="#A3AEC2" font-family="Montserrat,system-ui,sans-serif">${labels[i].toUpperCase()}</text>` +
       `<g transform="translate(60,${FLOOR}) scale(${s.toFixed(3)}) translate(${(-cx).toFixed(2)},${-FLOOR})">` +
-      drawProps(fr.J, fr.props, false, inv) + drawFigure(fr.J) + drawProps(fr.J, fr.props, true, inv) + `</g></g>`;
+      drawProps(fr.J, fr.props, false, inv) + drawFigure(fr.J, ex.front) + drawProps(fr.J, fr.props, true, inv) + `</g></g>`;
   });
   if (!one) svg += `<path d="M119 60h8m-3.5-4.5L128 60l-4.5 4.5" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
   return svg + `</svg>`;
@@ -908,6 +1020,12 @@ const WALK_A = { t: 175, th1: 25, sh1: 5, ft1: 110, th2: -20, sh2: -40, ft2: 30,
 const WALK_B = { t: 175, th1: -20, sh1: -40, ft1: 30, th2: 25, sh2: 5, ft2: 110, ua1: 30, fa1: 70, ua2: -30, fa2: -10 };
 const STEP_S = { t: 175, th1: 70, sh1: -10, th2: 0, sh2: 0, p: [{ k: "block", at: ["A1", 6], w: 36 }] };
 const STEP_E = { t: 180, th1: 0, sh1: 0, th2: 85, sh2: 0, lift: 17, p: [{ k: "block", at: ["A1", 6], w: 36 }] };
+/* Dibujos del split por grupo muscular. front: true = vista de frente (los dos brazos/piernas en primer plano) */
+const DBV = { k: "dbv", at: ["W1"] };
+const ELEV_F = k => [{ ua1: 10, fa1: 6, ua2: -10, fa2: -6 }, { ua1: 84, fa1: 96, ua2: -84, fa2: -96 }].map(o => ({ ...o, t: 180, th1: 9, sh1: 0, th2: -9, sh2: 0, ft1: 60, ft2: -60, p: [{ k, at: ["W1"] }, { k, at: ["W2"] }] }));
+const PAJARO_F = k => [{ ua1: 0, fa1: 0 }, { ua1: -96, fa1: -100 }].map(o => ({ ...o, t: 120, hd: 115, th1: 25, sh1: 5, p: [{ k, at: ["W1"] }] }));
+const CURL_F = k => [{ t: 180, ua1: 0, fa1: 0, p: [{ k, at: ["W1"] }] }, { t: 180, ua1: 8, fa1: 165, p: [{ k, at: ["W1"] }] }];
+const EXTNUCA_F = extra => [{ ua1: 178, fa1: 180 }, { ua1: -168, fa1: -18 }].map(o => ({ ...o, t: 180, th1: 90, sh1: 0, p: [{ k: "block", at: ["P", -2, 3], w: 18 }, ...extra, DBV] }));
 const EX = {
   sentadilla: { n: "Sentadilla", tips: ["Pies al ancho de hombros, puntas un poco hacia afuera.", "Baja como si te sentaras en una silla, con el pecho arriba.", "Empuja el piso con todo el pie para subir."],
     f: [{ ua1: 90, fa1: 90 }, { ...SQ_END, ua1: 100, fa1: 100 }] },
@@ -996,7 +1114,36 @@ const EX = {
   gobletBag: { n: "Sentadilla con mochila al pecho", tips: ["Abraza la mochila contra el pecho.", "Baja como si te sentaras en una silla, pecho arriba.", "Sube empujando el piso con todo el pie."],
     f: [{ ua1: 15, fa1: 175, p: [{ k: "bag", at: ["W1", 0, -8] }] }, { ...SQ_END, ua1: 40, fa1: 165, p: [{ k: "bag", at: ["W1", 0, -8] }] }] },
   pressBot: { n: "Press de hombros con botellas de agua", tips: ["Siéntate derecho en una silla firme.", "Empieza con las botellas a la altura de los hombros.", "Empuja hacia arriba sin arquear la espalda baja."],
-    f: [{ ua1: 25, fa1: 178 }, { ua1: 176, fa1: 180 }].map(o => ({ ...o, t: 180, th1: 90, sh1: 0, p: [{ k: "block", at: ["P", -2, 3], w: 18 }, { k: "dbv", at: ["W1"] }] })) }
+    f: [{ ua1: 25, fa1: 178 }, { ua1: 176, fa1: 180 }].map(o => ({ ...o, t: 180, th1: 90, sh1: 0, p: [{ k: "block", at: ["P", -2, 3], w: 18 }, { k: "dbv", at: ["W1"] }] })) },
+  // ----- split por grupo muscular (oct 2026) -----
+  pressMaq: { n: "Press de pecho en máquina", tips: ["Ajusta el asiento para que los agarres queden a la altura del pecho.", "Espalda pegada al respaldo; empuja al frente sin bloquear los codos.", "Regresa lento hasta sentir que se estira el pecho."],
+    f: [{ ua1: -35, fa1: 80 }, { ua1: 88, fa1: 90 }].map(o => ({ ...o, t: 180, th1: 90, sh1: 0,
+      p: [{ k: "block", at: ["P", -2, 3], w: 18 }, { k: "seg", a: ["P", -6, 2], b: ["N", -6, -2], w: 5 }, { k: "seg", a: ["W1", 0, -6], b: ["W1", 0, 6], w: 3.5, c: C.propDark }, { k: "dot", at: ["W1"], r: 3, c: "var(--accent)" }] })) },
+  elevLat: { n: "Elevaciones laterales con mancuernas", tips: ["De pie, mancuernas a los lados y codos un poco doblados.", "Sube los brazos hacia los lados hasta la altura de los hombros.", "Baja lento, en 2–3 segundos, sin balancearte."],
+    f: ELEV_F("db"), front: true },
+  pajaro: { n: "Pájaros con mancuernas (inclinado)", tips: ["Inclínate con la espalda recta y las rodillas suaves, como en el remo.", "Abre los brazos hacia los lados con los codos un poco doblados.", "Junta los omóplatos arriba y baja lento."],
+    f: PAJARO_F("db") },
+  curlMartillo: { n: "Curl martillo con mancuernas", tips: ["Palmas viendo hacia tu cuerpo, como si sostuvieras un martillo.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
+    f: CURL_F("dbv") },
+  extNuca: { n: "Extensión de tríceps sobre la cabeza con mancuerna", tips: ["Sentado y derecho, sostén una mancuerna con las dos manos arriba de la cabeza.", "Dobla los codos y baja la mancuerna detrás de la cabeza.", "Estira los brazos sin abrir los codos; abdomen firme."],
+    f: EXTNUCA_F([]) },
+  pressPisoBot: { n: "Press de pecho en el piso con botellas", tips: ["Acuéstate boca arriba con las rodillas dobladas y los pies en el piso.", "Baja las botellas hasta que los codos toquen suave el piso.", "Empuja hacia arriba hasta estirar los brazos."],
+    f: [{ ua1: 180, fa1: 180 }, { ua1: 88, fa1: 182 }].map(o => ({ ...o, t: -90, hd: -104, th1: 135, sh1: 45, p: [DBV] })) },
+  aperturasBot: { n: "Aperturas en el piso con botellas", tips: ["Boca arriba en el piso, brazos arriba del pecho y codos un poco doblados.", "Abre los brazos hacia los lados hasta que los codos toquen suave el piso.", "Junta los brazos arriba apretando el pecho, como si abrazaras un árbol."],
+    f: [{ ua1: 176, fa1: 184, ua2: 184, fa2: 176 }, { ua1: 96, fa1: 112, ua2: -96, fa2: -112 }].map(o => ({ ...o, t: -90, hd: -104, th1: 135, sh1: 45, p: [DBV, { k: "dbv", at: ["W2"] }] })) },
+  remoUnaBag: { n: "Remo a una mano con mochila (apoyado en silla)", tips: ["Apoya una mano y una rodilla en una silla firme.", "Espalda recta; jala la mochila hacia la cadera con el codo pegado.", "Baja lento y cambia de brazo."],
+    f: [{ ua1: 0, fa1: 0 }, { ua1: -95, fa1: 0 }].map(o => ({ ...o, t: 104, hd: 98, ua2: -4, fa2: -4, th1: 8, sh1: 0, th2: 2, sh2: -90, ft2: -90,
+      p: [{ k: "block", at: ["K2", 4, 0], w: 62 }, BAG] })) },
+  yPiso: { n: "Elevación en Y boca abajo", tips: ["Boca abajo, brazos estirados al frente en forma de Y, pulgares hacia arriba.", "Sube solo los brazos y un poco el pecho, juntando los omóplatos.", "Sostén 2 segundos y baja lento; las piernas se quedan en el piso."],
+    f: [{ t: 90, hd: 100, ua1: 90, fa1: 90 }, { t: 100, hd: 112, ua1: 118, fa1: 118 }].map(o => ({ ...o, th1: -90, sh1: -90, ft1: -90 })) },
+  elevLatBot: { n: "Elevaciones laterales con botellas", tips: ["De pie, botellas a los lados y codos un poco doblados.", "Sube los brazos hacia los lados hasta la altura de los hombros.", "Baja lento, en 2–3 segundos, sin balancearte."],
+    f: ELEV_F("dbv"), front: true },
+  pajaroBot: { n: "Pájaros con botellas (inclinado)", tips: ["Inclínate con la espalda recta y las rodillas suaves.", "Abre los brazos hacia los lados con los codos un poco doblados.", "Junta los omóplatos arriba y baja lento."],
+    f: PAJARO_F("dbv") },
+  curlMartilloBot: { n: "Curl martillo con botellas de agua", tips: ["Agarra las botellas por el cuello, palmas viendo hacia tu cuerpo.", "Codos pegados a los costados; sube sin balancearte.", "Baja lento, en 2–3 segundos."],
+    f: CURL_F("dbv") },
+  extNucaBot: { n: "Extensión de tríceps sobre la cabeza con botella", tips: ["Sentado en una silla firme, sostén un galón o botella con las dos manos arriba de la cabeza.", "Dobla los codos y baja la botella detrás de la cabeza.", "Estira los brazos sin abrir los codos; abdomen firme."],
+    f: EXTNUCA_F([{ k: "seg", a: ["P", -10, 3], b: ["P", -10, -24], w: 4 }]) }
 };
 
 const $ = s => document.querySelector(s);
@@ -1176,12 +1323,15 @@ document.addEventListener("submit", e => { if (e.target.id === "leadForm") { e.p
 const plan = () => ROUTINE[S.mode][S.freq];
 const setKey = i => `${S.mode}-${S.freq}-w${S.week}-${S.day}-${i}`;
 function ensureSetsDate() { if (S.sets.date !== todayKey()) S.sets = { date: todayKey(), done: {} }; }
-function adj(sets, reps) {
+function adj(sets, reps, i) {
   const W = WEEKS[S.week - 1], isMin = /min/.test(reps), isSec = /seg|sec/.test(reps);
   const d = isMin ? W.min : isSec ? W.sec : W.reps;
-  return [sets === 1 ? 1 : Math.min(4, sets + W.sets), reps.replace(/\d+/g, n => +n + d)];
+  const add = (S.freq === "x" || i < 2) ? W.sets : 0; // serie extra de S3–S4 solo en los 2 principales (Exprés: +1 vuelta a todos)
+  return [sets === 1 ? 1 : Math.min(4, sets + add), reps.replace(/\d+/g, n => +n + d)];
 }
-const dayEx = () => plan()[S.day].ex.map(([id, sets, es, en]) => { const [s, rp] = adj(sets, S.lang === "en" ? en : es); return { id, sets: s, reps: rp }; });
+// opt = caminata opcional: se puede marcar, pero no cuenta para terminar el día (ni para el hábito "Entrené")
+const dayEx = () => plan()[S.day].ex.map(([id, sets, es, en, rest], i) => { const [s, rp] = adj(sets, S.lang === "en" ? en : es, i); return { id, sets: s, reps: rp, rest, opt: /\(opcional\)/.test(es) }; });
+const exTip = id => (EX_TIP[id] ? L(EX_TIP[id]) : "");
 const figCache = {};
 const fig = id => (figCache[id + S.lang] ??= illustration(EX[id], exN(id)));
 function vRutina() {
@@ -1202,23 +1352,25 @@ function vRutina() {
     <p class="muted small" style="margin:0">${since >= 28 ? t("weekDone") : t("weekSince", { date: dLong(S.planStart), n: sugg })}
       ${sugg !== S.week && since < 28 ? `<button class="inl" data-act="week" data-v="${sugg}">${t("weekGo", { n: sugg })}</button> · ` : ""}<button class="inl" data-act="weekRestart">${t("weekRestart")}</button></p>
     <details class="faq ov"><summary>${t("overloadQ")}</summary><p>${t("overloadA")}</p></details></div>
-  <div class="pills${plan().length > 3 ? " five" : ""}" id="dayPills">${plan().map((_, i) => `<button type="button" data-act="day" data-v="${i}" class="${i === S.day ? "on" : ""}">${t("day", { n: i + 1 })}</button>`).join("")}</div>
+  <div class="dpills" id="dayPills">${plan().map((d, i) => `<button type="button" data-act="day" data-v="${i}" class="${i === S.day ? "on" : ""}" aria-pressed="${i === S.day}"><small>${t("day", { n: i + 1 })}</small><span class="vh"> · </span><b>${esc(L(d.s))}</b></button>`).join("")}</div>
   <p class="sub" id="rutSub" style="margin-top:-2px">${t("sub" + S.freq)}</p>
   <div class="card" style="padding:14px 16px">
     <div class="daycap" id="dayCap">${t("dayOf", { n: S.day + 1, t: plan().length })} · ${t(S.mode)} · ${t("weekS", { n: S.week })}</div>
     <h3 id="dayTitle">${esc(L(day.t))}</h3>
+    <p class="muted small" id="dayFocus"><b>${t("focusLbl")}:</b> ${esc(L(day.focus))}</p>
     <div class="row small" style="margin-bottom:10px"><b id="progText" class="lbl" style="color:var(--text)"></b><button class="linkbtn small" data-act="reset">${t("reset")}</button></div>
     <div class="bar"><i id="progBar" style="width:0"></i></div></div>
   <div id="exList">${list.map((x, i) => exCard(x, i)).join("")}</div>
   <p class="muted small" style="margin:4px 2px 14px">${t("rutTip")}</p>` + progressInit();
 }
-function exCard({ id, sets, reps }, i) {
-  const key = setKey(i), done = S.sets.done[key] || [];
-  const meta = sets === 1 ? esc(reps) : t(S.freq === "x" ? "rounds" : "setsReps", { s: sets, r: esc(reps) });
+function exCard({ id, sets, reps, rest }, i) {
+  const key = setKey(i), done = S.sets.done[key] || [], tip = exTip(id);
+  const meta = (sets === 1 ? esc(reps) : t(S.freq === "x" ? "rounds" : "setsReps", { s: sets, r: esc(reps) })) + (rest ? " · " + t("rest", { s: rest }) : "");
   const vurl = EX[id].videoUrl || CONFIG.VIDEOS[id];
   return `<div class="card ex" data-ex="${id}"><h3>${i + 1}. ${esc(exN(id))}</h3><span class="meta">${meta}</span>
     ${fig(id)}
     ${vurl ? `<a class="vid" href="${esc(vurl)}" target="_blank" rel="noopener" data-video="${id}">${ICON.play}${t("video")}</a>` : ""}
+    ${tip ? `<p class="extip"><b>${t("tipLbl")}:</b> ${esc(tip)}</p>` : ""}
     <ul>${exTips(id).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
     <div class="sets">${Array.from({ length: sets }, (_, s) => `<button type="button" class="set ${done[s] ? "done" : ""}" data-act="set" data-k="${key}" data-s="${s}" aria-label="${t("setAria", { n: s + 1 })}"><span>${s + 1}</span></button>`).join("")}
     <span class="muted small">${sets === 1 ? t("tapOnce") : t("tapSet")}</span></div></div>`;
@@ -1227,7 +1379,7 @@ function progressInit() { queueMicrotask(() => updateProgress(false)); return ""
 function updateProgress(celebrate) {
   if (!$("#progText")) return;
   let total = 0, done = 0;
-  dayEx().forEach(({ sets }, i) => { total += sets; const arr = S.sets.done[setKey(i)] || []; for (let s = 0; s < sets; s++) if (arr[s]) done++; });
+  dayEx().forEach(({ sets, opt }, i) => { if (opt) return; total += sets; const arr = S.sets.done[setKey(i)] || []; for (let s = 0; s < sets; s++) if (arr[s]) done++; });
   $("#progText").textContent = t("setsCount", { d: done, t: total });
   $("#progBar").style.width = (100 * done / total) + "%";
   if (celebrate && done === total) {
