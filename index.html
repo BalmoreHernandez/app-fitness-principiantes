@@ -264,7 +264,7 @@ const CONFIG = {
   COACHING_URL: "https://wa.me/50366803369?text=Hola%20Balmore%2C%20vengo%20de%20tu%20app%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20coaching",
   APP_URL:      "app.balmorehernandez.com",   // se muestra en la imagen para compartir
   // Formulario "Recibe tu plan de 4 semanas": URL del Google Apps Script (Nico). Vacío = el botón abre WhatsApp (COACHING_URL).
-  LEAD_FORM_URL: "",
+  LEAD_FORM_URL: "https://script.google.com/macros/s/AKfycbwi-qKbRDoItlIyQsywu4rAPkB7_3EFdjMErQnMWOAI4eBzJJO2Joh0k80DEBaTr56u/exec",
   ACCENT_COLOR: "#FF5F1F",           // naranja brasa (marca Brasa Navy). El resto de colores está en :root del CSS
   LOGO_URL:     "",                  // opcional: ruta o URL de tu logo/foto (vacío = iniciales)
   SOCIAL: {                          // agrega o quita redes aquí (ej. youtube: { handle: "@...", url: "https://..." })
@@ -294,14 +294,14 @@ const MENSAJES = [
   { es: "Yo empecé en 250 libras. No esperes a sentirte listo: empieza con lo que tienes hoy.", en: "I started at 250 pounds. Don't wait until you feel ready: start with what you have today." },
   { es: "Disciplina es elegir lo que más quieres sobre lo que quieres ahorita.", en: "Discipline is choosing what you want most over what you want right now." },
   { es: "Un mal día de comida no arruina tu progreso. Rendirte, sí. Vuelve en la siguiente comida.", en: "One bad day of eating doesn't ruin your progress. Quitting does. Get back on track at your next meal." },
-  { es: "Los tuyos te ven. Cada entrenamiento también es un ejemplo para ellos.", en: "Your people are watching. Every workout is also an example for them." },
+  { es: "Mi familia me ve. Cada entrenamiento también es un ejemplo para ellos.", en: "My family is watching. Every workout is also an example for them." },
   { es: "No eres 'alguien que intenta hacer ejercicio'. Eres alguien que entrena. Actúa como esa persona hoy.", en: "You're not 'someone trying to work out.' You're someone who trains. Act like that person today." },
   { es: "En el negocio y en el gym es igual: lo que se mide, mejora. Anota tu peso y tus comidas.", en: "Business and the gym work the same way: what gets measured gets better. Track your weight and your meals." },
   { es: "20 minutos hechos valen más que una hora planeada que nunca llegó.", en: "20 minutes done beats an hour planned that never happened." },
   { es: "La constancia le gana al talento cuando el talento no es constante.", en: "Consistency beats talent when talent isn't consistent." },
   { es: "Hoy no tienes que ser perfecto. Solo tienes que ser mejor que tu excusa.", en: "Today you don't have to be perfect. You just have to be better than your excuse." },
   { es: "Cuida tu cuerpo como cuidas tu negocio: con atención diaria, no solo cuando hay crisis.", en: "Take care of your body like you take care of your business: every day, not only in a crisis." },
-  { es: "Cuida tu salud para disfrutar a los tuyos, no solo para verte bien. ¿Cuál es tu porqué?", en: "Take care of your health to enjoy your loved ones, not just to look good. What's your why?" },
+  { es: "Quiero estar sano para disfrutar a mi familia, no solo para verme bien. ¿Cuál es tu porqué?", en: "I want to be healthy to enjoy my family, not just to look good. What's your why?" },
   { es: "Cada vez que cumples lo que te prometiste, tu confianza crece. Cúmplete hoy.", en: "Every time you keep a promise to yourself, your confidence grows. Keep one today." },
   { es: "El progreso lento sigue siendo progreso. Una libra por semana son 50 en un año.", en: "Slow progress is still progress. One pound a week is 50 in a year." },
   { es: "No negocies con tu alarma. Levántate, muévete y después decides cómo te sientes.", en: "Don't negotiate with your alarm. Get up, move, and then decide how you feel." },
@@ -310,7 +310,7 @@ const MENSAJES = [
   { es: "Empieza pequeño: un vaso de agua más, una caminata de 10 minutos. Lo pequeño se suma.", en: "Start small: one more glass of water, a 10-minute walk. Small things add up." },
   { es: "Los resultados que quieres están del otro lado de los días aburridos. Sigue.", en: "The results you want are on the other side of the boring days. Keep going." },
   { es: "No compares tu capítulo 1 con el capítulo 20 de otro.", en: "Don't compare your chapter 1 to someone else's chapter 20." },
-  { es: "Estar ocupado no es la excusa, es la razón. Entrenar te da energía para los tuyos y para tu trabajo.", en: "Being busy isn't the excuse, it's the reason. Training gives you energy for your loved ones and your work." },
+  { es: "Estar ocupado no es la excusa, es la razón. Entreno para tener energía para mi familia y mi negocio.", en: "Being busy isn't the excuse, it's the reason. I train to have energy for my family and my business." },
   { es: "El dinero y el físico se construyen igual: hábitos pequeños, repetidos por mucho tiempo.", en: "Money and fitness are built the same way: small habits, repeated for a long time." },
   { es: "Si fallaste ayer, hoy es el mejor día para volver. No esperes al lunes.", en: "If you slipped yesterday, today is the best day to come back. Don't wait for Monday." },
   { es: "La motivación te hace empezar. El hábito te hace seguir.", en: "Motivation gets you started. Habit keeps you going." },
@@ -331,7 +331,7 @@ const MENSAJES = [
   { es: "Invierte en ti primero: tu salud paga los mejores intereses.", en: "Invest in yourself first: your health pays the best interest." },
   { es: "Si no te gusta el resultado, cambia el hábito, no la meta.", en: "If you don't like the result, change the habit, not the goal." },
   { es: "Haz las cosas difíciles mientras son pequeñas. Una caminata hoy evita un problema mañana.", en: "Do the hard things while they're small. A walk today prevents a problem tomorrow." },
-  { es: "Los tuyos merecen tu mejor versión. Esa versión se entrena todos los días.", en: "Your loved ones deserve the best version of you. That version gets trained every day." },
+  { es: "Mi familia merece mi mejor versión. Esa versión se entrena todos los días.", en: "My family deserves the best version of me. That version gets trained every day." },
   { es: "La báscula no mide tu valor. Mide un número. Confía en el proceso.", en: "The scale doesn't measure your worth. It measures a number. Trust the process." },
   { es: "Rodéate de gente que entrena, emprende y crece. Se contagia.", en: "Surround yourself with people who train, build, and grow. It's contagious." },
   { es: "No es suerte. Es repetición.", en: "It's not luck. It's repetition." },
@@ -435,7 +435,7 @@ const I18N = {
     proSub: "Pésate 1 vez por semana, en ayunas y a la misma hora.", date: "Fecha", saveW: "Guardar peso", yourW: "Tu peso",
     first: "Inicio", current: "Actual", change: "Cambio", history: "Historial", noLog: "Todavía no hay registros. ¡Anota tu primer peso!", chartEmpty: "Aquí verás tu gráfica 📉",
     delAria: "Borrar", delConfirm: "¿Borrar este registro?", errDate: "Elige una fecha.", errWeight: "Escribe un peso válido.", savedW: "Peso guardado ✅",
-    bStory: "Soy Balmore, tu coach. El 2 de octubre de 2026 me subí a la báscula y marcó 250 libras. Mi meta es llegar a 200–210. No te voy a vender perfección: voy a entrenar con esta misma app, comer mejor y compartir aquí mi peso real cada semana, con lo bueno y lo difícil. Si yo puedo con mi agenda, tú también puedes con la tuya. Hagámoslo juntos.",
+    bStory: "Soy Balmore: papá, emprendedor y coach. Entre la familia, el negocio y el entrenamiento, sé lo que es sentir que no te alcanza el día. El 2 de octubre de 2026 me subí a la báscula y marcó 250 libras. Mi meta es llegar a 200–210. No te voy a vender perfección: voy a entrenar con esta misma app, comer mejor y compartir aquí mi peso real cada semana, con lo bueno y lo difícil. Si yo puedo balancear familia, negocio y entrenamiento, tú también puedes. Hagámoslo juntos.",
     bStart: "Inicio", bNow: "Ahora", bLost: "Bajado", bLeft: "Falta", bGoal: "Meta", bLog: "Mis registros semanales", bJoin: "Únete al reto de 30 días",
     bOnlyStart: "Semana 1. Los próximos registros aparecerán aquí cada semana."
   },
@@ -516,7 +516,7 @@ const I18N = {
     proSub: "Weigh in once a week, on an empty stomach, at the same time.", date: "Date", saveW: "Save weight", yourW: "Your weight",
     first: "Start", current: "Current", change: "Change", history: "History", noLog: "No entries yet. Log your first weight!", chartEmpty: "Your chart will show up here 📉",
     delAria: "Delete", delConfirm: "Delete this entry?", errDate: "Pick a date.", errWeight: "Enter a valid weight.", savedW: "Weight saved ✅",
-    bStory: "I'm Balmore, your coach. On October 2, 2026, I stepped on the scale and it read 250 pounds. My goal is 200–210. I'm not going to sell you perfection: I'll train with this same app, eat better, and share my real weight here every week, the good and the hard. If I can make it work with my schedule, you can make it work with yours. Let's do this together.",
+    bStory: "I'm Balmore: a dad, an entrepreneur, and a coach. Between family, business, and training, I know what it feels like when there aren't enough hours in the day. On October 2, 2026, I stepped on the scale and it read 250 pounds. My goal is 200–210. I'm not going to sell you perfection: I'll train with this same app, eat better, and share my real weight here every week, the good and the hard. If I can balance family, business, and training, so can you. Let's do this together.",
     bStart: "Start", bNow: "Now", bLost: "Lost", bLeft: "To go", bGoal: "Goal", bLog: "My weekly check-ins", bJoin: "Join the 30-day challenge",
     bOnlyStart: "Week 1. New check-ins will show up here every week."
   }
