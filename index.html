@@ -153,8 +153,8 @@ nav button{flex:1;height:var(--tabh);border:none;background:none;display:flex;fl
 nav button svg{width:26px;height:26px}
 nav button.on{color:var(--accent)}
 nav button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
-.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,-140%);transition:transform .25s;background:var(--card);border:2px solid var(--accent);color:var(--text);padding:12px 18px;border-radius:16px;font-weight:600;z-index:20;max-width:90vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-.toast.show{transform:translate(-50%,0)}
+.toast{position:fixed;left:50%;top:18px;transform:translate(-50%,calc(-100% - 60px));transition:transform .25s,visibility 0s .25s;visibility:hidden;background:var(--card);border:2px solid var(--accent);color:var(--text);padding:12px 18px;border-radius:16px;font-weight:600;z-index:20;max-width:90vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .25s,visibility 0s}
 .foot{text-align:center;color:var(--muted);font-size:12px;margin:8px 0 18px}
 .note{background:var(--card);border:2px solid var(--line);border-left:6px solid var(--accent);border-radius:16px;padding:14px 16px;margin:0 0 16px;font-size:15px}
 .note p{margin:0}
