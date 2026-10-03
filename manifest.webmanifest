@@ -2,6 +2,11 @@
   "name": "Fitness para principiantes · Balmore Hernandez",
   "short_name": "Balmore Fit",
   "description": "Master your body, mind and money.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "es",
   "icons": [
     {
       "src": "icon-192.png?v=g8b",

@@ -1323,6 +1323,19 @@ const DEF = {
   r30: { start: "", done: {}, sel: 0 },
   lead: { sent: false, name: "" }
 };
+/* Mudanza de dirección: la página de app.balmorehernandez.com trae los datos guardados allá en #bhimport=<base64url>.
+   Solo se importan si aquí todavía no hay datos; luego se limpia la dirección. */
+try {
+  const mv = /^#bhimport=([A-Za-z0-9_-]+)$/.exec(location.hash);
+  if (mv) {
+    if (!localStorage.getItem(KEY)) {
+      const bin = atob(mv[1].replace(/-/g, "+").replace(/_/g, "/"));
+      const obj = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0))));
+      if (obj && typeof obj === "object" && !Array.isArray(obj)) localStorage.setItem(KEY, JSON.stringify(obj));
+    }
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+} catch (e) {}
 let S = JSON.parse(JSON.stringify(DEF));
 try {
   const sv = JSON.parse(localStorage.getItem(KEY));
